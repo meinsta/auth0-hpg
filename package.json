@@ -1,8 +1,8 @@
 {
   "name": "auth0-hpg",
   "version": "0.1.0",
-  "homepage": "https://meinsta.github.io/auth0-hpg",
   "private": true,
+  "homepage": "https://meinsta.github.io/auth0-hpg/",
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
