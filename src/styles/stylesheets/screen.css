@@ -71,15 +71,117 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: 'FaktProUI-Blond';
   src: url(./fonts/FaktProUI-Blond.ttf) format("truetype");
 }
-/* line 13, ../sass/screen.scss */
+@font-face {
+  font-family: 'FaktPro-Blond';
+  src: url(./fonts/FaktPro-Blond.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'FaktPro-Normal';
+  src: url(./fonts/FaktPro-Normal.ttf) format("truetype");
+}
+/* line 23, ../sass/screen.scss */
 body {
   margin: 0;
   padding: 0;
   font-family: 'FaktProUI-Blond';
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
+h1 {
+  font-size: 72px;
+  line-height: 80px;
+  text-align: center;
+  color: #fff;
+}
+
+/* line 36, ../sass/screen.scss */
+h2 {
+  line-height: 60px;
+  font-size: 36px;
+  color: #333333;
+}
+
+/* line 42, ../sass/screen.scss */
+.emphasis {
+  color: #e9552f;
+}
+
+/* line 46, ../sass/screen.scss */
+header {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+/* line 53, ../sass/screen.scss */
 #hero {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
+  transform: translate(0%, -25%);
+}
+
+/* line 59, ../sass/screen.scss */
+aside {
+  position: absolute;
+  top: 0;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 69, ../sass/screen.scss */
+.caption-hero {
+  font-family: 'FaktPro-Blond';
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: #D0D2D3;
+}
+
+/* line 77, ../sass/screen.scss */
+main {
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+/* line 84, ../sass/screen.scss */
+.carousel {
+  background: #F8F8F8;
+  box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  height: 100%;
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* line 93, ../sass/screen.scss */
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 99, ../sass/screen.scss */
+.caption-carousel {
+  font-family: 'FaktPro-Normal';
+  line-height: 32px;
+  font-size: 20px;
+  color: #5C666F;
+  text-align: center;
+}
+
+/* line 107, ../sass/screen.scss */
+footer {
+  height: 150%;
+  width: 100%;
+  position: absolute;
+  top: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
