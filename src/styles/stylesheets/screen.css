@@ -189,7 +189,7 @@ h5 {
 /* line 119, ../sass/screen.scss */
 header {
   width: 100%;
-  height: 110%;
+  height: 100%;
   overflow: hidden;
   position: absolute;
 }
@@ -205,7 +205,7 @@ header {
 aside {
   position: absolute;
   top: 0;
-  height: 50%;
+  height: 75%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -218,7 +218,7 @@ aside {
 main {
   height: 100%;
   position: absolute;
-  top: 50%;
+  top: 75%;
   width: 100%;
   z-index: 1;
 }
@@ -308,27 +308,38 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 75px 50px 50px 50px;
+  padding: 115px 50px 50px 50px;
+  background: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
+  background-size: contain;
+  background-position: right -5px;
+  background-repeat: no-repeat;
+  /* start styles for nuanced map bg overlap */
+  top: -30px;
+  position: relative;
+  z-index: -1;
+  /* end styles for nuanced map bg overlap */
 }
 
-/* line 228, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .cloud-container {
-  width: 75%;
+  width: 90%;
+  padding: 25px 0 0 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
-/* line 237, ../sass/screen.scss */
-.cloud-image {
-  height: 15%;
-  width: 15%;
-  padding: 10px;
+/* line 248, ../sass/screen.scss */
+.icon {
+  height: auto;
+  width: 10%;
+  padding: 0 50px;
 }
 
-/* line 243, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 .stats {
   display: flex;
   flex-direction: row;
@@ -337,30 +348,30 @@ main {
   border-top: 1px solid #E2E2E2;
 }
 
-/* line 251, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 .stats-column {
   width: 50%;
   padding: 50px;
 }
 
-/* line 256, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .stats-column:first-of-type {
   border-right: 1px solid #E2E2E2;
 }
 
-/* line 260, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 .stats-table {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-/* line 266, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 .stats-table-column {
   width: 50%;
 }
 
-/* line 270, ../sass/screen.scss */
+/* line 281, ../sass/screen.scss */
 .stats-list {
   font-family: 'FaktProUI-Medium';
   line-height: 28px;
@@ -368,12 +379,12 @@ main {
   color: rgba(51, 51, 51, 0.86);
 }
 
-/* line 277, ../sass/screen.scss */
+/* line 288, ../sass/screen.scss */
 .stats-list.small {
   line-height: 25px;
 }
 
-/* line 281, ../sass/screen.scss */
+/* line 292, ../sass/screen.scss */
 .stats-list-detail {
   font-family: 'FaktProUI-Medium';
   line-height: 25px;
@@ -381,4 +392,28 @@ main {
   color: rgba(51, 51, 51, 0.86);
   mix-blend-mode: normal;
   opacity: 0.5;
+}
+
+/* line 301, ../sass/screen.scss */
+.stats-list-cluster {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* line 307, ../sass/screen.scss */
+.stats-list-cluster-icon-container {
+  display: flex;
+  flex-direction: row;
+  width: 75px;
+  flex-wrap: wrap;
+  height: 50px;
+  align-items: center;
+}
+
+/* line 316, ../sass/screen.scss */
+.stats-list-cluster-icon {
+  height: 17px;
+  width: 17px;
+  padding: 2.5px 5px;
 }

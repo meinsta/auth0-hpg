@@ -1,0 +1,86 @@
+/* line 1, ../sass/icons.scss */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+/* line 18, ../sass/icons.scss */
+.icon-vmware {
+  width: 6.13671875em;
+}
+
+/* line 22, ../sass/icons.scss */
+.icon-atalssian {
+  width: 8.0595703125em;
+}
+
+/* line 26, ../sass/icons.scss */
+.icon-polaris {
+  width: 6.3330078125em;
+}
+
+/* line 30, ../sass/icons.scss */
+.icon-nvidia {
+  width: 5.1728515625em;
+}
+
+/* line 34, ../sass/icons.scss */
+.icon-amd {
+  width: 4.1923828125em;
+}
+
+/* line 38, ../sass/icons.scss */
+.icon-news-corp {
+  width: 4.0283203125em;
+}
+
+/* line 42, ../sass/icons.scss */
+.icon-jet-airways {
+  width: 5.6953125em;
+}
+
+/* line 46, ../sass/icons.scss */
+.icon-mozilla {
+  width: 3.1181640625em;
+}
+
+/* line 50, ../sass/icons.scss */
+.icon-harpercollins {
+  width: 9.478515625em;
+}
+
+/* line 54, ../sass/icons.scss */
+.icon-bluetooth {
+  width: 4.1669921875em;
+}
+
+/* line 58, ../sass/icons.scss */
+.icon-pbs {
+  width: 1.7734375em;
+}
+
+/* line 62, ../sass/icons.scss */
+.icon-mns {
+  width: 1.6865234375em;
+}
+
+/* line 66, ../sass/icons.scss */
+.icon-aeromexico {
+  width: 5.5341796875em;
+}
+
+/* line 70, ../sass/icons.scss */
+.icon-mazda {
+  width: 5.8369140625em;
+}

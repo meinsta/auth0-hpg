@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-function importAll(r) {
-  return r.keys().map(r);
-}
+const url = 'https://meinsta.github.io/auth0-hpg/symbol-defs.svg';
 
-const images = importAll(require.context('./', false, /\.(png|jpe?g|svg)$/));
+const Icon = (props) => (
+  <svg viewBox='0 0 16 16' className={`icon icon-${props.icon}`}>
+    <use xlinkHref={`${url}#icon-${props.icon}`} />
+  </svg>
+);
 
 class App extends Component {
   render() {
@@ -54,7 +56,14 @@ class App extends Component {
           <h3 className="h3-stats">Advanced infrastructure ensuring high availability and resiliency for its users with globally distributed data centers and full disaster recovery systems.</h3>
           <div className="stats-table">
             <div className="stats-table-column">
-              <h5>3</h5>
+              <div className="stats-list-cluster">
+                <h5 className="stats-list-cluster-label">3</h5>
+                <div className="stats-list-cluster-icon-container">
+                  <img className="stats-list-cluster-icon" src="https://twemoji.maxcdn.com/2/svg/1f1fa-1f1f2.svg" alt="USA" />
+                  <img className="stats-list-cluster-icon" src="https://twemoji.maxcdn.com/2/svg/1f1e6-1f1fa.svg" alt="New Zealand" />
+                  <img className="stats-list-cluster-icon" src="https://twemoji.maxcdn.com/2/svg/1f1ea-1f1fa.svg" alt="European Union" />
+                </div>
+              </div>
               <div className="stats-list small">
                 <p>Clusters</p>
                 <p className="stats-list-detail">(US, EU, AU)</p>
@@ -127,16 +136,16 @@ class VideoCarousel extends Component {
 class CustomerCloud extends Component {
     render() {
 
-        let array = ["aeromexico.svg", "jet airways.svg", "nvidia.svg", "amd.svg", "m&s.svg", "pbs.svg", "atalssian.svg", "mazda.svg", "polaris.svg", "bluetooth.svg", "mozilla.svg", "vmware.jpg", "harpercollins.svg", "news corp.svg"];
+        let array = ["aeromexico", "jet-airways", "nvidia", "amd", "mns", "pbs", "atalssian", "mazda", "polaris", "bluetooth", "mozilla", "vmware", "harpercollins", "news-corp"];
 
-        let images = array.map(image => {
-           return <img key={image} src={require(`./assets/${image}`)} alt="" className="cloud-image" />
+        let svgs = array.map(svg => {
+           return <Icon icon={svg} />
         });
 
         return (
           <section className="customers">
             <h2 className="h2-customers">Join thousands of companies that trust Auth0 everyday</h2>
-            <div className="cloud-container">{ images }</div>
+            <div className="cloud-container">{ svgs }</div>
             <p className="h3-link">See All Customers <div className="triangle" /></p>
           </section>
         );
