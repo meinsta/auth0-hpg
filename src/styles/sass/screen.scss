@@ -51,6 +51,7 @@ h2 {
 
 .h2-customers {
 	line-height: 54px;
+	text-align: center;
 }
 
 .h2-stats {
@@ -230,8 +231,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-	position: absolute;
-	top: 60%;
+    margin: 50px;
 }
 
 .cloud-container {
@@ -255,8 +255,6 @@ footer {
     justify-content: center;
     align-items: flex-start;
     border-top: 1px solid #E2E2E2;
-    position: absolute;
-    top: 100%;
 }
 
 .stats-column {

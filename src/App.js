@@ -26,8 +26,6 @@ class App extends Component {
             <div className="video-carousel"><VideoCarousel /></div>
           </div>
         </section>
-      </main>
-      <footer>
       <CustomerCloud />
       <section className="stats">
         <div className="stats-column">
@@ -73,7 +71,8 @@ class App extends Component {
           <p className="h3-link">Learn more <div className="triangle" /></p>
         </div>
       </section>
-      </footer>
+      </main>
+      <footer />
       </div>
     );
   }
