@@ -1,0 +1,2 @@
+body:before{white-space:pre;font-family:monospace;content:"Error: Invalid CSS after \"...I-Blond'), url(\": expected \")\", was \"./fonts/Fakt Pr...\"\A           on line 10 of /Users/lapis.star/Desktop/auth0-hpg/src/styles/sass/screen.scss\A   \A   5: \A   6: @import \"compass/reset\";\A   7: \A   8: @font-face {\A   9:   font-family: 'Fakt ProUI-Blond';\A   10:   src: local('Fakt ProUI-Blond'), url(./fonts/Fakt ProUI-Blond.ttf) format('truetype');\A   11: }\A   12: \A   13: body {\A   14:   margin: 0;\A   15:   padding: 0;"}
+/*# sourceMappingURL=main.6ba688cb.css.map*/
