@@ -22,7 +22,7 @@ class App extends Component {
         <section className="carousel">
           <div className="carousel-container">
             <h2>What’s Auth0</h2>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</h3>
+            <h3 className="h3-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</h3>
             <div className="video-carousel"><VideoCarousel /></div>
           </div>
         </section>
