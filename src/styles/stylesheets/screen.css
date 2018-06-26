@@ -72,6 +72,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   src: url(./fonts/FaktProUI-Blond.ttf) format("truetype");
 }
 @font-face {
+  font-family: 'FaktProUI-SemiBold';
+  src: url(./fonts/FaktProUI-SemiBold.ttf) format("truetype");
+}
+@font-face {
   font-family: 'FaktPro-Blond';
   src: url(./fonts/FaktPro-Blond.ttf) format("truetype");
 }
@@ -79,14 +83,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: 'FaktPro-Normal';
   src: url(./fonts/FaktPro-Normal.ttf) format("truetype");
 }
-/* line 23, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 body {
   margin: 0;
   padding: 0;
   font-family: 'FaktProUI-Blond';
 }
 
-/* line 29, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 h1 {
   font-size: 72px;
   line-height: 80px;
@@ -94,19 +98,24 @@ h1 {
   color: #fff;
 }
 
-/* line 36, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 h2 {
   line-height: 60px;
   font-size: 36px;
   color: #333333;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
+.h2-customers {
+  line-height: 54px;
+}
+
+/* line 51, ../sass/screen.scss */
 .emphasis {
   color: #e9552f;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 header {
   width: 100%;
   height: 100%;
@@ -114,14 +123,14 @@ header {
   position: absolute;
 }
 
-/* line 53, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 #hero {
   width: 100%;
   height: auto;
   transform: translate(0%, -25%);
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 aside {
   position: absolute;
   top: 0;
@@ -132,7 +141,7 @@ aside {
   justify-content: center;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .caption-hero {
   font-family: 'FaktPro-Blond';
   font-size: 24px;
@@ -141,15 +150,16 @@ aside {
   color: #D0D2D3;
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 main {
   height: 100%;
   position: absolute;
   top: 50%;
   width: 100%;
+  z-index: 1;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 .carousel {
   background: #F8F8F8;
   box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.2);
@@ -159,7 +169,7 @@ main {
   margin: 0 auto;
 }
 
-/* line 93, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 .carousel-container {
   display: flex;
   flex-direction: column;
@@ -167,7 +177,7 @@ main {
   padding: 50px;
 }
 
-/* line 100, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .caption-carousel {
   font-family: 'FaktPro-Normal';
   line-height: 32px;
@@ -176,23 +186,68 @@ main {
   text-align: center;
 }
 
-/* line 108, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
+.slide-list-nav-container {
+  padding: 40px 60px;
+}
+
+/* line 122, ../sass/screen.scss */
+.slide-list-nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* line 130, ../sass/screen.scss */
+.slide-list-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 23px;
+  font-size: 14px;
+  font-family: 'FaktProUI-SemiBold';
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #D0D2D3;
+}
+
+/* line 142, ../sass/screen.scss */
+.slide-list-nav-item.selected {
+  color: #222228;
+}
+
+/* line 146, ../sass/screen.scss */
+.dot {
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background: #D0D2D3;
+}
+
+/* line 153, ../sass/screen.scss */
+.slide-list-nav-item.selected .dot {
+  background: #222228;
+}
+
+/* line 157, ../sass/screen.scss */
 .slide video {
   height: auto;
   width: 100%;
 }
 
-/* line 113, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 .slide.selected {
   display: block;
 }
 
-/* line 117, ../sass/screen.scss */
+/* line 166, ../sass/screen.scss */
 .slide {
   display: none;
 }
 
-/* line 121, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 footer {
   height: 150%;
   width: 100%;
@@ -201,4 +256,41 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* line 180, ../sass/screen.scss */
+.customers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 55%;
+}
+
+/* line 189, ../sass/screen.scss */
+.cloud-container {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 198, ../sass/screen.scss */
+.cloud-image {
+  height: 15%;
+  width: 15%;
+  padding: 10px;
+}
+
+/* line 204, ../sass/screen.scss */
+.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 85%;
 }

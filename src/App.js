@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+const images = importAll(require.context('./', false, /\.(png|jpe?g|svg)$/));
+
 class App extends Component {
   render() {
     return (
@@ -22,9 +28,7 @@ class App extends Component {
         </section>
       </main>
       <footer>
-      <section className="customers">
-        customers
-      </section>
+      <CustomerCloud />
       <section className="stats">
         stats
       </section>
@@ -37,6 +41,7 @@ class App extends Component {
 class VideoCarousel extends Component {
     render() {
         return (
+          <div>
             <div>
               <ul className="slide-list">
                 <li className="slide selected">
@@ -66,6 +71,34 @@ class VideoCarousel extends Component {
                 </li>
               </ul>
             </div>
+            <div className="slide-list-nav-container">
+              <ul className="slide-list-nav">
+                <li className="slide-list-nav-item selected"><div className="dot" />Use Case</li>
+                <li className="slide-list-nav-item"><div className="dot" />Technologies</li>
+                <li className="slide-list-nav-item"><div className="dot" />Deployment</li>
+                <li className="slide-list-nav-item"><div className="dot" />Customization</li>
+                <li className="slide-list-nav-item"><div className="dot" />Result</li>
+              </ul>
+            </div>
+          </div>
+        );
+    }
+}
+
+class CustomerCloud extends Component {
+    render() {
+
+        let array = ["aeromexico.svg", "jet airways.svg", "nvidia.svg", "amd.svg", "m&s.svg", "pbs.svg", "atalssian.svg", "mazda.svg", "polaris.svg", "bluetooth.svg", "mozilla.svg", "vmware.jpg", "harpercollins.svg", "news corp.svg"];
+
+        let images = array.map(image => {
+           return <img key={image} src={require(`./assets/${image}`)} alt="" className="cloud-image" />
+        });
+
+        return (
+          <section className="customers">
+            <h2 className="h2-customers">Join thousands of companies that trust Auth0 everyday</h2>
+            <div className="cloud-container">{ images }</div>
+          </section>
         );
     }
 }
