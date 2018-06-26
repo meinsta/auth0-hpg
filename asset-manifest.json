@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.650dfa26.css",
   "main.css.map": "static/css/main.650dfa26.css.map",
-  "main.js": "static/js/main.8f40aef0.js",
-  "main.js.map": "static/js/main.8f40aef0.js.map",
+  "main.js": "static/js/main.2ed4472b.js",
+  "main.js.map": "static/js/main.2ed4472b.js.map",
   "static/media/FaktPro-Blond.ttf": "static/media/FaktPro-Blond.2b1372db.ttf",
   "static/media/FaktPro-Normal.ttf": "static/media/FaktPro-Normal.5888c6c2.ttf",
   "static/media/FaktProUI-Blond.ttf": "static/media/FaktProUI-Blond.d184da08.ttf",
@@ -21,5 +21,6 @@
   "static/media/nvidia.svg": "static/media/nvidia.762aaeae.svg",
   "static/media/pbs.svg": "static/media/pbs.cbe09089.svg",
   "static/media/polaris.svg": "static/media/polaris.c723fa6b.svg",
+  "static/media/symbol-defs.svg": "static/media/symbol-defs.e3ed6a77.svg",
   "static/media/vmware.svg": "static/media/vmware.d8757589.svg"
 }
