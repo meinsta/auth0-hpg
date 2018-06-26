@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Carousel } from 'react-responsive-carousel';
 
 class App extends Component {
   render() {
@@ -18,7 +17,7 @@ class App extends Component {
           <div className="carousel-container">
             <h2>What’s Auth0</h2>
             <caption className="caption-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</caption>
-            <videoCarousel />
+            <div className="video-carousel"><VideoCarousel /></div>
           </div>
         </section>
       </main>
@@ -35,31 +34,38 @@ class App extends Component {
   }
 }
 
-class videoCarousel extends Component {
+class VideoCarousel extends Component {
     render() {
         return (
-            <Carousel>
-                <div>
-                    <video><sourc src="https://meinsta.github.io/auth0-bg/What_is_Auth0/01_Use_Cases.mp4" type="video/mp4" /></video>
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <video><sourc src="https://meinsta.github.io/auth0-bg/What_is_Auth0/02_Technology_1.mp4" type="video/mp4" /></video>
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <video><sourc src="https://meinsta.github.io/auth0-bg/What_is_Auth0/03_Deployment.mp4" type="video/mp4" /></video>
-                    <p className="legend">Legend 3</p>
-                </div>
-                <div>
-                    <video><sourc src="https://meinsta.github.io/auth0-bg/What_is_Auth0/04_Customization.mp4" type="video/mp4" /></video>
-                    <p className="legend">Legend 3</p>
-                </div>
-                <div>
-                    <video><sourc src="https://meinsta.github.io/auth0-bg/What_is_Auth0/04_Result.mp4" type="video/mp4" /></video>
-                    <p className="legend">Legend 3</p>
-                </div>
-            </Carousel>
+            <div>
+              <ul className="slide-list">
+                <li className="slide selected">
+                  <div>
+                      <video autoPlay playsInline muted loop><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/01_Use_Cases.mp4" type="video/mp4" /></video>
+                  </div>
+                </li>
+                <li className="slide">
+                  <div>
+                      <video autoPlay playsInline muted loop><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/02_Technology_1.mp4" type="video/mp4" /></video>
+                  </div>
+                </li>
+                <li className="slide">
+                  <div>
+                      <video autoPlay playsInline muted loop><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/03_Deployment.mp4" type="video/mp4" /></video>
+                  </div>
+                </li>
+                <li className="slide">
+                  <div>
+                      <video autoPlay playsInline muted loop><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/04_Customization.mp4" type="video/mp4" /></video>
+                  </div>
+                </li>
+                <li className="slide">
+                  <div>
+                      <video autoPlay playsInline muted loop><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/05_Result.mp4" type="video/mp4" /></video>
+                  </div>
+                </li>
+              </ul>
+            </div>
         );
     }
 }

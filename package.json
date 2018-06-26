@@ -40,7 +40,6 @@
     "react": "^16.4.1",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.1",
-    "react-responsive-carousel": "^3.1.41",
     "resolve": "1.6.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "webpack-dev-server": "2.9.4",

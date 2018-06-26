@@ -94,6 +94,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 50px;
 }
 
 .caption-carousel {
@@ -102,6 +103,19 @@ main {
 	font-size: 20px;
 	color: #5C666F;
 	text-align: center;
+}
+
+.slide video {
+	height: auto;
+    width: 100%;
+}
+
+.slide.selected {
+	display: block;
+}
+
+.slide {
+	display: none;
 }
 
 footer {
