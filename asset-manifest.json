@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.01ae339b.css",
   "main.css.map": "static/css/main.01ae339b.css.map",
-  "main.js": "static/js/main.55a78c6d.js",
-  "main.js.map": "static/js/main.55a78c6d.js.map",
+  "main.js": "static/js/main.907cb5f5.js",
+  "main.js.map": "static/js/main.907cb5f5.js.map",
   "static/media/FaktPro-Blond.ttf": "static/media/FaktPro-Blond.2b1372db.ttf",
   "static/media/FaktPro-Normal.ttf": "static/media/FaktPro-Normal.5888c6c2.ttf",
   "static/media/FaktProUI-Blond.ttf": "static/media/FaktProUI-Blond.d184da08.ttf",
@@ -20,5 +20,6 @@
   "static/media/news corp.svg": "static/media/news corp.0dab593d.svg",
   "static/media/nvidia.svg": "static/media/nvidia.6b3d90df.svg",
   "static/media/pbs.svg": "static/media/pbs.f8e4a8a4.svg",
-  "static/media/polaris.svg": "static/media/polaris.5ee70ef1.svg"
+  "static/media/polaris.svg": "static/media/polaris.5ee70ef1.svg",
+  "static/media/vmware.jpg": "static/media/vmware.a8e96de0.jpg"
 }
