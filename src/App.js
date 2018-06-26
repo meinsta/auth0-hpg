@@ -15,14 +15,14 @@ class App extends Component {
         <video autoPlay playsInline muted loop id="hero"><source src="https://meinsta.github.io/auth0-hpg/Hero/atom.mp4" type="video/mp4" /></video>
         <aside>
         <h1>Never compromise on <span className="emphasis">identity</span></h1>
-        <caption className="caption-hero">We provide a universal authentication &amp; authorization platform for web, mobile and legacy applications.</caption>
+        <h4>We provide a universal authentication &amp; authorization platform for web,<br />mobile and legacy applications.</h4>
         </aside>
       </header>
       <main>
         <section className="carousel">
           <div className="carousel-container">
             <h2>What’s Auth0</h2>
-            <caption className="caption-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</caption>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</h3>
             <div className="video-carousel"><VideoCarousel /></div>
           </div>
         </section>
@@ -30,7 +30,48 @@ class App extends Component {
       <footer>
       <CustomerCloud />
       <section className="stats">
-        stats
+        <div className="stats-column">
+          <h2 className="h2-stats">Risk-based, security-first approach</h2>
+          <h3 className="h3-stats">Robust security architecture and features providing adaptive multi-layer security, designed by world-class security experts.</h3>
+          <div className="stats-table">
+            <div className="stats-table-column">
+              <h5>1.1B<span className="emphasis">+</span></h5>
+              <div className="stats-list">
+                <p>Monthly Logins</p>
+                <p>Securely Authenticated</p>
+              </div>
+            </div>
+            <div className="stats-table-column">
+              <h5>1.3M<span className="emphasis">+</span></h5>
+              <div className="stats-list">
+                <p>Malicious Logins</p>
+                <p>Prevented</p>
+              </div>
+            </div>
+          </div>
+          <p className="h3-link">Learn more <div className="triangle" /></p>
+        </div>
+        <div className="stats-column">
+          <h2 className="h2-stats">Enterprise-class availability. Always ready.</h2>
+          <h3 className="h3-stats">Advanced infrastructure ensuring high availability and resiliency for its users with globally distributed data centers and full disaster recovery systems.</h3>
+          <div className="stats-table">
+            <div className="stats-table-column">
+              <h5>3</h5>
+              <div className="stats-list small">
+                <p>Clusters</p>
+                <p className="stats-list-detail">(US, EU, AU)</p>
+              </div>
+            </div>
+            <div className="stats-table-column">
+              <h5>99.9<span className="emphasis">%</span></h5>
+              <div className="stats-list small">
+                <p>Guaranteed SLA</p>
+                <p className="stats-list-detail">For Prod. Environments</p>
+              </div>
+            </div>
+          </div>
+          <p className="h3-link">Learn more <div className="triangle" /></p>
+        </div>
       </section>
       </footer>
       </div>
@@ -98,6 +139,7 @@ class CustomerCloud extends Component {
           <section className="customers">
             <h2 className="h2-customers">Join thousands of companies that trust Auth0 everyday</h2>
             <div className="cloud-container">{ images }</div>
+            <p className="h3-link">See All Customers <div className="triangle" /></p>
           </section>
         );
     }
