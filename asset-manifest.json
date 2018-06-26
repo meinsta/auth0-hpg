@@ -1,10 +1,24 @@
 {
   "main.css": "static/css/main.01ae339b.css",
   "main.css.map": "static/css/main.01ae339b.css.map",
-  "main.js": "static/js/main.e1715375.js",
-  "main.js.map": "static/js/main.e1715375.js.map",
+  "main.js": "static/js/main.b41b49a9.js",
+  "main.js.map": "static/js/main.b41b49a9.js.map",
   "static/media/FaktPro-Blond.ttf": "static/media/FaktPro-Blond.2b1372db.ttf",
   "static/media/FaktPro-Normal.ttf": "static/media/FaktPro-Normal.5888c6c2.ttf",
   "static/media/FaktProUI-Blond.ttf": "static/media/FaktProUI-Blond.d184da08.ttf",
-  "static/media/FaktProUI-SemiBold.ttf": "static/media/FaktProUI-SemiBold.1f5c59e9.ttf"
+  "static/media/FaktProUI-SemiBold.ttf": "static/media/FaktProUI-SemiBold.1f5c59e9.ttf",
+  "static/media/aeromexico.svg": "static/media/aeromexico.8fafadbb.svg",
+  "static/media/amd.svg": "static/media/amd.1d531318.svg",
+  "static/media/atalssian.svg": "static/media/atalssian.e8680148.svg",
+  "static/media/bluetooth.svg": "static/media/bluetooth.632a4ebc.svg",
+  "static/media/harpercollins.svg": "static/media/harpercollins.485f8339.svg",
+  "static/media/jet airways.svg": "static/media/jet airways.26aa6f78.svg",
+  "static/media/logo.svg": "static/media/logo.5d5d9eef.svg",
+  "static/media/m&s.svg": "static/media/m&s.44f43ead.svg",
+  "static/media/mazda.svg": "static/media/mazda.499abd11.svg",
+  "static/media/mozilla.svg": "static/media/mozilla.2538e7d3.svg",
+  "static/media/news corp.svg": "static/media/news corp.0dab593d.svg",
+  "static/media/nvidia.svg": "static/media/nvidia.6b3d90df.svg",
+  "static/media/pbs.svg": "static/media/pbs.f8e4a8a4.svg",
+  "static/media/polaris.svg": "static/media/polaris.5ee70ef1.svg"
 }
