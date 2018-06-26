@@ -138,6 +138,7 @@ aside {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    -webkit-backface-visibility: hidden;
 }
 
 main {
@@ -231,7 +232,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    margin: 75px 50px 50px 50px;
 }
 
 .cloud-container {
