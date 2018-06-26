@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://meinsta.github.io/auth0-hpg/",
+  "rnpm": {
+    "assets": [
+      "app/fonts"
+    ]
+  },
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -17,6 +22,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "font-loader": "^0.1.2",
     "gh-pages": "^1.2.0"
   }
 }
