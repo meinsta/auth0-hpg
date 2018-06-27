@@ -6,25 +6,60 @@ export default class VideoCarousel extends React.Component  {
   componentDidMount() {
     // define the selected video
     var carouselVideo = document.querySelector('.slide.selected video');
-    //scroll listener which controls play/pause
-    window.addEventListener("scroll", function(){
-      if (elementVisible(carouselVideo)) {
-        carouselVideo.play();
+
+    // detect all videos
+    var vids = document.querySelectorAll('.slide video'); 
+
+    //pause all the videos by default
+    for (var i = vids.length - 1; i >= 0; i--) {
+      vids[i].pause();
+    }
+
+    // promise test
+    let autoPlayAllowed = true;
+    let v = document.createElement('video');
+    v.src = ""; // we need this
+
+    const promise = v.play();
+    if (promise instanceof Promise) {
+      promise.catch(function(error) {
+        console.log(error.message);
+        // Check if it is the right error
+        if (error.name === 'NotAllowedError') {
+          autoPlayAllowed = false;
+        } else {
+          // Don't throw the error so that we get to the then
+          // or throw it but set the autoPlayAllowed to true in here
+        }
+      }).then(function() {
+        if (autoPlayAllowed) {
+          // Autoplay is allowed - continue with initialization
+          console.log('autoplay allowed')
+          //scroll listener which controls play/pause
+          window.onscroll = autoplay;
+          // ended video listener, which determines when to go to next slide
+          carouselVideo.addEventListener('ended', carouselHandler, false);
+        } else {
+          // Autoplay is not allowed - wait for the user to trigger the play button manually
+          console.log('autoplay NOT allowed')
+        }
+      });
+
+    } else {
+      // Unknown if allowed
+      // Note: you could fallback to simple event listeners in this case
+      console.log('autoplay unknown')
+    }
+
+    function autoplay() {
+        for (var i = vids.length - 1; i >= 0; i--) {
+            var currentYpos = window.pageYOffset || document.documentElement.scrollTop;
+        if ( currentYpos >= vids[i].offsetTop && currentYpos <= vids[i].offsetTop + vids[i].offsetHeight ) {
+          vids[i].play();
+        }else{
+          vids[i].pause();
+        }
       }
-      if (!elementVisible(carouselVideo)) {
-        carouselVideo.pause();
-      }
-    })
-
-    // ended video listener, which determines when to go to next slide
-    carouselVideo.addEventListener('ended',carouselHandler,false);
-
-    // handles visibility within the browser window
-    function elementVisible( element ) {
-        var elementTop    = element.getBoundingClientRect().top,
-            elementBottom = element.getBoundingClientRect().bottom;
-
-        return elementTop >= 0 && elementBottom <= window.innerHeight;
     }
 
     // quick and dirty implementation of video advancement
@@ -94,32 +129,32 @@ export default class VideoCarousel extends React.Component  {
             <ul className="slide-list">
               <li className="slide selected" id="0">
                 <div>
-                    <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/1.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/01_Use_Cases.mp4" type="video/mp4" /></video>
-                    <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/1.svg" />
+                    <video controls muted playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/1.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/01_Use_Cases.mp4" type="video/mp4" /></video>
+                    <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/1.svg" alt="Use Cases" />
                 </div>
               </li>
               <li className="slide" id="1">
                 <div>
-                    <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/2.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/02_Technology_1.mp4" type="video/mp4" /></video>
-                    <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/2.svg" />
+                    <video controls muted playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/2.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/02_Technology_1.mp4" type="video/mp4" /></video>
+                    <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/2.svg" alt="Technology" />
                 </div>
               </li>
               <li className="slide" id="2">
                 <div>
-                    <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/3.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/03_Deployment.mp4" type="video/mp4" /></video>
-                    <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/3.svg" />
+                    <video controls muted playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/3.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/03_Deployment.mp4" type="video/mp4" /></video>
+                    <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/3.svg" alt="Deployment" />
                 </div>
               </li>
               <li className="slide" id="3">
                 <div>
-                    <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/4.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/04_Customization.mp4" type="video/mp4" /></video>
-                    <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/4.svg" />
+                    <video controls muted playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/4.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/04_Customization.mp4" type="video/mp4" /></video>
+                    <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/4.svg" alt="Customization" />
                 </div>
               </li>
               <li className="slide" id="4">
                 <div>
-                    <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/5.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/05_Result.mp4" type="video/mp4" /></video>
-                    <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/5.svg" />
+                    <video controls muted playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/5.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/05_Result.mp4" type="video/mp4" /></video>
+                    <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/5.svg" alt="Result" />
                 </div>
               </li>
             </ul>
