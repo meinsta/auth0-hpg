@@ -102,8 +102,28 @@ h5 {
 	padding: 25px 0;
 }
 
-.emphasis {
+.dot.emphasis {
 	color: rgb(233, 85, 47);
+}
+
+.dot.use-case {
+    background: #40BEEA;
+}
+
+.dot.technologies {
+    background: #00B08C;
+}
+
+.dot.deployment {
+    background: #E9CF51;
+}
+
+.dot.customization {
+    background: #FB9D5E;
+}
+
+.dot.result {
+    background: #EA5323;
 }
 
 .triangle {
@@ -207,6 +227,10 @@ main {
 .slide video {
 	height: auto;
     width: 100%;
+}
+
+.hidden {
+    display: none;
 }
 
 .slide.selected {
