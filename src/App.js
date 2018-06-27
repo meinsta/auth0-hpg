@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
-const url = 'https://meinsta.github.io/auth0-hpg/symbol-defs.svg';
-
-const Icon = (props) => (
-  <svg viewBox='0 0 16 16' className={`icon icon-${props.icon}`}>
-    <use xlinkHref={`${url}#icon-${props.icon}`} />
-  </svg>
-);
+import VideoCarousel from './components/VideoCarousel';
+import CustomerCloud from './components/CustomerCloud';
 
 class App extends Component {
 
   //add listeners when component is added to DOM
   componentDidMount() {
-
-
-
     // define the selected video
     var carouselVideo = document.querySelector('.slide.selected video');
     //scroll listener which controls play/pause
@@ -173,79 +164,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-class VideoCarousel extends Component {
-    render() {
-
-
-        return (
-          <div>
-            <div>
-              <ul className="slide-list">
-                <li className="slide selected" id="0">
-                  <div>
-                      <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/1.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/01_Use_Cases.mp4" type="video/mp4" /></video>
-                      <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/1.svg" />
-                  </div>
-                </li>
-                <li className="slide" id="1">
-                  <div>
-                      <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/2.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/02_Technology_1.mp4" type="video/mp4" /></video>
-                      <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/2.svg" />
-                  </div>
-                </li>
-                <li className="slide" id="2">
-                  <div>
-                      <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/3.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/03_Deployment.mp4" type="video/mp4" /></video>
-                      <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/3.svg" />
-                  </div>
-                </li>
-                <li className="slide" id="3">
-                  <div>
-                      <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/4.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/04_Customization.mp4" type="video/mp4" /></video>
-                      <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/4.svg" />
-                  </div>
-                </li>
-                <li className="slide" id="4">
-                  <div>
-                      <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/5.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/05_Result.mp4" type="video/mp4" /></video>
-                      <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/5.svg" />
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="slide-list-nav-container">
-              <ul className="slide-list-nav">
-                <li className="slide-list-nav-item selected" id="0"><div className="dot" />Use Case</li>
-                <li className="slide-list-nav-item" id="1"><div className="dot" />Technologies</li>
-                <li className="slide-list-nav-item" id="2"><div className="dot" />Deployment</li>
-                <li className="slide-list-nav-item" id="3"><div className="dot" />Customization</li>
-                <li className="slide-list-nav-item" id="4"><div className="dot" />Result</li>
-              </ul>
-            </div>
-          </div>
-        );
-    }
-}
-
-class CustomerCloud extends Component {
-    render() {
-
-        let logos = ["aeromexico", "jet-airways", "nvidia", "amd", "mns", "pbs", "atalssian", "mazda", "polaris", "bluetooth", "mozilla", "vmware", "harpercollins", "news-corp"];
-
-        let svgs = logos.map(svg => {
-           return <Icon icon={svg} />
-        });
-
-        return (
-          <section className="customers">
-            <h2 className="h2-customers">Join thousands of companies that trust Auth0 everyday</h2>
-            <div className="cloud-container">{ svgs }</div>
-            <p className="h3-link">See All Customers <div className="triangle" /></p>
-          </section>
-        );
-    }
 }
 
 export default App;
