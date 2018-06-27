@@ -102,7 +102,7 @@ h5 {
 	padding: 25px 0;
 }
 
-.dot.emphasis {
+.emphasis {
 	color: rgb(233, 85, 47);
 }
 
@@ -209,7 +209,7 @@ main {
 	color: #D0D2D3;
 }
 
-.slide-list-nav-item.selected {
+.slide-list-nav-item.selected, .slide-list-nav-item.completed {
 	color: #222228;
 }
 

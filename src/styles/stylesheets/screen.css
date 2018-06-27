@@ -171,7 +171,7 @@ h5 {
 }
 
 /* line 105, ../sass/screen.scss */
-.dot.emphasis {
+.emphasis {
   color: #e9552f;
 }
 
@@ -294,7 +294,7 @@ main {
 }
 
 /* line 212, ../sass/screen.scss */
-.slide-list-nav-item.selected {
+.slide-list-nav-item.selected, .slide-list-nav-item.completed {
   color: #222228;
 }
 

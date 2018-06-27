@@ -14,9 +14,10 @@ class App extends Component {
   //add listeners when component is added to DOM
   componentDidMount() {
 
+
+
     // define the selected video
     var carouselVideo = document.querySelector('.slide.selected video');
-
     //scroll listener which controls play/pause
     window.addEventListener("scroll", function(){
       if (elementVisible(carouselVideo)) {
@@ -82,6 +83,11 @@ class App extends Component {
            if(!next) {
             var lastLegend =  slideLegend[slideLegend.length - 1];;
             lastLegend.classList.remove('selected');
+            slideLegend[0].classList.add('completed');
+            slideLegend[1].classList.add('completed');
+            slideLegend[2].classList.add('completed');
+            slideLegend[3].classList.add('completed');
+            slideLegend[4].classList.add('completed');
             slideLegend[0].querySelector('.dot').classList.add('use-case');
             slideLegend[1].querySelector('.dot').classList.add('technologies');
             slideLegend[2].querySelector('.dot').classList.add('deployment');
@@ -179,31 +185,31 @@ class VideoCarousel extends Component {
               <ul className="slide-list">
                 <li className="slide selected" id="0">
                   <div>
-                      <video playsInline muted poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/1.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/01_Use_Cases.mp4" type="video/mp4" /></video>
+                      <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/1.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/01_Use_Cases.mp4" type="video/mp4" /></video>
                       <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/1.svg" />
                   </div>
                 </li>
                 <li className="slide" id="1">
                   <div>
-                      <video playsInline muted poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/2.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/02_Technology_1.mp4" type="video/mp4" /></video>
+                      <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/2.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/02_Technology_1.mp4" type="video/mp4" /></video>
                       <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/2.svg" />
                   </div>
                 </li>
                 <li className="slide" id="2">
                   <div>
-                      <video playsInline muted poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/3.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/03_Deployment.mp4" type="video/mp4" /></video>
+                      <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/3.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/03_Deployment.mp4" type="video/mp4" /></video>
                       <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/3.svg" />
                   </div>
                 </li>
                 <li className="slide" id="3">
                   <div>
-                      <video laysInline muted poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/4.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/04_Customization.mp4" type="video/mp4" /></video>
+                      <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/4.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/04_Customization.mp4" type="video/mp4" /></video>
                       <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/4.svg" />
                   </div>
                 </li>
                 <li className="slide" id="4">
                   <div>
-                      <video playsInline muted poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/5.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/05_Result.mp4" type="video/mp4" /></video>
+                      <video controls playsInline poster="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/5.svg"><source src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/05_Result.mp4" type="video/mp4" /></video>
                       <img className="poster-image hidden" src="https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/5.svg" />
                   </div>
                 </li>
@@ -226,9 +232,9 @@ class VideoCarousel extends Component {
 class CustomerCloud extends Component {
     render() {
 
-        let array = ["aeromexico", "jet-airways", "nvidia", "amd", "mns", "pbs", "atalssian", "mazda", "polaris", "bluetooth", "mozilla", "vmware", "harpercollins", "news-corp"];
+        let logos = ["aeromexico", "jet-airways", "nvidia", "amd", "mns", "pbs", "atalssian", "mazda", "polaris", "bluetooth", "mozilla", "vmware", "harpercollins", "news-corp"];
 
-        let svgs = array.map(svg => {
+        let svgs = logos.map(svg => {
            return <Icon icon={svg} />
         });
 
