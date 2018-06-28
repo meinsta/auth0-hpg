@@ -287,6 +287,17 @@ main {
 }
 
 /* line 205, ../sass/screen.scss */
+.video-react-big-play-button, .video-react-control-bar {
+  display: none;
+}
+
+/* end of react styling overrides */
+/* line 210, ../sass/screen.scss */
+.image-carousel {
+  display: none;
+}
+
+/* line 214, ../sass/screen.scss */
 pre {
   position: fixed;
   top: 0;
@@ -295,12 +306,12 @@ pre {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 213, ../sass/screen.scss */
+/* line 222, ../sass/screen.scss */
 .slide-list-nav-container {
   padding: 40px 60px;
 }
 
-/* line 217, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 .slide-list-nav {
   display: flex;
   flex-direction: row;
@@ -309,7 +320,7 @@ pre {
   justify-content: space-between;
 }
 
-/* line 225, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 .slide-list-nav-item {
   display: flex;
   flex-direction: column;
@@ -322,12 +333,12 @@ pre {
   color: #D0D2D3;
 }
 
-/* line 237, ../sass/screen.scss */
+/* line 246, ../sass/screen.scss */
 .slide-list-nav-item.selected, .slide-list-nav-item.completed {
   color: #222228;
 }
 
-/* line 241, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 .dot {
   border-radius: 50%;
   width: 8px;
@@ -335,33 +346,33 @@ pre {
   background: #D0D2D3;
 }
 
-/* line 248, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 .slide-list-nav-item.selected .dot {
   background: #222228;
 }
 
-/* line 252, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .slide video {
   height: auto;
   width: 100%;
 }
 
-/* line 257, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 .hidden {
   display: none;
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 .slide.selected {
   display: block;
 }
 
-/* line 265, ../sass/screen.scss */
+/* line 274, ../sass/screen.scss */
 .slide {
   display: none;
 }
 
-/* line 269, ../sass/screen.scss */
+/* line 278, ../sass/screen.scss */
 .customers {
   display: flex;
   flex-direction: column;
@@ -379,7 +390,7 @@ pre {
   /* end styles for nuanced map bg overlap */
 }
 
-/* line 286, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 .cloud-container {
   width: 90%;
   padding: 25px 0 0 0;
@@ -391,14 +402,14 @@ pre {
   text-align: center;
 }
 
-/* line 297, ../sass/screen.scss */
+/* line 306, ../sass/screen.scss */
 .icon {
   height: auto;
   width: 10%;
   padding: 0 50px;
 }
 
-/* line 303, ../sass/screen.scss */
+/* line 312, ../sass/screen.scss */
 .stats {
   display: flex;
   flex-direction: row;
@@ -407,30 +418,30 @@ pre {
   border-top: 1px solid #E2E2E2;
 }
 
-/* line 311, ../sass/screen.scss */
+/* line 320, ../sass/screen.scss */
 .stats-column {
   width: 50%;
   padding: 50px;
 }
 
-/* line 316, ../sass/screen.scss */
+/* line 325, ../sass/screen.scss */
 .stats-column:first-of-type {
   border-right: 1px solid #E2E2E2;
 }
 
-/* line 320, ../sass/screen.scss */
+/* line 329, ../sass/screen.scss */
 .stats-table {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-/* line 326, ../sass/screen.scss */
+/* line 335, ../sass/screen.scss */
 .stats-table-column {
   width: 50%;
 }
 
-/* line 330, ../sass/screen.scss */
+/* line 339, ../sass/screen.scss */
 .stats-list {
   font-family: 'FaktProUI-Medium';
   line-height: 28px;
@@ -438,12 +449,12 @@ pre {
   color: rgba(51, 51, 51, 0.86);
 }
 
-/* line 337, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 .stats-list.small {
   line-height: 25px;
 }
 
-/* line 341, ../sass/screen.scss */
+/* line 350, ../sass/screen.scss */
 .stats-list-detail {
   font-family: 'FaktProUI-Medium';
   line-height: 25px;
@@ -453,14 +464,14 @@ pre {
   opacity: 0.5;
 }
 
-/* line 350, ../sass/screen.scss */
+/* line 359, ../sass/screen.scss */
 .stats-list-cluster {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-/* line 356, ../sass/screen.scss */
+/* line 365, ../sass/screen.scss */
 .stats-list-cluster-icon-container {
   display: flex;
   flex-direction: row;
@@ -470,7 +481,7 @@ pre {
   align-items: center;
 }
 
-/* line 365, ../sass/screen.scss */
+/* line 374, ../sass/screen.scss */
 .stats-list-cluster-icon {
   height: 17px;
   width: 17px;

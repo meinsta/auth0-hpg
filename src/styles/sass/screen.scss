@@ -202,6 +202,15 @@ main {
     padding-top: 0 !important;
 }
 
+.video-react-big-play-button, .video-react-control-bar {
+    display: none;
+}
+/* end of react styling overrides */
+
+.image-carousel {
+    display: none;
+}
+
 pre {
     position: fixed;
     top: 0;

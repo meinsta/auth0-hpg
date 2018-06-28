@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import VideoCarousel from './components/VideoCarousel';
+import ImageCarousel from './components/ImageCarousel';
 import CustomerCloud from './components/CustomerCloud';
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
             <h2>What’s Auth0</h2>
             <h3 className="h3-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</h3>
             <div className="video-carousel"><VideoCarousel /></div>
+            <div className="image-carousel"><ImageCarousel /></div>
           </div>
         </section>
       <CustomerCloud />
