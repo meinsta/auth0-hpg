@@ -185,6 +185,31 @@ main {
     padding: 25px 50px;
 }
 
+.container {
+    display: flex;
+    width: 500px;
+    height: auto;
+    flex-direction: column;
+}
+
+.container video {
+    width: 500px;
+    height: auto;
+}
+
+/* TO DO: unsightly selector for some ootb react styling i have to debug */
+#root > div > main > section.carousel > div > div > div > div {
+    padding-top: 0 !important;
+}
+
+pre {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    background: rgba(255,255,255,.5);
+}
+
 .slide-list-nav-container {
 	padding: 40px 60px;
 }

@@ -267,11 +267,40 @@ main {
 }
 
 /* line 188, ../sass/screen.scss */
+.container {
+  display: flex;
+  width: 500px;
+  height: auto;
+  flex-direction: column;
+}
+
+/* line 195, ../sass/screen.scss */
+.container video {
+  width: 500px;
+  height: auto;
+}
+
+/* TO DO: unsightly selector for some ootb react styling i have to debug */
+/* line 201, ../sass/screen.scss */
+#root > div > main > section.carousel > div > div > div > div {
+  padding-top: 0 !important;
+}
+
+/* line 205, ../sass/screen.scss */
+pre {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* line 213, ../sass/screen.scss */
 .slide-list-nav-container {
   padding: 40px 60px;
 }
 
-/* line 192, ../sass/screen.scss */
+/* line 217, ../sass/screen.scss */
 .slide-list-nav {
   display: flex;
   flex-direction: row;
@@ -280,7 +309,7 @@ main {
   justify-content: space-between;
 }
 
-/* line 200, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 .slide-list-nav-item {
   display: flex;
   flex-direction: column;
@@ -293,12 +322,12 @@ main {
   color: #D0D2D3;
 }
 
-/* line 212, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .slide-list-nav-item.selected, .slide-list-nav-item.completed {
   color: #222228;
 }
 
-/* line 216, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 .dot {
   border-radius: 50%;
   width: 8px;
@@ -306,33 +335,33 @@ main {
   background: #D0D2D3;
 }
 
-/* line 223, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 .slide-list-nav-item.selected .dot {
   background: #222228;
 }
 
-/* line 227, ../sass/screen.scss */
+/* line 252, ../sass/screen.scss */
 .slide video {
   height: auto;
   width: 100%;
 }
 
-/* line 232, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 .hidden {
   display: none;
 }
 
-/* line 236, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .slide.selected {
   display: block;
 }
 
-/* line 240, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 .slide {
   display: none;
 }
 
-/* line 244, ../sass/screen.scss */
+/* line 269, ../sass/screen.scss */
 .customers {
   display: flex;
   flex-direction: column;
@@ -350,7 +379,7 @@ main {
   /* end styles for nuanced map bg overlap */
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 .cloud-container {
   width: 90%;
   padding: 25px 0 0 0;
@@ -362,14 +391,14 @@ main {
   text-align: center;
 }
 
-/* line 272, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 .icon {
   height: auto;
   width: 10%;
   padding: 0 50px;
 }
 
-/* line 278, ../sass/screen.scss */
+/* line 303, ../sass/screen.scss */
 .stats {
   display: flex;
   flex-direction: row;
@@ -378,30 +407,30 @@ main {
   border-top: 1px solid #E2E2E2;
 }
 
-/* line 286, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 .stats-column {
   width: 50%;
   padding: 50px;
 }
 
-/* line 291, ../sass/screen.scss */
+/* line 316, ../sass/screen.scss */
 .stats-column:first-of-type {
   border-right: 1px solid #E2E2E2;
 }
 
-/* line 295, ../sass/screen.scss */
+/* line 320, ../sass/screen.scss */
 .stats-table {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-/* line 301, ../sass/screen.scss */
+/* line 326, ../sass/screen.scss */
 .stats-table-column {
   width: 50%;
 }
 
-/* line 305, ../sass/screen.scss */
+/* line 330, ../sass/screen.scss */
 .stats-list {
   font-family: 'FaktProUI-Medium';
   line-height: 28px;
@@ -409,12 +438,12 @@ main {
   color: rgba(51, 51, 51, 0.86);
 }
 
-/* line 312, ../sass/screen.scss */
+/* line 337, ../sass/screen.scss */
 .stats-list.small {
   line-height: 25px;
 }
 
-/* line 316, ../sass/screen.scss */
+/* line 341, ../sass/screen.scss */
 .stats-list-detail {
   font-family: 'FaktProUI-Medium';
   line-height: 25px;
@@ -424,14 +453,14 @@ main {
   opacity: 0.5;
 }
 
-/* line 325, ../sass/screen.scss */
+/* line 350, ../sass/screen.scss */
 .stats-list-cluster {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-/* line 331, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 .stats-list-cluster-icon-container {
   display: flex;
   flex-direction: row;
@@ -441,7 +470,7 @@ main {
   align-items: center;
 }
 
-/* line 340, ../sass/screen.scss */
+/* line 365, ../sass/screen.scss */
 .stats-list-cluster-icon {
   height: 17px;
   width: 17px;
