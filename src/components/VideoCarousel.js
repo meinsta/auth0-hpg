@@ -82,7 +82,7 @@ export default class VideoCarousel extends React.Component  {
       return;
     } 
     var currentYpos = window.pageYOffset || document.documentElement.scrollTop;
-    if ( currentYpos >= document.querySelector('.video-carousel video').offsetTop && currentYpos <= document.querySelector('.video-carousel video').offsetTop + document.querySelector('.video-carousel video').offsetHeight ) 
+    if ( currentYpos >= document.querySelector('.video-carousel').offsetTop && currentYpos <= document.querySelector('.video-carousel').offsetTop + document.querySelector('.video-carousel video').offsetHeight ) 
     {
       document.querySelector('.video-carousel video').play();
       console.info('video playing')

@@ -1,7 +1,3 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* line 5, ../../../../../../../usr/local/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -87,14 +83,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: 'FaktProUI-Medium';
   src: url(./fonts/FaktProUI-Medium.ttf) format("truetype");
 }
-/* line 33, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 body {
   margin: 0;
   padding: 0;
   font-family: 'FaktProUI-Blond';
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 h1 {
   font-size: 72px;
   line-height: 80px;
@@ -102,26 +98,26 @@ h1 {
   color: #fff;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 h2 {
   line-height: 60px;
   font-size: 36px;
   color: #333333;
 }
 
-/* line 52, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 .h2-customers {
   line-height: 54px;
   text-align: center;
 }
 
-/* line 57, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 .h2-stats {
   line-height: 48px;
   padding: 25px 0;
 }
 
-/* line 62, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 h3 {
   font-family: 'FaktPro-Normal';
   line-height: 32px;
@@ -130,12 +126,12 @@ h3 {
   text-align: center;
 }
 
-/* line 70, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 .h3-carousel {
   padding: 25px 0 75px 0;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 .h3-link {
   line-height: 40px;
   color: #222228;
@@ -146,13 +142,13 @@ h3 {
   align-items: center;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .h3-stats {
   line-height: 34px;
   text-align: left;
 }
 
-/* line 89, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 h4 {
   font-family: 'FaktPro-Blond';
   font-size: 24px;
@@ -161,7 +157,7 @@ h4 {
   color: #D0D2D3;
 }
 
-/* line 97, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 h5 {
   font-family: 'FaktPro-Blond';
   line-height: 72px;
@@ -170,37 +166,37 @@ h5 {
   padding: 25px 0;
 }
 
-/* line 105, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 .emphasis {
   color: #e9552f;
 }
 
-/* line 109, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 .dot.use-case {
   background: #40BEEA;
 }
 
-/* line 113, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 .dot.technologies {
   background: #00B08C;
 }
 
-/* line 117, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 .dot.deployment {
   background: #E9CF51;
 }
 
-/* line 121, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 .dot.customization {
   background: #FB9D5E;
 }
 
-/* line 125, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 .dot.result {
   background: #EA5323;
 }
 
-/* line 129, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .triangle {
   width: 0;
   height: 0;
@@ -211,7 +207,7 @@ h5 {
   position: relative;
 }
 
-/* line 139, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 header {
   width: 100%;
   height: 100%;
@@ -219,14 +215,14 @@ header {
   position: absolute;
 }
 
-/* line 146, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 #hero {
   width: 100%;
   height: auto;
   transform: translate(0%, -25%);
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 aside {
   position: absolute;
   top: 0;
@@ -239,7 +235,7 @@ aside {
   -webkit-backface-visibility: hidden;
 }
 
-/* line 164, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 main {
   height: 100%;
   position: absolute;
@@ -248,7 +244,7 @@ main {
   z-index: 1;
 }
 
-/* line 172, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .carousel {
   background: #F8F8F8;
   box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.2);
@@ -258,7 +254,7 @@ main {
   margin: 0 auto;
 }
 
-/* line 181, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 .carousel-container {
   display: flex;
   flex-direction: column;
@@ -266,38 +262,56 @@ main {
   padding: 25px 50px;
 }
 
+/* line 183, ../sass/screen.scss */
+.video-carousel, .image-carousel {
+  width: 100%;
+  height: 100%;
+}
+
 /* line 188, ../sass/screen.scss */
 .container {
   display: flex;
-  width: 500px;
-  height: auto;
   flex-direction: column;
 }
 
-/* line 195, ../sass/screen.scss */
-.container video {
-  width: 500px;
-  height: auto;
+/* line 193, ../sass/screen.scss */
+.container video, .container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 201, ../sass/screen.scss */
+.image-carousel .container {
+  height: 100%;
+  width: 100%;
 }
 
 /* TO DO: unsightly selector for some ootb react styling i have to debug */
-/* line 201, ../sass/screen.scss */
-#root > div > main > section.carousel > div > div > div > div {
+/* line 208, ../sass/screen.scss */
+#root > div > main > section.carousel > div > div.video-carousel > div > div.video-react,
+.image-container {
   padding-top: 0 !important;
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
 }
 
-/* line 205, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 .video-react-big-play-button, .video-react-control-bar {
   display: none;
 }
 
 /* end of react styling overrides */
-/* line 210, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 .image-carousel {
   display: none;
 }
 
-/* line 214, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 pre {
   position: fixed;
   top: 0;
@@ -306,12 +320,12 @@ pre {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 222, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 .slide-list-nav-container {
   padding: 40px 60px;
 }
 
-/* line 226, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .slide-list-nav {
   display: flex;
   flex-direction: row;
@@ -320,7 +334,7 @@ pre {
   justify-content: space-between;
 }
 
-/* line 234, ../sass/screen.scss */
+/* line 245, ../sass/screen.scss */
 .slide-list-nav-item {
   display: flex;
   flex-direction: column;
@@ -333,12 +347,12 @@ pre {
   color: #D0D2D3;
 }
 
-/* line 246, ../sass/screen.scss */
+/* line 257, ../sass/screen.scss */
 .slide-list-nav-item.selected, .slide-list-nav-item.completed {
   color: #222228;
 }
 
-/* line 250, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .dot {
   border-radius: 50%;
   width: 8px;
@@ -346,33 +360,33 @@ pre {
   background: #D0D2D3;
 }
 
-/* line 257, ../sass/screen.scss */
+/* line 268, ../sass/screen.scss */
 .slide-list-nav-item.selected .dot {
   background: #222228;
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 .slide video {
   height: auto;
   width: 100%;
 }
 
-/* line 266, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 .hidden {
   display: none;
 }
 
-/* line 270, ../sass/screen.scss */
+/* line 281, ../sass/screen.scss */
 .slide.selected {
   display: block;
 }
 
-/* line 274, ../sass/screen.scss */
+/* line 285, ../sass/screen.scss */
 .slide {
   display: none;
 }
 
-/* line 278, ../sass/screen.scss */
+/* line 289, ../sass/screen.scss */
 .customers {
   display: flex;
   flex-direction: column;
@@ -390,7 +404,7 @@ pre {
   /* end styles for nuanced map bg overlap */
 }
 
-/* line 295, ../sass/screen.scss */
+/* line 306, ../sass/screen.scss */
 .cloud-container {
   width: 90%;
   padding: 25px 0 0 0;
@@ -402,14 +416,14 @@ pre {
   text-align: center;
 }
 
-/* line 306, ../sass/screen.scss */
+/* line 317, ../sass/screen.scss */
 .icon {
   height: auto;
   width: 10%;
   padding: 0 50px;
 }
 
-/* line 312, ../sass/screen.scss */
+/* line 323, ../sass/screen.scss */
 .stats {
   display: flex;
   flex-direction: row;
@@ -418,30 +432,30 @@ pre {
   border-top: 1px solid #E2E2E2;
 }
 
-/* line 320, ../sass/screen.scss */
+/* line 331, ../sass/screen.scss */
 .stats-column {
   width: 50%;
   padding: 50px;
 }
 
-/* line 325, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 .stats-column:first-of-type {
   border-right: 1px solid #E2E2E2;
 }
 
-/* line 329, ../sass/screen.scss */
+/* line 340, ../sass/screen.scss */
 .stats-table {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-/* line 335, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 .stats-table-column {
   width: 50%;
 }
 
-/* line 339, ../sass/screen.scss */
+/* line 350, ../sass/screen.scss */
 .stats-list {
   font-family: 'FaktProUI-Medium';
   line-height: 28px;
@@ -449,12 +463,12 @@ pre {
   color: rgba(51, 51, 51, 0.86);
 }
 
-/* line 346, ../sass/screen.scss */
+/* line 357, ../sass/screen.scss */
 .stats-list.small {
   line-height: 25px;
 }
 
-/* line 350, ../sass/screen.scss */
+/* line 361, ../sass/screen.scss */
 .stats-list-detail {
   font-family: 'FaktProUI-Medium';
   line-height: 25px;
@@ -464,14 +478,14 @@ pre {
   opacity: 0.5;
 }
 
-/* line 359, ../sass/screen.scss */
+/* line 370, ../sass/screen.scss */
 .stats-list-cluster {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-/* line 365, ../sass/screen.scss */
+/* line 376, ../sass/screen.scss */
 .stats-list-cluster-icon-container {
   display: flex;
   flex-direction: row;
@@ -481,7 +495,7 @@ pre {
   align-items: center;
 }
 
-/* line 374, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 .stats-list-cluster-icon {
   height: 17px;
   width: 17px;

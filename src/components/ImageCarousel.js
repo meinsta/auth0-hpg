@@ -29,7 +29,9 @@ export default class ImageCarousel extends React.Component  {
   render() {
     return (
       <div className="container">
-        <img src={this.state.source} />
+        <div className="image-container">
+          <img src={this.state.source} />
+        </div>
         <div className="pb-3">
           <Button onClick={this.changeSource('UseCases')} className="mr-3">Use Cases</Button>
           <Button onClick={this.changeSource('Technology')} className="mr-3">Technology</Button>
