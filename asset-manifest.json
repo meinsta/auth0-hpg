@@ -1,11 +1,6 @@
 {
-  "main.css": "static/css/main.c35f99be.css",
-  "main.css.map": "static/css/main.c35f99be.css.map",
-  "main.js": "static/js/main.5f2701bc.js",
-  "main.js.map": "static/js/main.5f2701bc.js.map",
-  "static/media/FaktPro-Blond.ttf": "static/media/FaktPro-Blond.2b1372db.ttf",
-  "static/media/FaktPro-Normal.ttf": "static/media/FaktPro-Normal.5888c6c2.ttf",
-  "static/media/FaktProUI-Blond.ttf": "static/media/FaktProUI-Blond.d184da08.ttf",
-  "static/media/FaktProUI-Medium.ttf": "static/media/FaktProUI-Medium.144b419e.ttf",
-  "static/media/FaktProUI-SemiBold.ttf": "static/media/FaktProUI-SemiBold.1f5c59e9.ttf"
+  "main.css": "static/css/main.5570e953.css",
+  "main.css.map": "static/css/main.5570e953.css.map",
+  "main.js": "static/js/main.2d861635.js",
+  "main.js.map": "static/js/main.2d861635.js.map"
 }
