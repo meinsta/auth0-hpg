@@ -457,27 +457,32 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 50px 25px 50px;
+  padding: 75px 0 75px;
 }
 
 /* line 450, ../sass/screen.scss */
+.text-wrapper {
+  padding: 0 25px;
+}
+
+/* line 454, ../sass/screen.scss */
 .content-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* line 456, ../sass/screen.scss */
+/* line 460, ../sass/screen.scss */
 .video-carousel {
   position: absolute;
 }
 
-/* line 460, ../sass/screen.scss */
+/* line 464, ../sass/screen.scss */
 .image-carousel {
   position: relative;
 }
 
-/* line 464, ../sass/screen.scss */
+/* line 468, ../sass/screen.scss */
 .video-carousel, .image-carousel {
   width: 100%;
   height: 100%;
@@ -485,18 +490,18 @@ main {
 }
 
 /* transition so that animation is smooth */
-/* line 471, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 .image-carousel {
   transition: all 2s;
 }
 
-/* line 475, ../sass/screen.scss */
+/* line 479, ../sass/screen.scss */
 .container {
   display: flex;
   flex-direction: column;
 }
 
-/* line 480, ../sass/screen.scss */
+/* line 484, ../sass/screen.scss */
 .container video, .carousel-image {
   position: absolute;
   top: 0;
@@ -505,24 +510,24 @@ main {
   height: 100%;
 }
 
-/* line 488, ../sass/screen.scss */
+/* line 492, ../sass/screen.scss */
 .carousel-image {
   transform: scale(1.75);
   padding: 0 !important;
 }
 
-/* line 493, ../sass/screen.scss */
+/* line 497, ../sass/screen.scss */
 .image-carousel .container {
   height: 100%;
   width: 100%;
 }
 
-/* line 498, ../sass/screen.scss */
+/* line 502, ../sass/screen.scss */
 .image-container {
   overflow: hidden;
 }
 
-/* line 502, ../sass/screen.scss */
+/* line 506, ../sass/screen.scss */
 .video-react,
 .image-container {
   padding-top: 0 !important;
@@ -533,12 +538,12 @@ main {
 }
 
 /* react styling override */
-/* line 511, ../sass/screen.scss */
+/* line 515, ../sass/screen.scss */
 .video-react-big-play-button, .video-react-control-bar {
   display: none;
 }
 
-/* line 515, ../sass/screen.scss */
+/* line 519, ../sass/screen.scss */
 pre {
   position: fixed;
   top: 0;
@@ -547,27 +552,27 @@ pre {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 523, ../sass/screen.scss */
+/* line 527, ../sass/screen.scss */
 button {
   border: none;
   background: transparent;
 }
 
-/* line 528, ../sass/screen.scss */
+/* line 532, ../sass/screen.scss */
 .slide-list-nav-container {
   padding: 40px 60px;
 }
 
-/* line 532, ../sass/screen.scss */
+/* line 536, ../sass/screen.scss */
 .slide-list-nav {
   display: flex;
   justify-content: space-evenly;
   z-index: 1;
-  padding: 50px 0;
+  padding: 50px 25px 0;
   flex-wrap: wrap;
 }
 
-/* line 540, ../sass/screen.scss */
+/* line 544, ../sass/screen.scss */
 .slide-list-nav-item {
   display: flex;
   flex-direction: column;
@@ -582,36 +587,37 @@ button {
   cursor: pointer;
 }
 
-/* line 554, ../sass/screen.scss */
+/* line 558, ../sass/screen.scss */
 .slide-list-nav-item.selected, .slide-list-nav-item.completed {
   color: #222228;
 }
 
-/* line 558, ../sass/screen.scss */
+/* line 562, ../sass/screen.scss */
 .dot {
   border-radius: 50%;
   width: 8px;
   height: 8px;
+  margin: 5px;
   background: #D0D2D3;
 }
 
-/* line 565, ../sass/screen.scss */
+/* line 570, ../sass/screen.scss */
 .slide-list-nav-item.selected .dot {
   background: #222228;
 }
 
-/* line 569, ../sass/screen.scss */
+/* line 574, ../sass/screen.scss */
 .slide video {
   height: auto;
   width: 100%;
 }
 
-/* line 574, ../sass/screen.scss */
+/* line 579, ../sass/screen.scss */
 .hidden {
   display: none;
 }
 
-/* line 578, ../sass/screen.scss */
+/* line 583, ../sass/screen.scss */
 .customers {
   display: flex;
   flex-direction: column;
@@ -622,7 +628,7 @@ button {
   padding: 50px 50px 25px 50px;
 }
 
-/* line 585, ../sass/screen.scss */
+/* line 590, ../sass/screen.scss */
 .cloud-container {
   padding: 25px 0 0 0;
   display: flex;
@@ -634,14 +640,14 @@ button {
   width: 100%;
 }
 
-/* line 590, ../sass/screen.scss */
+/* line 595, ../sass/screen.scss */
 .cloud-image {
   height: auto;
   width: 25%;
   padding: 0 12.5%;
 }
 
-/* line 596, ../sass/screen.scss */
+/* line 601, ../sass/screen.scss */
 .stats {
   width: 100%;
   display: flex;
@@ -650,14 +656,14 @@ button {
   flex-direction: column;
 }
 
-/* line 601, ../sass/screen.scss */
+/* line 606, ../sass/screen.scss */
 .stats-column {
   box-sizing: border-box;
   width: auto;
   padding: 0 10px;
 }
 
-/* line 607, ../sass/screen.scss */
+/* line 612, ../sass/screen.scss */
 .availability {
   background-size: contain;
   background-repeat: no-repeat;
@@ -665,7 +671,7 @@ button {
   background-image: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
 }
 
-/* line 613, ../sass/screen.scss */
+/* line 618, ../sass/screen.scss */
 .risk-based {
   background-size: contain;
   background-repeat: no-repeat;
@@ -673,7 +679,7 @@ button {
   background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), url(https://meinsta.github.io/auth0-hpg/Hero/BG_touch.svg);
 }
 
-/* line 619, ../sass/screen.scss */
+/* line 624, ../sass/screen.scss */
 .stats-column-icon {
   display: inline-flex;
   align-items: center;
@@ -682,7 +688,7 @@ button {
   height: 50px;
 }
 
-/* line 627, ../sass/screen.scss */
+/* line 632, ../sass/screen.scss */
 .stats-table {
   display: flex;
   flex-direction: row;
@@ -692,7 +698,7 @@ button {
   text-align: center;
 }
 
-/* line 634, ../sass/screen.scss */
+/* line 639, ../sass/screen.scss */
 .stats-table-column {
   display: flex;
   flex-direction: column;
@@ -702,12 +708,12 @@ button {
   padding: 0 10px 25px;
 }
 
-/* line 641, ../sass/screen.scss */
+/* line 646, ../sass/screen.scss */
 .stats-table-column:first-of-type {
   border-right: 1px solid #E2E2E2;
 }
 
-/* line 645, ../sass/screen.scss */
+/* line 650, ../sass/screen.scss */
 .stats-list {
   font-family: 'FaktProUI-Medium';
   line-height: 28px;
@@ -715,12 +721,12 @@ button {
   color: rgba(51, 51, 51, 0.86);
 }
 
-/* line 652, ../sass/screen.scss */
+/* line 657, ../sass/screen.scss */
 .stats-list.small {
   line-height: 25px;
 }
 
-/* line 656, ../sass/screen.scss */
+/* line 661, ../sass/screen.scss */
 .stats-list-detail {
   font-family: 'FaktProUI-Medium';
   line-height: 25px;
@@ -730,14 +736,14 @@ button {
   opacity: 0.5;
 }
 
-/* line 665, ../sass/screen.scss */
+/* line 670, ../sass/screen.scss */
 .stats-list-cluster {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-/* line 671, ../sass/screen.scss */
+/* line 676, ../sass/screen.scss */
 .stats-list-cluster-icon-container {
   display: flex;
   flex-direction: row;
@@ -748,7 +754,7 @@ button {
   margin: 0 0 0 5px;
 }
 
-/* line 678, ../sass/screen.scss */
+/* line 683, ../sass/screen.scss */
 .stats-list-cluster-icon {
   height: 12px;
   width: 12px;

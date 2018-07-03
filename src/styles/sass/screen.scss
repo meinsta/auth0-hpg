@@ -440,11 +440,15 @@ main {
     box-shadow: none;
 }
 
-.carousel-container{ 
+.carousel-container { 
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 50px 25px 50px;
+    padding: 75px 0 75px;
+}
+
+.text-wrapper {
+    padding: 0 25px;
 }
 
 .content-wrapper {
@@ -533,7 +537,7 @@ button {
     display: flex;
     justify-content: space-evenly;
     z-index: 1;
-    padding: 50px 0;
+    padding: 50px 25px 0;
     flex-wrap: wrap;
 }
 
@@ -559,6 +563,7 @@ button {
     border-radius: 50%;
     width: 8px;
     height: 8px;
+    margin: 5px;
     background: #D0D2D3;
 }
 
