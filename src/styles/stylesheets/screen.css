@@ -103,12 +103,12 @@ h2 {
   line-height: 60px;
   font-size: 36px;
   color: #333333;
+  text-align: center;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 .h2-customers {
   line-height: 54px;
-  text-align: center;
 }
 
 /* line 52, ../sass/screen.scss */
@@ -128,7 +128,7 @@ h3 {
 
 /* line 65, ../sass/screen.scss */
 .h3-carousel {
-  padding: 25px 0 75px 0;
+  padding: 0 0 50px;
 }
 
 /* line 69, ../sass/screen.scss */
@@ -263,19 +263,43 @@ main {
 }
 
 /* line 183, ../sass/screen.scss */
-.video-carousel, .image-carousel {
+.content-wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* line 188, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
+.video-carousel {
+  position: absolute;
+}
+
+/* line 193, ../sass/screen.scss */
+.image-carousel {
+  position: relative;
+}
+
+/* line 197, ../sass/screen.scss */
+.video-carousel, .image-carousel {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* transition so that animation is smooth */
+/* line 204, ../sass/screen.scss */
+.image-carousel {
+  transition: all 2s;
+}
+
+/* line 208, ../sass/screen.scss */
 .container {
   display: flex;
   flex-direction: column;
 }
 
-/* line 193, ../sass/screen.scss */
-.container video, .container img {
+/* line 213, ../sass/screen.scss */
+.container video, .container svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -283,15 +307,25 @@ main {
   height: 100%;
 }
 
-/* line 201, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
+.container svg {
+  transform: scale(1.75);
+  padding: 0 !important;
+}
+
+/* line 226, ../sass/screen.scss */
 .image-carousel .container {
   height: 100%;
   width: 100%;
 }
 
-/* TO DO: unsightly selector for some ootb react styling i have to debug */
-/* line 208, ../sass/screen.scss */
-#root > div > main > section.carousel > div > div.video-carousel > div > div.video-react,
+/* line 231, ../sass/screen.scss */
+.image-container {
+  overflow: hidden;
+}
+
+/* line 235, ../sass/screen.scss */
+.video-react,
 .image-container {
   padding-top: 0 !important;
   position: relative;
@@ -300,18 +334,13 @@ main {
   height: 0;
 }
 
-/* line 216, ../sass/screen.scss */
+/* react styling override */
+/* line 244, ../sass/screen.scss */
 .video-react-big-play-button, .video-react-control-bar {
   display: none;
 }
 
-/* end of react styling overrides */
-/* line 221, ../sass/screen.scss */
-.image-carousel {
-  display: none;
-}
-
-/* line 225, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 pre {
   position: fixed;
   top: 0;
@@ -320,21 +349,26 @@ pre {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 233, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
+button {
+  border: none;
+  background: transparent;
+}
+
+/* line 261, ../sass/screen.scss */
 .slide-list-nav-container {
   padding: 40px 60px;
 }
 
-/* line 237, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 .slide-list-nav {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  z-index: 1;
+  padding: 50px 0;
 }
 
-/* line 245, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 .slide-list-nav-item {
   display: flex;
   flex-direction: column;
@@ -347,12 +381,12 @@ pre {
   color: #D0D2D3;
 }
 
-/* line 257, ../sass/screen.scss */
+/* line 284, ../sass/screen.scss */
 .slide-list-nav-item.selected, .slide-list-nav-item.completed {
   color: #222228;
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 288, ../sass/screen.scss */
 .dot {
   border-radius: 50%;
   width: 8px;
@@ -360,33 +394,33 @@ pre {
   background: #D0D2D3;
 }
 
-/* line 268, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 .slide-list-nav-item.selected .dot {
   background: #222228;
 }
 
-/* line 272, ../sass/screen.scss */
+/* line 299, ../sass/screen.scss */
 .slide video {
   height: auto;
   width: 100%;
 }
 
-/* line 277, ../sass/screen.scss */
+/* line 304, ../sass/screen.scss */
 .hidden {
   display: none;
 }
 
-/* line 281, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 .slide.selected {
   display: block;
 }
 
-/* line 285, ../sass/screen.scss */
+/* line 312, ../sass/screen.scss */
 .slide {
   display: none;
 }
 
-/* line 289, ../sass/screen.scss */
+/* line 316, ../sass/screen.scss */
 .customers {
   display: flex;
   flex-direction: column;
@@ -404,7 +438,7 @@ pre {
   /* end styles for nuanced map bg overlap */
 }
 
-/* line 306, ../sass/screen.scss */
+/* line 333, ../sass/screen.scss */
 .cloud-container {
   width: 90%;
   padding: 25px 0 0 0;
@@ -416,14 +450,14 @@ pre {
   text-align: center;
 }
 
-/* line 317, ../sass/screen.scss */
+/* line 344, ../sass/screen.scss */
 .icon {
   height: auto;
   width: 10%;
   padding: 0 50px;
 }
 
-/* line 323, ../sass/screen.scss */
+/* line 350, ../sass/screen.scss */
 .stats {
   display: flex;
   flex-direction: row;
@@ -432,30 +466,30 @@ pre {
   border-top: 1px solid #E2E2E2;
 }
 
-/* line 331, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 .stats-column {
   width: 50%;
   padding: 50px;
 }
 
-/* line 336, ../sass/screen.scss */
+/* line 363, ../sass/screen.scss */
 .stats-column:first-of-type {
   border-right: 1px solid #E2E2E2;
 }
 
-/* line 340, ../sass/screen.scss */
+/* line 367, ../sass/screen.scss */
 .stats-table {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-/* line 346, ../sass/screen.scss */
+/* line 373, ../sass/screen.scss */
 .stats-table-column {
   width: 50%;
 }
 
-/* line 350, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
 .stats-list {
   font-family: 'FaktProUI-Medium';
   line-height: 28px;
@@ -463,12 +497,12 @@ pre {
   color: rgba(51, 51, 51, 0.86);
 }
 
-/* line 357, ../sass/screen.scss */
+/* line 384, ../sass/screen.scss */
 .stats-list.small {
   line-height: 25px;
 }
 
-/* line 361, ../sass/screen.scss */
+/* line 388, ../sass/screen.scss */
 .stats-list-detail {
   font-family: 'FaktProUI-Medium';
   line-height: 25px;
@@ -478,14 +512,14 @@ pre {
   opacity: 0.5;
 }
 
-/* line 370, ../sass/screen.scss */
+/* line 397, ../sass/screen.scss */
 .stats-list-cluster {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-/* line 376, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 .stats-list-cluster-icon-container {
   display: flex;
   flex-direction: row;
@@ -495,7 +529,7 @@ pre {
   align-items: center;
 }
 
-/* line 385, ../sass/screen.scss */
+/* line 412, ../sass/screen.scss */
 .stats-list-cluster-icon {
   height: 17px;
   width: 17px;

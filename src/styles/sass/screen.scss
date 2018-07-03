@@ -42,11 +42,11 @@ h2 {
 	line-height: 60px;
 	font-size: 36px;
 	color: #333333;
+    text-align: center;
 }
 
 .h2-customers {
 	line-height: 54px;
-	text-align: center;
 }
 
 .h2-stats {
@@ -63,7 +63,7 @@ h3 {
 }
 
 .h3-carousel {
-	padding: 25px 0 75px 0;
+	padding: 0 0 50px;
 }
 
 .h3-link {
@@ -180,9 +180,29 @@ main {
     padding: 25px 50px;
 }
 
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.video-carousel {
+    position: absolute;
+}
+
+.image-carousel {
+    position: relative;
+}
+
 .video-carousel, .image-carousel {
     width: 100%;
     height: 100%;
+    display: block;
+}
+
+/* transition so that animation is smooth */
+.image-carousel {
+    transition: all 2s;
 }
 
 .container {
@@ -190,7 +210,7 @@ main {
     flex-direction: column;
 }
 
-.container video, .container img {
+.container video, .container svg {
     position: absolute;
     top: 0;
     left: 0;
@@ -198,13 +218,21 @@ main {
     height: 100%;
 }
 
+.container svg {
+    transform: scale(1.75);
+    padding: 0 !important;
+}
+
 .image-carousel .container {
     height: 100%;
     width: 100%;
 }
 
-/* TO DO: unsightly selector for some ootb react styling i have to debug */
-#root > div > main > section.carousel > div > div.video-carousel > div > div.video-react,
+.image-container {
+    overflow: hidden;
+}
+
+.video-react,
 .image-container {
     padding-top: 0 !important;
     position: relative;
@@ -212,12 +240,8 @@ main {
     height: 0;
 }
 
+/* react styling override */
 .video-react-big-play-button, .video-react-control-bar {
-    display: none;
-}
-/* end of react styling overrides */
-
-.image-carousel {
     display: none;
 }
 
@@ -229,16 +253,20 @@ pre {
     background: rgba(255,255,255,.5);
 }
 
+button {
+    border: none;
+    background: transparent;
+}
+
 .slide-list-nav-container {
 	padding: 40px 60px;
 }
 
 .slide-list-nav {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    z-index: 1;
+    padding: 50px 0;
 }
 
 .slide-list-nav-item {

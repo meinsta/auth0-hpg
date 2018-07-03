@@ -1,12 +1,13 @@
 import React from 'react';
 import { Button } from 'reactstrap';
+import Icon from './Icon';
 
 const sources = {
-  UseCases: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/1.svg',
-  Technology: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/2.svg',
-  Deployment: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/3.svg',
-  Customization: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/4.svg',
-  Result: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/posters/5.svg',
+  UseCases: 'UseCases',
+  Technology: 'Technology',
+  Deployment: 'Deployment',
+  Customization: 'Customization',
+  Result: 'Result',
 };
 
 export default class ImageCarousel extends React.Component  {
@@ -14,7 +15,7 @@ export default class ImageCarousel extends React.Component  {
     super(props, context);
 
     this.state = {
-      source: sources['Result'],
+      source: sources["Result"],
     };
   }
 
@@ -30,14 +31,14 @@ export default class ImageCarousel extends React.Component  {
     return (
       <div className="container">
         <div className="image-container">
-          <img src={this.state.source} />
+          <Icon icon={this.state.source} />
         </div>
-        <div className="pb-3">
-          <Button onClick={this.changeSource('UseCases')} className="mr-3">Use Cases</Button>
-          <Button onClick={this.changeSource('Technology')} className="mr-3">Technology</Button>
-          <Button onClick={this.changeSource('Deployment')} className="mr-3">Deployment</Button>
-          <Button onClick={this.changeSource('Customization')} className="mr-3">Customization</Button>
-          <Button onClick={this.changeSource('Result')} className="mr-3">Result</Button>
+        <div className="slide-list-nav">
+          <Button onClick={this.changeSource('UseCases')} className="slide-list-nav-item completed use-case"><div className="dot" />Use Cases</Button>
+          <Button onClick={this.changeSource('Technology')} className="slide-list-nav-item completed technologies"><div className="dot" />Technology</Button>
+          <Button onClick={this.changeSource('Deployment')} className="slide-list-nav-item completed deployment"><div className="dot" />Deployment</Button>
+          <Button onClick={this.changeSource('Customization')} className="slide-list-nav-item completed Customization"><div className="dot" />Customization</Button>
+          <Button onClick={this.changeSource('Result')} className="slide-list-nav-item completed result"><div className="dot" />Result</Button>
         </div>
       </div>
     );

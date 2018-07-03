@@ -20,12 +20,22 @@ function throttle(fn, wait) {
   }
 };
 
+// Start animation helper using nested requestAnimationFrames
+function startAnimation(callback) {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      callback();
+    });
+  });
+};
+
 export default class VideoCarousel extends React.Component  {
   constructor(props, context) {
     super(props, context);
 
     this.state = {
       source: sources['UseCases'],
+      animate: false,
     };
 
     this.play = this.play.bind(this);
@@ -37,6 +47,7 @@ export default class VideoCarousel extends React.Component  {
   }
 
   componentDidMount() {
+    document.querySelector('.image-carousel').style.opacity = this.state.animate ? 1 : 0;
     // subscribe state change
     this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
     window.addEventListener('scroll', throttle(this.handleScroll, 1000));
@@ -77,12 +88,12 @@ export default class VideoCarousel extends React.Component  {
   };
 
   handleScroll(event) {
-    if(!document.querySelector('.video-carousel video')) 
+    if(!document.querySelector('.video-carousel video source').src) 
     {
       return;
     } 
     var currentYpos = window.pageYOffset || document.documentElement.scrollTop;
-    if ( currentYpos >= document.querySelector('.video-carousel').offsetTop && currentYpos <= document.querySelector('.video-carousel').offsetTop + document.querySelector('.video-carousel video').offsetHeight ) 
+    if ( currentYpos >= document.querySelector('.content-wrapper').offsetTop && currentYpos <= document.querySelector('.content-wrapper').offsetTop + document.querySelector('.video-carousel video').offsetHeight ) 
     {
       document.querySelector('.video-carousel video').play();
       console.info('video playing')
@@ -134,10 +145,15 @@ export default class VideoCarousel extends React.Component  {
     }
     else if(this.state.source === sources['Result'])
     {
-        // TO DO: find a better way to remove video element to disable event listeners & hide carousel
-        document.querySelector('#root > div > main > section.carousel > div > div > div > div').removeChild(document.querySelector('#root > div > main > section.carousel > div > div > div > div').childNodes[0]);
-        document.querySelector('.video-carousel').style.display = 'none';
-        document.querySelector('.image-carousel').style.display = 'flex';
+      // hide video carousel, clear out video element to disable event listeners, show image carousel
+      startAnimation(() => {
+        this.setState({ 
+          source: false, 
+          animate: true,
+         });
+      });
+      document.querySelector('.video-carousel').style.opacity = this.state.animate ? 1 : 0; 
+      document.querySelector('.image-carousel').style.opacity = this.state.animate ? 0 : 1;
     }
   };
   // TO DO: thinking about making a hot key for the debug panel 
@@ -147,12 +163,12 @@ export default class VideoCarousel extends React.Component  {
         <Player ref="player" autoPlay muted>
           <source src={this.state.source} />
         </Player>
-        <div className="pb-3">
-          <Button onClick={this.changeSource('UseCases')} className="mr-3">Use Cases</Button>
-          <Button onClick={this.changeSource('Technology')} className="mr-3">Technology</Button>
-          <Button onClick={this.changeSource('Deployment')} className="mr-3">Deployment</Button>
-          <Button onClick={this.changeSource('Customization')} className="mr-3">Customization</Button>
-          <Button onClick={this.changeSource('Result')} className="mr-3">Result</Button>
+        <div className="slide-list-nav">
+          <Button onClick={this.changeSource('UseCases')} className="slide-list-nav-item"><div className="dot" />Use Cases</Button>
+          <Button onClick={this.changeSource('Technology')} className="slide-list-nav-item"><div className="dot" />Technology</Button>
+          <Button onClick={this.changeSource('Deployment')} className="slide-list-nav-item"><div className="dot" />Deployment</Button>
+          <Button onClick={this.changeSource('Customization')} className="slide-list-nav-item"><div className="dot" />Customization</Button>
+          <Button onClick={this.changeSource('Result')} className="slide-list-nav-item"><div className="dot" />Result</Button>
         </div>
         <pre>
           <p>Debug Panel</p>
