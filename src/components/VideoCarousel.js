@@ -113,32 +113,32 @@ export default class VideoCarousel extends React.Component  {
     //TO DO: i don't love this if-else-if; want to iterate with a nice iterative function :)
     if(this.state.source === sources['UseCases'])
     {
-      this.setState({
-        source: sources['Technology']
+        this.setState({
+          source: sources['Technology']
         });
         this.refs.player.load();
         document.querySelector('.video-carousel video').play();
     }
     else if(this.state.source === sources['Technology'])
     {
-      this.setState({
-        source: sources['Deployment']
+        this.setState({
+          source: sources['Deployment']
         });
         this.refs.player.load();
         document.querySelector('.video-carousel video').play();
     }
     else if(this.state.source === sources['Deployment'])
     {
-      this.setState({
-        source: sources['Customization']
+        this.setState({
+          source: sources['Customization']
         });
         this.refs.player.load();
         document.querySelector('.video-carousel video').play();
     } 
     else if(this.state.source === sources['Customization'])
     {
-      this.setState({
-        source: sources['Result']
+        this.setState({
+          source: sources['Result']
         });
         this.refs.player.load();
         document.querySelector('.video-carousel video').play();
@@ -156,7 +156,6 @@ export default class VideoCarousel extends React.Component  {
       document.querySelector('.image-carousel').style.opacity = this.state.animate ? 0 : 1;
     }
   };
-  // TO DO: thinking about making a hot key for the debug panel 
   render() {
     return (
       <div className="container">
@@ -164,19 +163,21 @@ export default class VideoCarousel extends React.Component  {
           <source src={this.state.source} />
         </Player>
         <div className="slide-list-nav">
-          <Button onClick={this.changeSource('UseCases')} className="slide-list-nav-item"><div className="dot" />Use Cases</Button>
-          <Button onClick={this.changeSource('Technology')} className="slide-list-nav-item"><div className="dot" />Technology</Button>
-          <Button onClick={this.changeSource('Deployment')} className="slide-list-nav-item"><div className="dot" />Deployment</Button>
-          <Button onClick={this.changeSource('Customization')} className="slide-list-nav-item"><div className="dot" />Customization</Button>
-          <Button onClick={this.changeSource('Result')} className="slide-list-nav-item"><div className="dot" />Result</Button>
+          <Button onClick={this.changeSource('UseCases')} className={ this.state.source === sources['UseCases'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Use Cases</Button>
+          <Button onClick={this.changeSource('Technology')} className={ this.state.source === sources['Technology'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Technology</Button>
+          <Button onClick={this.changeSource('Deployment')} className={ this.state.source === sources['Deployment'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Deployment</Button>
+          <Button onClick={this.changeSource('Customization')} className={ this.state.source === sources['Customization'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Customization</Button>
+          <Button onClick={this.changeSource('Result')} className={ this.state.source === sources['Result'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Result</Button>
         </div>
-        <pre>
-          <p>Debug Panel</p>
-          <div>
-            {JSON.stringify(this.state.player, null, 2)}
-          </div>
-        </pre>
       </div>
     );
   }
 }
+
+// TO DO: thinking about making a hot key for the debug panel 
+//  <pre>
+//   <p>Debug Panel</p>
+//   <div>
+//     {JSON.stringify(this.state.player, null, 2)}
+//   </div>
+// </pre>
