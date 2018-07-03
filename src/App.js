@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import Icon from './components/Icon';
 import VideoCarousel from './components/VideoCarousel';
 import ImageCarousel from './components/ImageCarousel';
 import CustomerCloud from './components/CustomerCloud';
+import ClusterList from './components/ClusterList';
 
 class App extends Component {
   render() {
@@ -29,7 +31,8 @@ class App extends Component {
         </section>
       <CustomerCloud />
       <section className="stats">
-        <div className="stats-column">
+        <div className="stats-column risk-based">
+          <Icon icon="RiskBased" iconStyle="stats-column-icon" />
           <h2 className="h2-stats">Risk-based, security-first approach</h2>
           <h3 className="h3-stats">Robust security architecture and features providing adaptive multi-layer security, designed by world-class security experts.</h3>
           <div className="stats-table">
@@ -48,20 +51,17 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <p className="h3-link">Learn more <div className="triangle" /></p>
+          <h3 className="h3-link">Learn more <div className="triangle" /></h3>
         </div>
-        <div className="stats-column">
-          <h2 className="h2-stats">Enterprise-class availability. Always ready.</h2>
+        <div className="stats-column availability">
+          <Icon icon="Availability" iconStyle="stats-column-icon" />
+          <h2 className="h2-stats">Enterprise-class availability.<br />Always ready, wherever you are.</h2>
           <h3 className="h3-stats">Advanced infrastructure ensuring high availability and resiliency for its users with globally distributed data centers and full disaster recovery systems.</h3>
           <div className="stats-table">
             <div className="stats-table-column">
               <div className="stats-list-cluster">
                 <h5 className="stats-list-cluster-label">3</h5>
-                <div className="stats-list-cluster-icon-container">
-                  <img className="stats-list-cluster-icon" src="https://twemoji.maxcdn.com/2/svg/1f1fa-1f1f2.svg" alt="USA" />
-                  <img className="stats-list-cluster-icon" src="https://twemoji.maxcdn.com/2/svg/1f1e6-1f1fa.svg" alt="New Zealand" />
-                  <img className="stats-list-cluster-icon" src="https://twemoji.maxcdn.com/2/svg/1f1ea-1f1fa.svg" alt="European Union" />
-                </div>
+                <ClusterList />
               </div>
               <div className="stats-list small">
                 <p>Clusters</p>
@@ -76,7 +76,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <p className="h3-link">Learn more <div className="triangle" /></p>
+          <h3 className="h3-link">Learn more <div className="triangle" /></h3>
         </div>
       </section>
       </main>

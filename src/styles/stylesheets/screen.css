@@ -63,6 +63,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/* Font Imports */
 @font-face {
   font-family: 'FaktProUI-Blond';
   src: url(./fonts/FaktProUI-Blond.ttf) format("truetype");
@@ -83,55 +84,270 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: 'FaktProUI-Medium';
   src: url(./fonts/FaktProUI-Medium.ttf) format("truetype");
 }
-/* line 28, ../sass/screen.scss */
+/* Sass Variables */
+/* Sass Mixins */
+/* Large Screens - Larger Desktop */
+@media screen and (min-width: 2001px) {
+  /* line 153, ../sass/screen.scss */
+  body .cloud-container {
+    width: 50%;
+  }
+}
+/* Medium Screens - Regular Desktop */
+@media screen and (min-width: 1601px) and (max-width: 2000px) {
+  /* line 162, ../sass/screen.scss */
+  body .cloud-container {
+    width: 60%;
+  }
+}
+/* Small Screens - Small Desktop, Landscape Large Tablets */
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  /* line 171, ../sass/screen.scss */
+  body .cloud-container {
+    width: 75%;
+  }
+}
+/* Large Devices (tablet and smartphone), Desktop */
+@media screen and (min-width: 900px) {
+  /* line 180, ../sass/screen.scss */
+  body .h3-stats {
+    padding: 0;
+  }
+  /* line 183, ../sass/screen.scss */
+  body .customers {
+    top: -100px;
+  }
+  /* line 186, ../sass/screen.scss */
+  body .stats {
+    flex-direction: row;
+    border-top: 1px solid #E2E2E2;
+  }
+  /* line 190, ../sass/screen.scss */
+  body .stats-column {
+    width: 50%;
+    padding: 50px;
+  }
+  /* line 194, ../sass/screen.scss */
+  body .stats-column:first-of-type {
+    /* risk-based */
+    border-right: 1px solid #E2E2E2;
+  }
+  /* line 197, ../sass/screen.scss */
+  body .stats-column-icon {
+    display: none;
+  }
+  /* line 200, ../sass/screen.scss */
+  body .stats-table {
+    border: none;
+  }
+  /* line 203, ../sass/screen.scss */
+  body .stats-table-column:first-of-type {
+    border-right: none;
+  }
+  /* line 206, ../sass/screen.scss */
+  body .stats-table-column {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+  /* line 211, ../sass/screen.scss */
+  body .stats-list-cluster-icon-container {
+    width: 75px;
+    height: 50px;
+    margin: 0;
+  }
+  /* line 216, ../sass/screen.scss */
+  body .stats-list-cluster-icon {
+    height: 17px;
+    width: 17px;
+    padding: 2.5px 5px;
+  }
+}
+/* Small Devices (tablet and smartphone) */
+@media screen and (min-width: 600px) {
+  /* line 226, ../sass/screen.scss */
+  body {
+    /* need to verify below */
+    /* end of made up values */
+  }
+  /* line 227, ../sass/screen.scss */
+  body h1 {
+    font-size: 72px;
+    line-height: 80px;
+  }
+  /* line 231, ../sass/screen.scss */
+  body h2 {
+    font-size: 36px;
+    line-height: 60px;
+  }
+  /* line 235, ../sass/screen.scss */
+  body h3 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  /* line 239, ../sass/screen.scss */
+  body h4 {
+    font-size: 24px;
+    line-height: 40px;
+  }
+  /* line 244, ../sass/screen.scss */
+  body h5 {
+    line-height: 72px;
+    font-size: 72px;
+  }
+  /* line 248, ../sass/screen.scss */
+  body p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  /* line 252, ../sass/screen.scss */
+  body header {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+  }
+  /* line 258, ../sass/screen.scss */
+  body #hero {
+    height: auto;
+  }
+  /* line 261, ../sass/screen.scss */
+  body aside {
+    top: 0;
+    height: 75%;
+    width: 100%;
+  }
+  /* line 266, ../sass/screen.scss */
+  body .h2-customers {
+    line-height: 54px;
+  }
+  /* line 270, ../sass/screen.scss */
+  body .h2-stats {
+    line-height: 24px;
+  }
+  /* line 274, ../sass/screen.scss */
+  body .h3-link {
+    justify-content: flex-start;
+  }
+  /* line 277, ../sass/screen.scss */
+  body .h3-stats {
+    text-align: left;
+  }
+  /* line 280, ../sass/screen.scss */
+  body main {
+    position: absolute;
+    top: 75%;
+    width: 100%;
+  }
+  /* line 285, ../sass/screen.scss */
+  body .carousel {
+    width: 75%;
+    box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+  /* line 290, ../sass/screen.scss */
+  body .customers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 225px 50px 0px;
+    background-image: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
+    background-position: right -5px;
+    /* start styles for nuanced map bg overlap */
+    top: -125px;
+    position: relative;
+    z-index: -1;
+    /* end styles for nuanced map bg overlap */
+  }
+  /* line 302, ../sass/screen.scss */
+  body .cloud-image {
+    width: 15%;
+    padding: 0 2.5%;
+  }
+  /* line 306, ../sass/screen.scss */
+  body .availability, body .risk-based {
+    background-image: none;
+  }
+}
+/* Mobile-First (smartphone, tablet) Styles */
+/* line 313, ../sass/screen.scss */
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   font-family: 'FaktProUI-Blond';
 }
 
-/* line 34, ../sass/screen.scss */
+/* line 321, ../sass/screen.scss */
 h1 {
-  font-size: 72px;
-  line-height: 80px;
   text-align: center;
   color: #fff;
+  font-size: 36px;
+  line-height: 48px;
 }
 
-/* line 41, ../sass/screen.scss */
+/* line 327, ../sass/screen.scss */
 h2 {
-  line-height: 60px;
-  font-size: 36px;
   color: #333333;
   text-align: center;
+  font-size: 24px;
+  line-height: 40px;
 }
 
-/* line 48, ../sass/screen.scss */
+/* line 333, ../sass/screen.scss */
+h3 {
+  font-family: 'FaktPro-Normal';
+  color: #5C666F;
+  text-align: center;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+/* line 339, ../sass/screen.scss */
+h4 {
+  font-family: 'FaktPro-Blond';
+  text-align: center;
+  color: #D0D2D3;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+/* line 345, ../sass/screen.scss */
+h5 {
+  font-family: 'FaktPro-Blond';
+  color: #222228;
+  padding: 25px 0;
+  line-height: 36px;
+  font-size: 36px;
+}
+
+/* line 352, ../sass/screen.scss */
+p {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+/* line 357, ../sass/screen.scss */
 .h2-customers {
-  line-height: 54px;
+  line-height: 40px;
 }
 
-/* line 52, ../sass/screen.scss */
+/* line 361, ../sass/screen.scss */
 .h2-stats {
   line-height: 48px;
   padding: 25px 0;
 }
 
-/* line 57, ../sass/screen.scss */
-h3 {
-  font-family: 'FaktPro-Normal';
-  line-height: 32px;
-  font-size: 20px;
-  color: #5C666F;
-  text-align: center;
-}
-
-/* line 65, ../sass/screen.scss */
+/* line 366, ../sass/screen.scss */
 .h3-carousel {
   padding: 0 0 50px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 370, ../sass/screen.scss */
 .h3-link {
   line-height: 40px;
   color: #222228;
@@ -140,63 +356,47 @@ h3 {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
-/* line 79, ../sass/screen.scss */
+/* line 375, ../sass/screen.scss */
 .h3-stats {
   line-height: 34px;
-  text-align: left;
-}
-
-/* line 84, ../sass/screen.scss */
-h4 {
-  font-family: 'FaktPro-Blond';
-  font-size: 24px;
-  line-height: 40px;
   text-align: center;
-  color: #D0D2D3;
+  padding: 0 0 50px;
 }
 
-/* line 92, ../sass/screen.scss */
-h5 {
-  font-family: 'FaktPro-Blond';
-  line-height: 72px;
-  font-size: 72px;
-  color: #222228;
-  padding: 25px 0;
-}
-
-/* line 100, ../sass/screen.scss */
+/* line 381, ../sass/screen.scss */
 .emphasis {
   color: #e9552f;
 }
 
-/* line 104, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 .dot.use-case {
   background: #40BEEA;
 }
 
-/* line 108, ../sass/screen.scss */
+/* line 389, ../sass/screen.scss */
 .dot.technologies {
   background: #00B08C;
 }
 
-/* line 112, ../sass/screen.scss */
+/* line 393, ../sass/screen.scss */
 .dot.deployment {
   background: #E9CF51;
 }
 
-/* line 116, ../sass/screen.scss */
+/* line 397, ../sass/screen.scss */
 .dot.customization {
   background: #FB9D5E;
 }
 
-/* line 120, ../sass/screen.scss */
+/* line 401, ../sass/screen.scss */
 .dot.result {
   background: #EA5323;
 }
 
-/* line 124, ../sass/screen.scss */
+/* line 405, ../sass/screen.scss */
 .triangle {
   width: 0;
   height: 0;
@@ -207,79 +407,77 @@ h5 {
   position: relative;
 }
 
-/* line 134, ../sass/screen.scss */
+/* line 415, ../sass/screen.scss */
 header {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-/* line 141, ../sass/screen.scss */
+/* line 419, ../sass/screen.scss */
 #hero {
   width: 100%;
-  height: auto;
-  transform: translate(0%, -25%);
+  height: 100%;
 }
 
-/* line 147, ../sass/screen.scss */
+/* line 424, ../sass/screen.scss */
 aside {
   position: absolute;
-  top: 0;
-  height: 75%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   -webkit-backface-visibility: hidden;
+  height: auto;
+  top: auto;
+  width: min-content;
 }
 
-/* line 159, ../sass/screen.scss */
+/* line 431, ../sass/screen.scss */
 main {
   height: 100%;
-  position: absolute;
-  top: 75%;
-  width: 100%;
   z-index: 1;
+  top: 0;
+  position: relative;
 }
 
-/* line 167, ../sass/screen.scss */
+/* line 437, ../sass/screen.scss */
 .carousel {
   background: #F8F8F8;
-  box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
   height: auto;
-  width: 75%;
   margin: 0 auto;
+  width: 100%;
+  box-shadow: none;
 }
 
-/* line 176, ../sass/screen.scss */
+/* line 443, ../sass/screen.scss */
 .carousel-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25px 50px;
+  padding: 50px 50px 25px 50px;
 }
 
-/* line 183, ../sass/screen.scss */
+/* line 450, ../sass/screen.scss */
 .content-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* line 189, ../sass/screen.scss */
+/* line 456, ../sass/screen.scss */
 .video-carousel {
   position: absolute;
 }
 
-/* line 193, ../sass/screen.scss */
+/* line 460, ../sass/screen.scss */
 .image-carousel {
   position: relative;
 }
 
-/* line 197, ../sass/screen.scss */
+/* line 464, ../sass/screen.scss */
 .video-carousel, .image-carousel {
   width: 100%;
   height: 100%;
@@ -287,19 +485,19 @@ main {
 }
 
 /* transition so that animation is smooth */
-/* line 204, ../sass/screen.scss */
+/* line 471, ../sass/screen.scss */
 .image-carousel {
   transition: all 2s;
 }
 
-/* line 208, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 .container {
   display: flex;
   flex-direction: column;
 }
 
-/* line 213, ../sass/screen.scss */
-.container video, .container svg {
+/* line 480, ../sass/screen.scss */
+.container video, .carousel-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -307,24 +505,24 @@ main {
   height: 100%;
 }
 
-/* line 221, ../sass/screen.scss */
-.container svg {
+/* line 488, ../sass/screen.scss */
+.carousel-image {
   transform: scale(1.75);
   padding: 0 !important;
 }
 
-/* line 226, ../sass/screen.scss */
+/* line 493, ../sass/screen.scss */
 .image-carousel .container {
   height: 100%;
   width: 100%;
 }
 
-/* line 231, ../sass/screen.scss */
+/* line 498, ../sass/screen.scss */
 .image-container {
   overflow: hidden;
 }
 
-/* line 235, ../sass/screen.scss */
+/* line 502, ../sass/screen.scss */
 .video-react,
 .image-container {
   padding-top: 0 !important;
@@ -335,12 +533,12 @@ main {
 }
 
 /* react styling override */
-/* line 244, ../sass/screen.scss */
+/* line 511, ../sass/screen.scss */
 .video-react-big-play-button, .video-react-control-bar {
   display: none;
 }
 
-/* line 248, ../sass/screen.scss */
+/* line 515, ../sass/screen.scss */
 pre {
   position: fixed;
   top: 0;
@@ -349,18 +547,18 @@ pre {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 256, ../sass/screen.scss */
+/* line 523, ../sass/screen.scss */
 button {
   border: none;
   background: transparent;
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 528, ../sass/screen.scss */
 .slide-list-nav-container {
   padding: 40px 60px;
 }
 
-/* line 265, ../sass/screen.scss */
+/* line 532, ../sass/screen.scss */
 .slide-list-nav {
   display: flex;
   justify-content: space-evenly;
@@ -369,7 +567,7 @@ button {
   flex-wrap: wrap;
 }
 
-/* line 273, ../sass/screen.scss */
+/* line 540, ../sass/screen.scss */
 .slide-list-nav-item {
   display: flex;
   flex-direction: column;
@@ -384,12 +582,12 @@ button {
   cursor: pointer;
 }
 
-/* line 287, ../sass/screen.scss */
+/* line 554, ../sass/screen.scss */
 .slide-list-nav-item.selected, .slide-list-nav-item.completed {
   color: #222228;
 }
 
-/* line 291, ../sass/screen.scss */
+/* line 558, ../sass/screen.scss */
 .dot {
   border-radius: 50%;
   width: 8px;
@@ -397,53 +595,35 @@ button {
   background: #D0D2D3;
 }
 
-/* line 298, ../sass/screen.scss */
+/* line 565, ../sass/screen.scss */
 .slide-list-nav-item.selected .dot {
   background: #222228;
 }
 
-/* line 302, ../sass/screen.scss */
+/* line 569, ../sass/screen.scss */
 .slide video {
   height: auto;
   width: 100%;
 }
 
-/* line 307, ../sass/screen.scss */
+/* line 574, ../sass/screen.scss */
 .hidden {
   display: none;
 }
 
-/* line 311, ../sass/screen.scss */
-.slide.selected {
-  display: block;
-}
-
-/* line 315, ../sass/screen.scss */
-.slide {
-  display: none;
-}
-
-/* line 319, ../sass/screen.scss */
+/* line 578, ../sass/screen.scss */
 .customers {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 115px 50px 50px 50px;
-  background: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
-  background-size: contain;
-  background-position: right -5px;
-  background-repeat: no-repeat;
-  /* start styles for nuanced map bg overlap */
-  top: -30px;
-  position: relative;
-  z-index: -1;
-  /* end styles for nuanced map bg overlap */
+  background: none;
+  top: 0;
+  padding: 50px 50px 25px 50px;
 }
 
-/* line 336, ../sass/screen.scss */
+/* line 585, ../sass/screen.scss */
 .cloud-container {
-  width: 90%;
   padding: 25px 0 0 0;
   display: flex;
   flex-direction: row;
@@ -451,48 +631,83 @@ button {
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
 }
 
-/* line 347, ../sass/screen.scss */
-.icon {
+/* line 590, ../sass/screen.scss */
+.cloud-image {
   height: auto;
-  width: 10%;
-  padding: 0 50px;
+  width: 25%;
+  padding: 0 12.5%;
 }
 
-/* line 353, ../sass/screen.scss */
+/* line 596, ../sass/screen.scss */
 .stats {
+  width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  border-top: 1px solid #E2E2E2;
+  flex-direction: column;
 }
 
-/* line 361, ../sass/screen.scss */
+/* line 601, ../sass/screen.scss */
 .stats-column {
-  width: 50%;
-  padding: 50px;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0 10px;
 }
 
-/* line 366, ../sass/screen.scss */
-.stats-column:first-of-type {
-  border-right: 1px solid #E2E2E2;
+/* line 607, ../sass/screen.scss */
+.availability {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 50%;
+  background-image: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
 }
 
-/* line 370, ../sass/screen.scss */
+/* line 613, ../sass/screen.scss */
+.risk-based {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 70px -20px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), url(https://meinsta.github.io/auth0-hpg/Hero/BG_touch.svg);
+}
+
+/* line 619, ../sass/screen.scss */
+.stats-column-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+}
+
+/* line 627, ../sass/screen.scss */
 .stats-table {
   display: flex;
   flex-direction: row;
   width: 100%;
+  border-top: 1px solid #E2E2E2;
+  border-bottom: 1px solid #E2E2E2;
+  text-align: center;
 }
 
-/* line 376, ../sass/screen.scss */
+/* line 634, ../sass/screen.scss */
 .stats-table-column {
+  display: flex;
+  flex-direction: column;
   width: 50%;
+  align-items: center;
+  text-align: center;
+  padding: 0 10px 25px;
 }
 
-/* line 380, ../sass/screen.scss */
+/* line 641, ../sass/screen.scss */
+.stats-table-column:first-of-type {
+  border-right: 1px solid #E2E2E2;
+}
+
+/* line 645, ../sass/screen.scss */
 .stats-list {
   font-family: 'FaktProUI-Medium';
   line-height: 28px;
@@ -500,12 +715,12 @@ button {
   color: rgba(51, 51, 51, 0.86);
 }
 
-/* line 387, ../sass/screen.scss */
+/* line 652, ../sass/screen.scss */
 .stats-list.small {
   line-height: 25px;
 }
 
-/* line 391, ../sass/screen.scss */
+/* line 656, ../sass/screen.scss */
 .stats-list-detail {
   font-family: 'FaktProUI-Medium';
   line-height: 25px;
@@ -515,26 +730,27 @@ button {
   opacity: 0.5;
 }
 
-/* line 400, ../sass/screen.scss */
+/* line 665, ../sass/screen.scss */
 .stats-list-cluster {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-/* line 406, ../sass/screen.scss */
+/* line 671, ../sass/screen.scss */
 .stats-list-cluster-icon-container {
   display: flex;
   flex-direction: row;
-  width: 75px;
   flex-wrap: wrap;
-  height: 50px;
   align-items: center;
+  width: 45px;
+  height: 30px;
+  margin: 0 0 0 5px;
 }
 
-/* line 415, ../sass/screen.scss */
+/* line 678, ../sass/screen.scss */
 .stats-list-cluster-icon {
-  height: 17px;
-  width: 17px;
-  padding: 2.5px 5px;
+  height: 12px;
+  width: 12px;
+  padding: 0 5px 0;
 }

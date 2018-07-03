@@ -7,7 +7,7 @@ export default class CustomerCloud extends React.Component {
         let logos = ["aeromexico", "jet-airways", "nvidia", "amd", "mns", "pbs", "atalssian", "mazda", "polaris", "bluetooth", "mozilla", "vmware", "harpercollins", "news-corp"];
 
         let svgs = logos.map(svg => {
-           return <Icon icon={svg} />
+           return <Icon icon={svg} iconStyle={'cloud-image'} />
         });
 
         return (

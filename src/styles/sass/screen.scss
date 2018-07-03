@@ -1,5 +1,6 @@
 @import "compass/reset";
 
+/* Font Imports */
 @font-face {
   font-family: 'FaktProUI-Blond';
   src: url(./fonts/FaktProUI-Blond.ttf) format('truetype');
@@ -25,41 +26,341 @@
   src: url(./fonts/FaktProUI-Medium.ttf) format('truetype');
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'FaktProUI-Blond';
+/* Sass Variables */
+$border: 1px solid #E2E2E2;
+
+/* Sass Mixins */
+@mixin --h1 {
+    text-align: center;
+    color: #fff;
 }
 
-h1 {
-	font-size: 72px;
-	line-height: 80px;
-	text-align: center;
-	color: #fff;
-}
-
-h2 {
-	line-height: 60px;
-	font-size: 36px;
-	color: #333333;
+@mixin --h2 {
+    color: #333333;
     text-align: center;
 }
 
-.h2-customers {
-	line-height: 54px;
+@mixin --h3 {
+    font-family: 'FaktPro-Normal';
+    color: #5C666F;
+    text-align: center;
 }
 
-.h2-stats {
+@mixin --h4 {
+    font-family: 'FaktPro-Blond';
+    text-align: center;
+    color: #D0D2D3;
+}
+
+@mixin --h5 {
+    font-family: 'FaktPro-Blond';
+    color: #222228;
+}
+
+@mixin --h3-link {
+    line-height: 40px;
+    color: #222228;
+    margin: 25px 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin --header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+@mixin --hero {
+    width: 100%;
+}
+
+@mixin --aside {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-backface-visibility: hidden;
+}
+
+@mixin --main {
+    height: 100%;
+    z-index: 1;
+}
+
+@mixin --carousel {
+    background: #F8F8F8;
+    height: auto;
+    margin: 0 auto;
+}
+
+@mixin --customers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+@mixin --cloud-container {
+    padding: 25px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@mixin --stats {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@mixin --background {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@mixin --stats-table {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+@mixin --stats-table-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+@mixin --stats-list-cluster-icon-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Large Screens - Larger Desktop */
+@media screen and (min-width: 2001px) {
+    body {
+        .cloud-container {
+            width: 50%;
+        }
+    }
+}
+
+/* Medium Screens - Regular Desktop */
+@media screen and (min-width: 1601px) and (max-width: 2000px) {
+    body {
+        .cloud-container {
+            width: 60%;
+        }
+    }
+}
+
+/* Small Screens - Small Desktop, Landscape Large Tablets */
+@media screen and (min-width: 1200px) and (max-width: 1600px ) {
+    body {
+        .cloud-container {
+            width: 75%;
+        }
+    }
+}
+
+/* Large Devices (tablet and smartphone), Desktop */
+@media screen and (min-width: 900px) {
+    body {
+        .h3-stats {
+            padding: 0;
+        }
+        .customers {
+            top: -100px;
+        }
+        .stats {
+            flex-direction: row;
+            border-top: $border;
+        }
+        .stats-column {
+            width: 50%;
+            padding: 50px;
+        }
+        .stats-column:first-of-type { /* risk-based */
+            border-right: $border;
+        }
+        .stats-column-icon {
+            display: none;
+        }
+        .stats-table {
+            border: none;
+        }
+        .stats-table-column:first-of-type {
+            border-right: none;
+        }
+        .stats-table-column {
+            align-items: flex-start;
+            text-align: left;
+            padding: 0;
+        }
+        .stats-list-cluster-icon-container {
+            width: 75px;
+            height: 50px;
+            margin: 0;
+        }
+        .stats-list-cluster-icon {
+            height: 17px;
+            width: 17px;
+            padding: 2.5px 5px;
+        }
+    }
+}
+
+/* Small Devices (tablet and smartphone) */
+@media screen and (min-width: 600px) {
+    body {
+        h1 {
+            font-size: 72px;
+            line-height: 80px;
+        }
+        h2 {
+            font-size: 36px;
+            line-height: 60px;
+        }
+        h3 {
+            font-size: 20px;
+            line-height: 32px;
+        }
+        h4 {
+            font-size: 24px;
+            line-height: 40px;
+        }
+
+        h5 {
+            line-height: 72px;
+            font-size: 72px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 28px;
+        }
+        header {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+        }
+        #hero {
+            height: auto;
+        }
+        aside {
+            top: 0;
+            height: 75%;
+            width: 100%;
+        }
+        .h2-customers {
+            line-height: 54px;
+        }
+        /* need to verify below */
+        .h2-stats {
+            line-height: 24px;
+        }
+        /* end of made up values */
+        .h3-link {
+            justify-content: flex-start;
+        }
+        .h3-stats {
+            text-align: left;
+        }    
+        main {
+            position: absolute;
+            top: 75%;
+            width: 100%;
+        }
+        .carousel {
+            width: 75%;
+            box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+        .customers {
+            @include --customers;
+            @include --background;
+            padding: 225px 50px 0px;
+            background-image: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
+            background-position: right -5px;
+            /* start styles for nuanced map bg overlap */
+            top: -125px;
+            position: relative;
+            z-index: -1;
+            /* end styles for nuanced map bg overlap */
+        }
+        .cloud-image {
+            width: 15%;
+            padding: 0 2.5%;
+        }
+        .availability, .risk-based {
+            background-image: none;
+        }
+    }
+}
+
+/* Mobile-First (smartphone, tablet) Styles */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'FaktProUI-Blond';
+}
+
+h1 {
+    @include --h1;
+	font-size: 36px;
 	line-height: 48px;
-    padding: 25px 0;
+}
+
+h2 {
+    @include --h2;
+	font-size: 24px;
+	line-height: 40px;
 }
 
 h3 {
-	font-family: 'FaktPro-Normal';
+    @include --h3;
+    font-size: 18px;
 	line-height: 32px;
-	font-size: 20px;
-	color: #5C666F;
-	text-align: center;
+}
+
+h4 {
+    @include --h4;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+h5 {
+    @include --h5;
+    padding: 25px 0;
+    line-height: 36px;
+    font-size: 36px;
+}
+
+p {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.h2-customers {
+    line-height: 40px;
+}
+
+.h2-stats {
+    line-height: 48px;
+    padding: 25px 0;
 }
 
 .h3-carousel {
@@ -67,34 +368,14 @@ h3 {
 }
 
 .h3-link {
-	line-height: 40px;
-	color: #222228;
-	margin: 25px 0;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include --h3-link;
+    justify-content: center;
 }
 
 .h3-stats {
 	line-height: 34px;
-	text-align: left;
-}
-
-h4 {
-	font-family: 'FaktPro-Blond';
-	font-size: 24px;
-	line-height: 40px;
 	text-align: center;
-	color: #D0D2D3;
-}
-
-h5 {
-	font-family: 'FaktPro-Blond';
-	line-height: 72px;
-	font-size: 72px;
-	color: #222228;
-	padding: 25px 0;
+    padding: 0 0 50px;
 }
 
 .emphasis {
@@ -132,52 +413,38 @@ h5 {
 }
 
 header {
-	width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
+    @include --header;
 }
 
 #hero {
-    width: 100%;
-    height: auto;
-    transform: translate(0%, -25%);
+    @include --hero;
+    height: 100%;
 }
 
 aside {
-    position: absolute;
-    top: 0;
-    height: 75%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    -webkit-backface-visibility: hidden;
+    @include --aside;
+    height: auto;
+    top: auto;
+    width: min-content;
 }
 
 main {
-    height: 100%;
-    position: absolute;
-    top: 75%;
-    width: 100%;
-    z-index: 1;
+    @include --main;
+    top: 0;
+    position: relative;
 }
 
 .carousel {
-    background: #F8F8F8;
-    box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-    height: auto;
-    width: 75%;
-    margin: 0 auto;
+    @include --carousel;
+    width: 100%;
+    box-shadow: none;
 }
 
 .carousel-container{ 
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px 50px;
+    padding: 50px 50px 25px 50px;
 }
 
 .content-wrapper {
@@ -210,7 +477,7 @@ main {
     flex-direction: column;
 }
 
-.container video, .container svg {
+.container video, .carousel-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -218,7 +485,7 @@ main {
     height: 100%;
 }
 
-.container svg {
+.carousel-image {
     transform: scale(1.75);
     padding: 0 !important;
 }
@@ -308,73 +575,71 @@ button {
     display: none;
 }
 
-.slide.selected {
-	display: block;
-}
-
-.slide {
-	display: none;
-}
-
 .customers {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 115px 50px 50px 50px;
-    background: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
-    background-size: contain;
-    background-position: right -5px;
-    background-repeat: no-repeat;
-    /* start styles for nuanced map bg overlap */
-    top: -30px;
-    position: relative;
-    z-index: -1;
-    /* end styles for nuanced map bg overlap */
+    @include --customers;
+    background: none;
+    top: 0;
+    padding: 50px 50px 25px 50px;
 }
 
 .cloud-container {
-    width: 90%;
-    padding: 25px 0 0 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.icon {
-    height: auto;
-    width: 10%;
-    padding: 0 50px;
-}
-
-.stats {
-	display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    border-top: 1px solid #E2E2E2;
-}
-
-.stats-column {
-    width: 50%;
-    padding: 50px;
-}
-
-.stats-column:first-of-type {
-	border-right: 1px solid #E2E2E2;
-}
-
-.stats-table {
-    display: flex;
-    flex-direction: row;
+    @include --cloud-container;
     width: 100%;
 }
 
+.cloud-image {
+    height: auto;
+    width: 25%;
+    padding: 0 12.5%;
+}
+
+.stats {
+    @include --stats;
+    flex-direction: column;
+}
+
+.stats-column {
+    box-sizing: border-box;
+    width: auto;
+    padding: 0 10px;
+}
+
+.availability {
+    @include --background;
+    background-position: right 50%;
+    background-image: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
+}
+
+.risk-based {
+    @include --background;
+    background-position: 70px -20px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), url(https://meinsta.github.io/auth0-hpg/Hero/BG_touch.svg);
+}
+
+.stats-column-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+}
+
+.stats-table {
+    @include --stats-table;
+    border-top: $border;
+    border-bottom: $border;
+    text-align: center;
+}
+
 .stats-table-column {
-    width: 50%;
+    @include --stats-table-column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px 25px;
+}
+
+.stats-table-column:first-of-type {
+    border-right: $border;
 }
 
 .stats-list {
@@ -404,16 +669,14 @@ button {
 }
 
 .stats-list-cluster-icon-container {
-	display: flex;
-    flex-direction: row;
-    width: 75px;
-    flex-wrap: wrap;
-    height: 50px;
-    align-items: center;
+	@include --stats-list-cluster-icon-container;
+    width: 45px;
+    height: 30px;
+    margin: 0 0 0 5px;
 }
 
 .stats-list-cluster-icon {
-    height: 17px;
-    width: 17px;
-    padding: 2.5px 5px;
+    height: 12px;
+    width: 12px;
+    padding: 0 5px 0;
 }

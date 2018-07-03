@@ -31,7 +31,7 @@ export default class ImageCarousel extends React.Component  {
     return (
       <div className="container">
         <div className="image-container">
-          <Icon icon={this.state.source} />
+          <Icon icon={this.state.source} iconStyle={'carousel-image'} />
         </div>
         <div className="slide-list-nav">
           <Button onClick={this.changeSource('UseCases')} className="slide-list-nav-item completed"><div className="dot use-case" />Use Cases</Button>
