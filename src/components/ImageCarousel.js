@@ -34,11 +34,11 @@ export default class ImageCarousel extends React.Component  {
           <Icon icon={this.state.source} />
         </div>
         <div className="slide-list-nav">
-          <Button onClick={this.changeSource('UseCases')} className="slide-list-nav-item completed use-case"><div className="dot" />Use Cases</Button>
-          <Button onClick={this.changeSource('Technology')} className="slide-list-nav-item completed technologies"><div className="dot" />Technology</Button>
-          <Button onClick={this.changeSource('Deployment')} className="slide-list-nav-item completed deployment"><div className="dot" />Deployment</Button>
-          <Button onClick={this.changeSource('Customization')} className="slide-list-nav-item completed Customization"><div className="dot" />Customization</Button>
-          <Button onClick={this.changeSource('Result')} className="slide-list-nav-item completed result"><div className="dot" />Result</Button>
+          <Button onClick={this.changeSource('UseCases')} className="slide-list-nav-item completed"><div className="dot use-case" />Use Cases</Button>
+          <Button onClick={this.changeSource('Technology')} className="slide-list-nav-item completed"><div className="dot technologies" />Technology</Button>
+          <Button onClick={this.changeSource('Deployment')} className="slide-list-nav-item completed"><div className="dot deployment" />Deployment</Button>
+          <Button onClick={this.changeSource('Customization')} className="slide-list-nav-item completed"><div className="dot customization" />Customization</Button>
+          <Button onClick={this.changeSource('Result')} className="slide-list-nav-item completed"><div className="dot result" />Result</Button>
         </div>
       </div>
     );
