@@ -75,9 +75,6 @@ $border: 1px solid #E2E2E2;
     position: relative;
 }
 
-@mixin --hero {
-    width: 100%;
-}
 
 @mixin --aside {
     position: absolute;
@@ -168,6 +165,9 @@ $border: 1px solid #E2E2E2;
 /* Small Screens - Small Desktop, Landscape Large Tablets */
 @media screen and (min-width: 1200px) and (max-width: 1600px ) {
     body {
+        .customers {
+            top: -125px !important;
+        }
         .cloud-container {
             width: 75%;
         }
@@ -180,8 +180,8 @@ $border: 1px solid #E2E2E2;
         .h3-stats {
             padding: 0;
         }
-        .customers {
-            top: -100px;
+        h4 span {
+            display: block;
         }
         .stats {
             flex-direction: row;
@@ -255,9 +255,6 @@ $border: 1px solid #E2E2E2;
             overflow: hidden;
             position: absolute;
         }
-        #hero {
-            height: auto;
-        }
         aside {
             top: 0;
             height: 75%;
@@ -294,7 +291,7 @@ $border: 1px solid #E2E2E2;
             background-image: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
             background-position: right -5px;
             /* start styles for nuanced map bg overlap */
-            top: -125px;
+            top: -100px;
             position: relative;
             z-index: -1;
             /* end styles for nuanced map bg overlap */
@@ -417,8 +414,9 @@ header {
 }
 
 #hero {
-    @include --hero;
     height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 aside {

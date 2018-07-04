@@ -13,8 +13,7 @@ class App extends Component {
         <video autoPlay playsInline muted loop id="hero"><source src="https://meinsta.github.io/auth0-hpg/Hero/atom.mp4" type="video/mp4" /></video>
         <aside>
         <h1>Never compromise on <span className="emphasis">identity</span></h1>
-        <h4>We provide a universal authentication &amp; authorization platform for web,<br />mobile and legacy applications.</h4>
-        </aside>
+        <h4><span>We provide a universal authentication &amp; authorization platform for web, </span><span>mobile and legacy applications.</span></h4>        </aside>
       </header>
       <main>
         <section className="carousel">
