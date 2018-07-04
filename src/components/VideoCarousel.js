@@ -152,6 +152,8 @@ export default class VideoCarousel extends React.Component  {
           animate: true,
          });
       });
+
+      console.log(this);
       document.querySelector('.video-carousel').style.opacity = this.state.animate ? 1 : 0; 
       document.querySelector('.image-carousel').style.opacity = this.state.animate ? 0 : 1;
     }
@@ -163,11 +165,13 @@ export default class VideoCarousel extends React.Component  {
           <source src={this.state.source} />
         </Player>
         <div className="slide-list-nav">
-          <Button onClick={this.changeSource('UseCases')} className={ this.state.source === sources['UseCases'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Use Cases</Button>
-          <Button onClick={this.changeSource('Technology')} className={ this.state.source === sources['Technology'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Technology</Button>
-          <Button onClick={this.changeSource('Deployment')} className={ this.state.source === sources['Deployment'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Deployment</Button>
-          <Button onClick={this.changeSource('Customization')} className={ this.state.source === sources['Customization'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Customization</Button>
-          <Button onClick={this.changeSource('Result')} className={ this.state.source === sources['Result'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Result</Button>
+          <div className="slide-list-nav-wrapper">
+            <Button onClick={this.changeSource('UseCases')} className={ this.state.source === sources['UseCases'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Use Cases</Button>
+            <Button onClick={this.changeSource('Technology')} className={ this.state.source === sources['Technology'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Technology</Button>
+            <Button onClick={this.changeSource('Deployment')} className={ this.state.source === sources['Deployment'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Deployment</Button>
+            <Button onClick={this.changeSource('Customization')} className={ this.state.source === sources['Customization'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Customization</Button>
+            <Button onClick={this.changeSource('Result')} className={ this.state.source === sources['Result'] ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Result</Button>
+          </div>
         </div>
       </div>
     );

@@ -28,6 +28,7 @@
 
 /* Sass Variables */
 $border: 1px solid #E2E2E2;
+$height: 60px;
 
 /* Sass Mixins */
 @mixin --h1 {
@@ -36,7 +37,7 @@ $border: 1px solid #E2E2E2;
 }
 
 @mixin --h2 {
-    color: #333333;
+    color: #000;
     text-align: center;
 }
 
@@ -94,6 +95,26 @@ $border: 1px solid #E2E2E2;
     background: #F8F8F8;
     height: auto;
     margin: 0 auto;
+}
+
+@mixin --slide-list-nav {
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 1;
+    padding: 50px 25px 0;
+}
+
+@mixin --slide-list-nav-item {
+    display: inline-flex;
+    align-items: center;
+    line-height: 23px;
+    font-size: 14px;
+    font-family: 'FaktProUI-SemiBold';
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #D0D2D3;
+    transition: all 0.25s;
+    cursor: pointer;
 }
 
 @mixin --customers {
@@ -284,6 +305,33 @@ $border: 1px solid #E2E2E2;
             box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.2);
             border-radius: 3px;
         }
+        .slide-list-nav {
+            overflow: visible;
+            white-space: normal;
+            flex-wrap: wrap;
+            padding: 25px;
+/*            &:before {
+                background: none;
+            }*/
+        }
+        .slide-list-nav-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            margin: 0 auto;
+        }
+        .slide-list-nav-item {
+            flex-direction: column;
+            border: none;
+            border-radius: 0;
+            margin: 0;
+        }
+        .dot {
+            margin: 5px 10px;
+        }
         .customers {
             @include --customers;
             @include --background;
@@ -306,7 +354,7 @@ $border: 1px solid #E2E2E2;
     }
 }
 
-/* Mobile-First (smartphone, tablet) Styles */
+/* Mobile-First (smartphone, small tablet) Styles */
 body {
     margin: 0;
     padding: 0;
@@ -523,8 +571,11 @@ pre {
 }
 
 button {
-    border: none;
     background: transparent;
+}
+
+button:focus {
+    outline: none; /* override for browser style */
 }
 
 .slide-list-nav-container {
@@ -532,36 +583,55 @@ button {
 }
 
 .slide-list-nav {
-    display: flex;
-    justify-content: space-evenly;
-    z-index: 1;
-    padding: 50px 25px 0;
-    flex-wrap: wrap;
+    @include --slide-list-nav;
+    height: $height;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+/*    &:before {
+        content: '';
+        width: 100%;
+        height: $height;
+        position: absolute;
+        pointer-events: none;
+        background: linear-gradient(to left, #F8F8F8, transparent 90%);
+    }*/
+}
+
+.slide-list-nav-wrapper {
+    width: 100%;
 }
 
 .slide-list-nav-item {
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 23px;
-	font-size: 14px;
-	font-family: 'FaktProUI-SemiBold';
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	color: #D0D2D3;
-    transition: all 0.25s;
-    cursor: pointer;
+    @include --slide-list-nav-item;
+    flex-direction: row;
+    height: $height;
+    pointer-events: all;
+    border: 1px solid #000;
+    border-radius: 3px;
+    margin: 0 5px;
+    padding: 0 15px 0 10px;
 }
 
-.slide-list-nav-item.selected, .slide-list-nav-item.completed {
+.slide-list-nav-item.selected {
 	color: #222228;
+}
+
+.slide-list-nav-item.completed {
+    color: #000;   
 }
 
 .dot {
     border-radius: 50%;
     width: 8px;
     height: 8px;
-    margin: 5px;
+    margin: 0 10px;
     background: #D0D2D3;
 }
 
