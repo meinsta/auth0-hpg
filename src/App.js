@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Icon from './components/Icon';
-import VideoCarousel from './components/VideoCarousel';
-import ImageCarousel from './components/ImageCarousel';
+import Carousel from './components/Carousel';
 import CustomerCloud from './components/CustomerCloud';
 import ClusterList from './components/ClusterList';
 
@@ -23,8 +22,7 @@ class App extends Component {
               <h3 className="h3-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</h3>
             </div>
             <div className="content-wrapper">
-              <div className="video-carousel"><VideoCarousel /></div>
-              <div className="image-carousel"><ImageCarousel /></div>
+              <div id="container"><Carousel /></div>
             </div>
           </div>
         </section>

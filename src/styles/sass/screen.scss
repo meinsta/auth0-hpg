@@ -287,6 +287,7 @@ $height: 60px;
         /* need to verify below */
         .h2-stats {
             line-height: 24px;
+            text-align: left;
         }
         /* end of made up values */
         .h3-link {
@@ -503,12 +504,27 @@ main {
     height: 100%;
 }
 
-.video-carousel {
-    position: absolute;
+#container, .new-carousel {
+    height:100%;
+    margin: 0;
+    width: 100%;
 }
 
-.image-carousel {
+.image-slide {
+    height: 100%;
+    width: 100%;
+    transition: background-image .3s ease-in-out;
+}
+
+.new-video, body .new-image-only {
     position: relative;
+    z-index: 1;
+    opacity: 1;
+}
+
+.new-image {
+    position: absolute;
+    opacity: 0;
 }
 
 .video-carousel, .image-carousel {

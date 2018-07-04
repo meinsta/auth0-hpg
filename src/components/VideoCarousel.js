@@ -47,7 +47,16 @@ export default class VideoCarousel extends React.Component  {
   }
 
   componentDidMount() {
-    document.querySelector('.image-carousel').style.opacity = this.state.animate ? 1 : 0;
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if(isMobile) 
+    {
+      document.querySelector('.video-carousel').style.opacity = 0;
+      document.querySelector('.image-carousel').style.opacity = 1;
+    }
+    else
+    {
+      document.querySelector('.image-carousel').style.opacity = this.state.animate ? 1 : 0;
+    }
     // subscribe state change
     this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
     window.addEventListener('scroll', throttle(this.handleScroll, 1000));
@@ -113,7 +122,7 @@ export default class VideoCarousel extends React.Component  {
     //TO DO: i don't love this if-else-if; want to iterate with a nice iterative function :)
     if(this.state.source === sources['UseCases'])
     {
-        this.setState({
+       this.setState({
           source: sources['Technology']
         });
         this.refs.player.load();
