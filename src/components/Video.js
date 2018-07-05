@@ -34,7 +34,6 @@ export default class Video extends React.Component  {
     this.load = this.load.bind(this);
 
     this.handleScroll = this.handleScroll.bind(this);
-    this.carouselHandler = this.carouselHandler.bind(this);
   }
 
   componentDidMount() {
@@ -63,9 +62,18 @@ export default class Video extends React.Component  {
     this.refs.player.load();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.url!==this.props.url){
+      this.setState({
+        source: nextProps.url
+      });
+      this.refs.player.load();
+      document.querySelector('.new-video video').play();
+    }
+  };
+
   componentWillUnmount() {
     window.removeEventListener('scroll', throttle(this.handleScroll, 1000));
-    document.querySelector('.new-carousel video').removeEventListener('ended', this.carouselHandler, false);
   };
 
   handleScroll(event) {
@@ -77,53 +85,30 @@ export default class Video extends React.Component  {
     if ( currentYpos >= document.querySelector('.content-wrapper').offsetTop && currentYpos <= document.querySelector('.content-wrapper').offsetTop + document.querySelector('.new-carousel video').offsetHeight ) 
     {
       document.querySelector('.new-carousel video').play();
-      console.info('video playing')
     }
     else
     {
       document.querySelector('.new-carousel video').pause();
-      console.info('video paused')
     }
   };
 
-  carouselHandler = (event) => {
-    if(!document.querySelector('.new-video video'))
-    {
-      return;
-    }
-    var videoElement = document.querySelector('.new-video');
-
-    this.setState({
-      source: this.props.url
-    });
-    this.refs.player.load();
-    document.querySelector('.new-video video').play();
-
-    if(this.props.name === 'Result')
-    {
-      videoElement.onended = function() {
-        videoElement.parentNode.removeChild(videoElement);
-        document.querySelector('.new-image').classList.add('new-image-only');
-      };
-    }
-  };
   render() {
     return (
       <div className="new-video container">
         <Player ref="player" autoPlay muted>
           <source src={this.props.url} />
         </Player>
-          <div>
-           <pre>
-            <p>Debug Panel</p>
-            <div>
-              {JSON.stringify(this.state.player, null, 2)}
-            </div>
-          </pre>           
-        </div>
       </div>
     );
   }
 }
+//   <div>
+//    <pre>
+//     <p>Debug Panel</p>
+//     <div>
+//       {JSON.stringify(this.state.player, null, 2)}
+//     </div>
+//   </pre>           
+// </div>
 
 

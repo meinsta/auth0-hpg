@@ -527,7 +527,7 @@ main {
 }
 
 /* line 525, ../sass/screen.scss */
-.new-image {
+.new-image, body .new-video-hide {
   position: absolute;
   opacity: 0;
 }
@@ -541,7 +541,7 @@ main {
 
 /* transition so that animation is smooth */
 /* line 537, ../sass/screen.scss */
-.image-carousel {
+.new-video {
   transition: all 2s;
 }
 

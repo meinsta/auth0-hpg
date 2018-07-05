@@ -522,7 +522,7 @@ main {
     opacity: 1;
 }
 
-.new-image {
+.new-image, body .new-video-hide {
     position: absolute;
     opacity: 0;
 }
@@ -534,7 +534,7 @@ main {
 }
 
 /* transition so that animation is smooth */
-.image-carousel {
+.new-video {
     transition: all 2s;
 }
 
