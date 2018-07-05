@@ -31,10 +31,13 @@ export default class Carousel extends React.Component {
 
 	videoHandler = (event) => {
 		var lastIndex = sources.length - 1;
+		var videoElement = document.querySelector('.new-video');
+		if(!videoElement) { return; }
 		if(this.state.currentImageIndex === lastIndex) {
 			this.setState({ currentImageIndex: lastIndex }, () => {
-				document.querySelector('.new-video').classList.add('new-video-hide');
-				document.querySelector('.new-image').classList.add('new-image-only');
+				document.querySelector('.new-video').classList.add('new-video-hide'),
+				document.querySelector('.new-image').classList.add('new-image-only'),
+				document.querySelector('.new-carousel video').removeEventListener('ended', this.videoHandler, false);
 			})
 		}
 		var updatedIndex = this.state.currentImageIndex + 1;
@@ -44,13 +47,18 @@ export default class Carousel extends React.Component {
 	}
 
 	changeSource(newIndex) {
-	  return ( e => {
-		e.preventDefault();
-		this.setState({  currentImageIndex: newIndex }, () => {
-			document.querySelector('.new-video').classList.add('new-video-hide');
-			document.querySelector('.new-image').classList.add('new-image-only');
-		})
-	  });
+		var videoElement = document.querySelector('.new-video')
+		return ( e => {
+			this.setState({  currentImageIndex: newIndex }, () => {
+				if(videoElement) {
+					document.querySelector('.new-carousel video').pause(),
+					document.querySelector('.new-video').classList.add('new-video-hide'),
+					document.querySelector('.new-image').classList.add('new-image-only'),
+					document.querySelector('.new-carousel video').removeEventListener('ended', this.videoHandler, false);
+				}
+			})
+		})		
+
 	}
 
 	render () {

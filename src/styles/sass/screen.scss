@@ -409,10 +409,6 @@ p {
     padding: 25px 0;
 }
 
-.h3-carousel {
-	padding: 0 0 50px;
-}
-
 .h3-link {
     @include --h3-link;
     justify-content: center;
@@ -510,10 +506,12 @@ main {
     width: 100%;
 }
 
-.image-slide {
-    height: 100%;
+.new-image-only .image-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    transition: background-image .3s ease-in-out;
+    height: 100%;
 }
 
 .new-video, body .new-image-only {
@@ -534,8 +532,13 @@ main {
 }
 
 /* transition so that animation is smooth */
-.new-video {
+.new-video, .new-image {
     transition: all 2s;
+}
+
+.new-image-only {
+    padding-bottom: 50%;
+    height: 0;
 }
 
 .container {

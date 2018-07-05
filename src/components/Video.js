@@ -40,7 +40,6 @@ export default class Video extends React.Component  {
     // subscribe state change
     this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
     window.addEventListener('scroll', throttle(this.handleScroll, 1000));
-    document.querySelector('.new-carousel video').addEventListener('ended', this.carouselHandler, false);
   }
 
   handleStateChange(state, prevState) {
@@ -63,6 +62,7 @@ export default class Video extends React.Component  {
   }
 
   componentWillReceiveProps(nextProps) {
+    if(!document.querySelector('.new-video')) { return; }
     if(nextProps.url!==this.props.url){
       this.setState({
         source: nextProps.url
@@ -77,10 +77,7 @@ export default class Video extends React.Component  {
   };
 
   handleScroll(event) {
-    if(!document.querySelector('.new-carousel video')) 
-    {
-      return;
-    } 
+    if(!document.querySelector('.new-video')) { return; } 
     var currentYpos = window.pageYOffset || document.documentElement.scrollTop;
     if ( currentYpos >= document.querySelector('.content-wrapper').offsetTop && currentYpos <= document.querySelector('.content-wrapper').offsetTop + document.querySelector('.new-carousel video').offsetHeight ) 
     {
