@@ -48,14 +48,15 @@ export default class Carousel extends React.Component {
 
 	changeSource(newIndex) {
 		var videoElement = document.querySelector('.new-video')
+		if(videoElement) {
+			document.querySelector('.new-carousel video').pause(),
+			document.querySelector('.new-video').classList.add('new-video-hide'),
+			document.querySelector('.new-image').classList.add('new-image-only'),
+			document.querySelector('.new-carousel video').removeEventListener('ended', this.videoHandler, false);
+		}
 		return ( e => {
 			this.setState({  currentImageIndex: newIndex }, () => {
-				if(videoElement) {
-					document.querySelector('.new-carousel video').pause(),
-					document.querySelector('.new-video').classList.add('new-video-hide'),
-					document.querySelector('.new-image').classList.add('new-image-only'),
-					document.querySelector('.new-carousel video').removeEventListener('ended', this.videoHandler, false);
-				}
+
 			})
 		})		
 
