@@ -21,7 +21,7 @@ export default class Image extends React.Component  {
 
     render() {
     return (
-		<div className="new-image container">
+		<div className="new-image new-image-only container">
 			<img src={`${this.props.url}`} className="image-slide" />
 		</div>
     );

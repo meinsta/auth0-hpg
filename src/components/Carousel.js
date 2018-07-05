@@ -22,6 +22,7 @@ export default class Carousel extends React.Component {
 
 		this.videoHandler = this.videoHandler.bind(this);
 		this.changeSource = this.changeSource.bind(this);
+		this.changeImage = this.changeImage.bind(this);
 	}
 
 	componentDidMount() {
@@ -37,10 +38,10 @@ export default class Carousel extends React.Component {
 		var videoElement = document.querySelector('.new-video');
 		if(!videoElement) { return; }
 		if(this.state.currentImageIndex === lastIndex) {
-			this.setState({ currentImageIndex: lastIndex }, () => {
-				document.querySelector('.new-carousel video').pause(),
-				document.querySelector('.new-video').classList.add('new-video-hide'),
-				document.querySelector('.new-image').classList.add('new-image-only'),
+			this.setState({ 
+				currentImageIndex: lastIndex,
+				videoVisibility: false 
+			}, () => {
 				document.querySelector('.new-carousel video').removeEventListener('ended', this.videoHandler, false);
 			})
 		}
@@ -50,36 +51,52 @@ export default class Carousel extends React.Component {
 		});
 	}
 
-	changeSource(newIndex) {
-		return ( e => {
-			this.setState({
-				currentImageIndex: newIndex,
-				videoVisibility: false
-			});
-			console.info('current image index: ', this.state.currentImageIndex);
-			console.info('current video video visibility: ', this.state.videoVisibility);
-		})
+	changeSource(e) {
+		this.setState({
+			currentImageIndex: e.target.id,
+			videoVisibility: false
+		});
+		document.querySelector('.new-carousel video').removeEventListener('ended', this.videoHandler, false);
 	}
 
+	changeImage(e) {
+		this.setState({
+			currentImageIndex: e.target.id
+		});
+	}
 
 	render () {
-
-		var elementPos = sources.map(function(x) {return x.id; }).indexOf(this.state.currentImageIndex);
-
-		return (
-			<div className="new-carousel">
-				<Image url={ sources[elementPos].image } />
-				<Video url={ this.state.videoVisibility ? sources[elementPos].video : '' } />
-				<div className="slide-list-nav">
-		          <div className="slide-list-nav-wrapper">
-		            <Button id="0" onClick={ this.changeSource(0) } className={ this.state.currentImageIndex === 0 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Use Cases</Button>
-		            <Button id="1" onClick={ this.changeSource(1) } className={ this.state.currentImageIndex === 1 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Technology</Button>
-		            <Button id="2" onClick={ this.changeSource(2) } className={ this.state.currentImageIndex === 2 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Deployment</Button>
-		            <Button id="3" onClick={ this.changeSource(3) } className={ this.state.currentImageIndex === 3 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Customization</Button>
-		            <Button id="4" onClick={ this.changeSource(4) } className={ this.state.currentImageIndex === 4 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Result</Button>
-		          </div>
-		        </div>
-			</div>
-		);
+			if(this.state.videoVisibility === true) {
+				return (
+				<div className="new-carousel">
+					<Video url={ sources[this.state.currentImageIndex].video } />
+					<div className="slide-list-nav">
+			          <div className="slide-list-nav-wrapper">
+			            <Button id={0} onClick={ this.changeSource } className={ this.state.currentImageIndex === 0 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Use Cases</Button>
+			            <Button id={1} onClick={ this.changeSource } className={ this.state.currentImageIndex === 1 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Technology</Button>
+			            <Button id={2} onClick={ this.changeSource } className={ this.state.currentImageIndex === 2 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Deployment</Button>
+			            <Button id={3} onClick={ this.changeSource } className={ this.state.currentImageIndex === 3 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Customization</Button>
+			            <Button id={4} onClick={ this.changeSource } className={ this.state.currentImageIndex === 4 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }><div className="dot" />Result</Button>
+			          </div>
+			        </div>
+				</div>
+				)
+			}
+			else {
+				return (
+				<div className="new-carousel">
+					<Image url={ sources[this.state.currentImageIndex].image } />
+					<div className="slide-list-nav">
+			          <div className="slide-list-nav-wrapper">
+			            <Button id={0} onClick={ this.changeImage } className="slide-list-nav-item completed"><div className="dot use-case" />Use Cases</Button>
+			            <Button id={1} onClick={ this.changeImage } className="slide-list-nav-item completed"><div className="dot technologies" />Technology</Button>
+			            <Button id={2} onClick={ this.changeImage } className="slide-list-nav-item completed"><div className="dot deployment" />Deployment</Button>
+			            <Button id={3} onClick={ this.changeImage } className="slide-list-nav-item completed"><div className="dot customization" />Customization</Button>
+			            <Button id={4} onClick={ this.changeImage } className="slide-list-nav-item completed"><div className="dot result" />Result</Button>
+			          </div>
+			        </div>
+				</div>
+				)
+			}
 	}
 }
