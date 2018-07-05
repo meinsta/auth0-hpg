@@ -11,15 +11,6 @@ function throttle(fn, wait) {
   }
 };
 
-// Start animation helper using nested requestAnimationFrames
-function startAnimation(callback) {
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      callback();
-    });
-  });
-};
-
 export default class Video extends React.Component  {
   constructor(props, context) {
     super(props, context);
