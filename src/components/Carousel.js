@@ -30,7 +30,8 @@ export default class Carousel extends React.Component {
 		
 		this.state = {
 			currentIndex: 0,
-			videoVisibility: true, 
+			videoVisibility: true,
+			listeners: true 
 		};
 
 		this.resize = this.resize.bind(this);
@@ -43,7 +44,7 @@ export default class Carousel extends React.Component {
 		window.addEventListener('load', this.resize, false);
 	    window.addEventListener('resize', throttle(this.resize, 500), false);
 
-	    if(window.innerWidth >= 600 ) {
+	    if(window.innerWidth >= 600 && this.state.listeners === true ) {
 			document.querySelector('.new-carousel video').addEventListener('ended', this.videoHandler, false);
 	    }
 	}
@@ -53,12 +54,15 @@ export default class Carousel extends React.Component {
 	}
 
    	resize = (event) => {
-   		var buttons = document.getElementsByTagName("Button");
-	    this.setState({videoVisibility: window.innerWidth >= 600});
+   		var buttons = document.querySelectorAll('.slide-list-nav-wrapper Button');
+   		if(this.state.listeners === true) {
+		    this.setState({videoVisibility: window.innerWidth >= 600});
+   		}
 			for(var i = 0; i < buttons.length; i++)
 			{
 			    if(window.innerWidth < 600) 
 			    {
+			    	buttons[this.state.currentIndex].classList.add('mobile-selected');
 					if(!buttons[i].classList.contains('completed'))
 					{
 		   				buttons[i].classList.add('completed', sources[i].class);
@@ -66,25 +70,40 @@ export default class Carousel extends React.Component {
 	   			}
 	   			else if(window.innerWidth >= 600)
 	   			{
+	   				buttons[this.state.currentIndex].classList.add('selected');
 	   				if(buttons[i].classList.contains('completed'))
 	   				{
 	   					buttons[i].classList.remove('completed', sources[i].class);
+	   				}
+	   				else if (buttons[i].classList.contains('mobile-selected')) {
+	   					buttons[i].classList.remove('mobile-selected');
 	   				}
 	   			}
 	    	}
 	}
 
 	videoHandler = (event) => {
-		var videoElement = document.querySelector('.new-video');
+		var buttons = document.querySelectorAll('.slide-list-nav-wrapper Button'),
+			videoElement = document.querySelector('.new-video');
 		if(!videoElement) { return; }
-		if(this.state.currentIndex === lastIndex) {
+		if(this.state.currentIndex === lastIndex && this.state.listeners == true) {
+			for(var i = 0; i < buttons.length; i++)
+			{
+				if(buttons[i].classList.contains('selected')) 
+				{
+					buttons[i].classList.remove('selected');
+					buttons[i].classList.add('completed', sources[i].class);
+				}
+				buttons[i].classList.add('completed', sources[i].class);
+			}  
 			var that = this;
 			return new Promise(function (resolve) {
 			    document.querySelector('.new-carousel video').addEventListener('ended', function endedListener() {
 			    	document.querySelector('.new-carousel video').removeEventListener('ended', endedListener);
 	            	that.setState({
 						currentIndex: lastIndex,
-						videoVisibility: false
+						videoVisibility: false,
+						listeners: false,
 					});
 			        resolve();
 			    });
@@ -97,7 +116,7 @@ export default class Carousel extends React.Component {
 	}
 
 	changeSource(event) {
-		var buttons = document.getElementsByTagName("Button"),
+		var buttons = document.querySelectorAll('.slide-list-nav-wrapper Button'),
 			currentButtonIndex = Number(event.target.id);
 		for(var i = 0; i < buttons.length; i++)
 		{
@@ -106,6 +125,7 @@ export default class Carousel extends React.Component {
 				if(buttons[i].classList.contains('selected')) 
 				{
 					buttons[i].classList.remove('selected');
+					buttons[i].classList.add('completed', sources[i].class);
 				}
 				buttons[i].classList.add('completed', sources[i].class);
 			}  
@@ -121,13 +141,14 @@ export default class Carousel extends React.Component {
 		} 
 		this.setState({
 			currentIndex: event.target.id,
-			videoVisibility: false
+			videoVisibility: false,
+			listeners: false
 		});
 		document.querySelector('.new-carousel video').removeEventListener('ended', this.videoHandler, false);
 	}
 
 	changeImage(event) {
-		var buttons = document.getElementsByTagName("Button"),
+		var buttons = document.querySelectorAll('.slide-list-nav-wrapper Button'),
 			currentButtonIndex = Number(event.target.id);
 			if(window.innerWidth >= 600){
 				for(var i = 0; i < buttons.length; i++)
@@ -137,22 +158,28 @@ export default class Carousel extends React.Component {
 						if(buttons[i].classList.contains('selected')) 
 						{
 							buttons[i].classList.remove('selected');
+							buttons[i].classList.add('completed', sources[i].class);
 						}
 						else if(buttons[i].classList.contains('mobile-selected')) 
 						{
 							buttons[i].classList.remove('mobile-selected');
 						}
 						buttons[i].classList.add('completed', sources[i].class);
-					} 
-					else if(buttons[i].classList.contains('selected') && event.target.id !== buttons[i].id)
-					{
-						buttons[i].classList.remove('selected');
 					}
-					else if(event.target.id === buttons[i].id) 
-					{
-						event.target.classList.add('selected');
+					if(currentButtonIndex !== lastIndex) {
+						if(buttons[i].classList.contains('completed')) 
+						{
+							buttons[i].classList.remove('completed', sources[i].class);
+						}
+						if(buttons[i].classList.contains('selected') && event.target.id !== buttons[i].id)
+						{
+							buttons[i].classList.remove('selected');
+						}
+						if(event.target.id === buttons[i].id) 
+						{
+							event.target.classList.add('selected');
+						} 
 					}
-
 				} 				
 			}
 			if(window.innerWidth < 600) {
