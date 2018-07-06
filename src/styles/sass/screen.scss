@@ -88,6 +88,7 @@ $emphasis: rgb(233, 85, 47);
     align-items: center;
     justify-content: center;
     -webkit-backface-visibility: hidden;
+    padding: 0 25px;
 }
 
 @mixin --main {

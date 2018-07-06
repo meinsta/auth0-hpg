@@ -53,32 +53,37 @@ export default class Carousel extends React.Component {
 	}
 
    	resize = (event) => {
-   		var buttons = document.querySelectorAll('.slide-list-nav-wrapper Button');
    		if(this.state.listeners === true) {
 		    this.setState({videoVisibility: window.innerWidth >= 600});
    		}
+		var buttons = document.querySelectorAll('.slide-list-nav-wrapper Button');
+		if(window.innerWidth >= 600){
 			for(var i = 0; i < buttons.length; i++)
 			{
-			    if(window.innerWidth < 600) 
-			    {
-			    	buttons[this.state.currentIndex].classList.add('mobile-selected');
-					if(!buttons[i].classList.contains('completed'))
-					{
-		   				buttons[i].classList.add('completed', sources[i].class);
-					}
-	   			}
-	   			else if(window.innerWidth >= 600)
-	   			{
-	   				buttons[this.state.currentIndex].classList.add('selected');
-	   				if(buttons[i].classList.contains('completed'))
-	   				{
-	   					buttons[i].classList.remove('completed', sources[i].class);
-	   				}
-	   				else if (buttons[i].classList.contains('mobile-selected')) {
-	   					buttons[i].classList.remove('mobile-selected');
-	   				}
-	   			}
-	    	}
+				if(buttons[this.state.currentIndex].classList.contains('mobile-selected'))
+				{
+					buttons[i].classList.remove('mobile-selected');
+				}
+				if(buttons[i].classList.contains('completed'))
+				{
+					buttons[i].classList.remove('completed', sources[i].class);
+				}
+				buttons[this.state.currentIndex].classList.add('selected');
+			}
+		}
+		if(window.innerWidth < 600){
+			for(var i = 0; i < buttons.length; i++)
+			{
+				if(!buttons[i].classList.contains('completed'))
+				{
+					buttons[i].classList.add('completed', sources[i].class);
+				}
+				if(buttons[i].classList.contains('mobile-selected') && buttons[i].id !== buttons[this.state.currentIndex]) {
+					buttons[i].classList.remove('mobile-selected');
+				}
+				buttons[this.state.currentIndex].classList.add('mobile-selected');
+			}
+		}
 	}
 
 	videoHandler = (event) => {
@@ -115,40 +120,9 @@ export default class Carousel extends React.Component {
 	}
 
 	changeSource(event) {
-		var buttons = document.querySelectorAll('.slide-list-nav-wrapper Button'),
-			currentButtonIndex = Number(event.target.id);
-		for(var i = 0; i < buttons.length; i++)
-		{
-			if(currentButtonIndex === lastIndex) 
-			{
-				if(buttons[i].classList.contains('selected')) 
-				{
-					buttons[i].classList.remove('selected');
-					buttons[i].classList.add('completed', sources[i].class);
-				}
-				buttons[i].classList.add('completed', sources[i].class);
-			}
-			else if(currentButtonIndex !== lastIndex) {
-				if(buttons[i].classList.contains('completed'))
-				{
-					buttons[i].classList.remove('completed', sources[i].class);
-				}
-				if(event.target.id === buttons[i].id) 
-				{
-					buttons[currentButtonIndex].classList.add('selected');
-					if(buttons[i].classList.contains('completed'))
-					{
-						buttons[i].classList.remove('completed', sources[i].class);
-					}
-				}
-				else if(buttons[i].classList.contains('selected') && event.target.id !== buttons[i].id)
-				{
-					buttons[i].classList.remove('selected');
-				}
-			}  
-		} 
+		var currentButtonIndex = Number(event.target.id); 
 		this.setState({
-			currentIndex: event.target.id,
+			currentIndex: currentButtonIndex,
 			videoVisibility: false,
 			listeners: false
 		});
@@ -156,61 +130,25 @@ export default class Carousel extends React.Component {
 	}
 
 	changeImage(event) {
-		var buttons = document.querySelectorAll('.slide-list-nav-wrapper Button'),
-			currentButtonIndex = Number(event.target.id);
-			if(window.innerWidth >= 600){
-				for(var i = 0; i < buttons.length; i++)
-				{
-					if(currentButtonIndex === lastIndex) 
-					{
-						if(buttons[i].classList.contains('selected')) 
-						{
-							buttons[i].classList.remove('selected');
-							buttons[i].classList.add('completed', sources[i].class);
-						}
-						buttons[i].classList.add('completed', sources[i].class);
-					}
-					else if(currentButtonIndex !== lastIndex) {
-						if(buttons[i].classList.contains('completed'))
-						{
-							buttons[i].classList.remove('completed', sources[i].class);
-						}
-						if(event.target.id === buttons[i].id) 
-						{
-							buttons[currentButtonIndex].classList.add('selected');
-							if(buttons[i].classList.contains('completed'))
-							{
-								buttons[i].classList.remove('completed', sources[i].class);
-							}
-						}
-						else if(buttons[i].classList.contains('selected') && event.target.id !== buttons[i].id)
-						{
-							buttons[i].classList.remove('selected');
-						}
-					}
-				} 				
-			}
-			if(window.innerWidth < 600) {
-				for(i = 0; i < buttons.length; i++)
-				{
-					if(buttons[i].classList.contains('selected')) 
-					{
-						buttons[i].classList.remove('selected');
-					}
-					if(buttons[i].classList.contains('mobile-selected') && event.target.id !== buttons[i].id)
-					{
-						buttons[i].classList.remove('mobile-selected');
-					}
-					if(event.target.id === buttons[i].id) 
-					{
-						event.target.classList.add('mobile-selected');
-					}
-
+		var currentButtonIndex = Number(event.target.id),
+			buttons = document.querySelectorAll('.slide-list-nav-wrapper Button');
+		if(window.innerWidth >= 600){
+			for(var i = 0; i < buttons.length; i++)
+			{
+				if(currentButtonIndex === lastIndex) {
+					buttons[i].classList.add('completed', sources[i].class);
+					buttons[i].classList.remove('selected');
 				}
+				if(currentButtonIndex !== lastIndex) {
+					if(buttons[i].classList.contains('completed'))
+					{
+						buttons[i].classList.remove('completed', sources[i].class);
+					}
+				}  
 			}
-
+		}
 		this.setState({
-			currentIndex: event.target.id
+			currentIndex: currentButtonIndex
 		});
 	}
 
@@ -222,10 +160,10 @@ export default class Carousel extends React.Component {
 					<Video url={ sources[this.state.currentIndex].video } />
 					<div className="slide-list-nav">
 			          <div className="slide-list-nav-wrapper">
-			            <Button id={0} onClick={ this.changeSource } className={ this.state.currentIndex === 0 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }>Use Cases</Button>
+			            <Button id={0} onClick={ this.changeSource } className={ this.state.currentIndex === 0 ? 'slide-list-nav-item selected': 'slide-list-nav-item'  }>Use Cases</Button>
 			            <Button id={1} onClick={ this.changeSource } className={ this.state.currentIndex === 1 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }>Technology</Button>
 			            <Button id={2} onClick={ this.changeSource } className={ this.state.currentIndex === 2 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }>Deployment</Button>
-			            <Button id={3} onClick={ this.changeSource } className={ this.state.currentIndex === 3 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }>Customization</Button>
+			            <Button id={3} onClick={ this.changeSource } className={ this.state.currentIndex === 3 ? 'slide-list-nav-item selected': 'slide-list-nav-item'  }>Customization</Button>
 			            <Button id={4} onClick={ this.changeSource } className={ this.state.currentIndex === 4 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }>Result</Button>
 			          </div>
 			        </div>
@@ -233,21 +171,40 @@ export default class Carousel extends React.Component {
 				)
 			}
 			if(this.state.videoVisibility === false) {
-				return (
-				<div className="new-carousel">
-	              	<h3 className="h3-carousel" dangerouslySetInnerHTML={{__html: sources[this.state.currentIndex].linkText ? (sources[this.state.currentIndex].text).replace(sources[this.state.currentIndex].linkText, sources[this.state.currentIndex].linkText.link(sources[this.state.currentIndex].linkHref)) : sources[this.state.currentIndex].text }} />
-					<Image alt={ sources[this.state.currentIndex].alt } url={ sources[this.state.currentIndex].image } />
-					<div className="slide-list-nav">
-			          <div className="slide-list-nav-wrapper">
-			            <Button id={0} onClick={ this.changeImage } className={ this.state.currentIndex === 0 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }>Use Cases</Button>
-			            <Button id={1} onClick={ this.changeImage } className={ this.state.currentIndex === 1 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }>Technology</Button>
-			            <Button id={2} onClick={ this.changeImage } className={ this.state.currentIndex === 2 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }>Deployment</Button>
-			            <Button id={3} onClick={ this.changeImage } className={ this.state.currentIndex === 3 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }>Customization</Button>
-			            <Button id={4} onClick={ this.changeImage } className={ this.state.currentIndex === 4 ? 'slide-list-nav-item selected': 'slide-list-nav-item' }>Result</Button>
-			          </div>
-			        </div>
-				</div>
-				)
-			}
+				 if(window.innerWidth >= 600) {
+					return (
+					<div className="new-carousel">
+		              	<h3 className="h3-carousel" dangerouslySetInnerHTML={{__html: sources[this.state.currentIndex].linkText ? (sources[this.state.currentIndex].text).replace(sources[this.state.currentIndex].linkText, sources[this.state.currentIndex].linkText.link(sources[this.state.currentIndex].linkHref)) : sources[this.state.currentIndex].text }} />
+						<Image alt={ sources[this.state.currentIndex].alt } url={ sources[this.state.currentIndex].image } />
+						<div className="slide-list-nav">
+				          <div className="slide-list-nav-wrapper">
+				            <Button id={0} onClick={ this.changeImage } className={ this.state.currentIndex === 0 ? 'slide-list-nav-item selected': this.state.currentIndex === 4 ? 'slide-list-nav-item completed use-cases': 'slide-list-nav-item' }>Use Cases</Button>
+				            <Button id={1} onClick={ this.changeImage } className={ this.state.currentIndex === 1 ? 'slide-list-nav-item selected': this.state.currentIndex === 4 ? 'slide-list-nav-item completed technologies': 'slide-list-nav-item' }>Technology</Button>
+				            <Button id={2} onClick={ this.changeImage } className={ this.state.currentIndex === 2 ? 'slide-list-nav-item selected': this.state.currentIndex === 4 ? 'slide-list-nav-item completed deployment': 'slide-list-nav-item' }>Deployment</Button>
+				            <Button id={3} onClick={ this.changeImage } className={ this.state.currentIndex === 3 ? 'slide-list-nav-item selected': this.state.currentIndex === 4 ? 'slide-list-nav-item completed customization': 'slide-list-nav-item' }>Customization</Button>
+				            <Button id={4} onClick={ this.changeImage } className={ this.state.currentIndex === 4 ? 'slide-list-nav-item completed result': 'slide-list-nav-item'}>Result</Button>
+				          </div>
+				        </div>
+					</div>
+					) 
+				}
+				if(window.innerWidth < 600) {
+					return (
+					<div className="new-carousel">
+		              	<h3 className="h3-carousel" dangerouslySetInnerHTML={{__html: sources[this.state.currentIndex].linkText ? (sources[this.state.currentIndex].text).replace(sources[this.state.currentIndex].linkText, sources[this.state.currentIndex].linkText.link(sources[this.state.currentIndex].linkHref)) : sources[this.state.currentIndex].text }} />
+						<Image alt={ sources[this.state.currentIndex].alt } url={ sources[this.state.currentIndex].image } />
+						<div className="slide-list-nav">
+				          <div className="slide-list-nav-wrapper">
+	 			            <Button id={0} onClick={ this.changeImage } className={ this.state.currentIndex === 0 ? 'slide-list-nav-item mobile-selected completed use-cases': 'slide-list-nav-item completed use-cases' }>Use Cases</Button>
+				            <Button id={1} onClick={ this.changeImage } className={ this.state.currentIndex === 1 ? 'slide-list-nav-item mobile-selected completed technologies': 'slide-list-nav-item completed technologies' }>Technology</Button>
+				            <Button id={2} onClick={ this.changeImage } className={ this.state.currentIndex === 2 ? 'slide-list-nav-item mobile-selected completed deployment': 'slide-list-nav-item completed deployment' }>Deployment</Button>
+				            <Button id={3} onClick={ this.changeImage } className={ this.state.currentIndex === 3 ? 'slide-list-nav-item mobile-selected completed customization': 'slide-list-nav-item completed customization' }>Customization</Button>
+				            <Button id={4} onClick={ this.changeImage } className={ this.state.currentIndex === 4 ? 'slide-list-nav-item mobile-selected completed result': 'slide-list-nav-item completed result' }>Result</Button>
+				          </div>
+				        </div>
+					</div>
+					) 
+				}
+			}			
 	}
 }
