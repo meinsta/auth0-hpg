@@ -19,7 +19,6 @@ class App extends Component {
           <div className="carousel-container">
           <div className="text-wrapper">
               <h2>What’s Auth0</h2>
-              <h3 className="h3-carousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</h3>
             </div>
             <div className="content-wrapper">
               <div id="container"><Carousel /></div>

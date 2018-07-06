@@ -289,7 +289,8 @@ $completed: #000;
         }
         /* need to verify below */
         .h2-stats {
-            line-height: 24px;
+            font-size: 36px;
+            line-height: 48px;
             text-align: left;
         }
         /* end of made up values */
@@ -332,9 +333,10 @@ $completed: #000;
             border: none;
             border-radius: 0;
             margin: 0;
+            padding: 0 25px 0 10px;
         }
-        .dot {
-            margin: 5px 10px;
+        .slide-list-nav-item::before {
+            top: -5px;
         }
         .customers {
             @include --customers;
@@ -418,7 +420,7 @@ p {
 }
 
 .h3-carousel {
-   padding: 0 0 50px;
+   padding: 0 25px 50px;
 }
 
 .h3-stats {
@@ -619,10 +621,15 @@ button:focus {
     flex-direction: row;
     height: $height;
     pointer-events: all;
-    border: 1px solid #000;
+    border: 1px solid $inactive;
     border-radius: 3px;
     margin: 0 5px;
-    padding: 0 25px 0 10px;
+    padding: 0 25px 0 30px;
+
+}
+
+.slide-list-nav-item.mobile-selected {
+    border: 1px solid $selected;
 }
 
 .slide-list-nav-item::before {
@@ -632,7 +639,8 @@ button:focus {
     width: 8px;
     height: 8px;
     position: relative;
-    top: -5px;
+    top: 0;
+    left: -5px;
     background: $inactive;
 }
 

@@ -223,30 +223,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   }
   /* line 291, ../sass/screen.scss */
   body .h2-stats {
-    line-height: 24px;
+    font-size: 36px;
+    line-height: 48px;
     text-align: left;
   }
-  /* line 296, ../sass/screen.scss */
+  /* line 297, ../sass/screen.scss */
   body .h3-link {
     justify-content: flex-start;
   }
-  /* line 299, ../sass/screen.scss */
+  /* line 300, ../sass/screen.scss */
   body .h3-stats {
     text-align: left;
   }
-  /* line 302, ../sass/screen.scss */
+  /* line 303, ../sass/screen.scss */
   body main {
     position: absolute;
     top: 75%;
     width: 100%;
   }
-  /* line 307, ../sass/screen.scss */
+  /* line 308, ../sass/screen.scss */
   body .carousel {
     width: 75%;
     box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.2);
     border-radius: 3px;
   }
-  /* line 312, ../sass/screen.scss */
+  /* line 313, ../sass/screen.scss */
   body .slide-list-nav {
     overflow: visible;
     white-space: normal;
@@ -256,7 +257,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                     background: none;
                 }*/
   }
-  /* line 321, ../sass/screen.scss */
+  /* line 322, ../sass/screen.scss */
   body .slide-list-nav-wrapper {
     display: flex;
     flex-direction: row;
@@ -266,18 +267,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     width: auto;
     margin: 0 auto;
   }
-  /* line 330, ../sass/screen.scss */
+  /* line 331, ../sass/screen.scss */
   body .slide-list-nav-item {
     flex-direction: column;
     border: none;
     border-radius: 0;
     margin: 0;
+    padding: 0 25px 0 10px;
   }
-  /* line 336, ../sass/screen.scss */
-  body .dot {
-    margin: 5px 10px;
+  /* line 338, ../sass/screen.scss */
+  body .slide-list-nav-item::before {
+    top: -5px;
   }
-  /* line 339, ../sass/screen.scss */
+  /* line 341, ../sass/screen.scss */
   body .customers {
     display: flex;
     flex-direction: column;
@@ -294,18 +296,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     z-index: -1;
     /* end styles for nuanced map bg overlap */
   }
-  /* line 351, ../sass/screen.scss */
+  /* line 353, ../sass/screen.scss */
   body .cloud-image {
     width: 15%;
     padding: 0 2.5%;
   }
-  /* line 355, ../sass/screen.scss */
+  /* line 357, ../sass/screen.scss */
   body .availability, body .risk-based {
     background-image: none;
   }
 }
 /* Mobile-First (smartphone, small tablet) Styles */
-/* line 362, ../sass/screen.scss */
+/* line 364, ../sass/screen.scss */
 body {
   margin: 0;
   padding: 0;
@@ -314,7 +316,7 @@ body {
   font-family: 'FaktProUI-Blond';
 }
 
-/* line 370, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 h1 {
   text-align: center;
   color: #fff;
@@ -322,7 +324,7 @@ h1 {
   line-height: 48px;
 }
 
-/* line 376, ../sass/screen.scss */
+/* line 378, ../sass/screen.scss */
 h2 {
   color: #000;
   text-align: center;
@@ -330,7 +332,7 @@ h2 {
   line-height: 40px;
 }
 
-/* line 382, ../sass/screen.scss */
+/* line 384, ../sass/screen.scss */
 h3 {
   font-family: 'FaktPro-Normal';
   color: #5C666F;
@@ -339,7 +341,7 @@ h3 {
   line-height: 32px;
 }
 
-/* line 388, ../sass/screen.scss */
+/* line 390, ../sass/screen.scss */
 h4 {
   font-family: 'FaktPro-Blond';
   text-align: center;
@@ -348,7 +350,7 @@ h4 {
   line-height: 32px;
 }
 
-/* line 394, ../sass/screen.scss */
+/* line 396, ../sass/screen.scss */
 h5 {
   font-family: 'FaktPro-Blond';
   color: #222228;
@@ -357,24 +359,24 @@ h5 {
   font-size: 36px;
 }
 
-/* line 401, ../sass/screen.scss */
+/* line 403, ../sass/screen.scss */
 p {
   font-size: 12px;
   line-height: 20px;
 }
 
-/* line 406, ../sass/screen.scss */
+/* line 408, ../sass/screen.scss */
 .h2-customers {
   line-height: 40px;
 }
 
-/* line 410, ../sass/screen.scss */
+/* line 412, ../sass/screen.scss */
 .h2-stats {
   line-height: 48px;
   padding: 25px 0;
 }
 
-/* line 415, ../sass/screen.scss */
+/* line 417, ../sass/screen.scss */
 .h3-link {
   line-height: 40px;
   color: #222228;
@@ -386,24 +388,24 @@ p {
   justify-content: center;
 }
 
-/* line 420, ../sass/screen.scss */
+/* line 422, ../sass/screen.scss */
 .h3-carousel {
-  padding: 0 0 50px;
+  padding: 0 25px 50px;
 }
 
-/* line 424, ../sass/screen.scss */
+/* line 426, ../sass/screen.scss */
 .h3-stats {
   line-height: 34px;
   text-align: center;
   padding: 0 0 50px;
 }
 
-/* line 430, ../sass/screen.scss */
+/* line 432, ../sass/screen.scss */
 .emphasis {
   color: #e9552f;
 }
 
-/* line 434, ../sass/screen.scss */
+/* line 436, ../sass/screen.scss */
 .triangle {
   width: 0;
   height: 0;
@@ -414,7 +416,7 @@ p {
   position: relative;
 }
 
-/* line 444, ../sass/screen.scss */
+/* line 446, ../sass/screen.scss */
 header {
   display: flex;
   flex-direction: column;
@@ -423,14 +425,14 @@ header {
   position: relative;
 }
 
-/* line 448, ../sass/screen.scss */
+/* line 450, ../sass/screen.scss */
 #hero {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-/* line 454, ../sass/screen.scss */
+/* line 456, ../sass/screen.scss */
 aside {
   position: absolute;
   display: flex;
@@ -443,7 +445,7 @@ aside {
   width: min-content;
 }
 
-/* line 461, ../sass/screen.scss */
+/* line 463, ../sass/screen.scss */
 main {
   height: 100%;
   z-index: 1;
@@ -451,7 +453,7 @@ main {
   position: relative;
 }
 
-/* line 467, ../sass/screen.scss */
+/* line 469, ../sass/screen.scss */
 .carousel {
   background: #F8F8F8;
   height: auto;
@@ -460,7 +462,7 @@ main {
   box-shadow: none;
 }
 
-/* line 473, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 .carousel-container {
   display: flex;
   flex-direction: column;
@@ -468,26 +470,26 @@ main {
   padding: 75px 0 50px;
 }
 
-/* line 480, ../sass/screen.scss */
+/* line 482, ../sass/screen.scss */
 .text-wrapper {
   padding: 0 25px;
 }
 
-/* line 484, ../sass/screen.scss */
+/* line 486, ../sass/screen.scss */
 .content-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* line 490, ../sass/screen.scss */
+/* line 492, ../sass/screen.scss */
 #container, .new-carousel {
   height: 100%;
   margin: 0;
   width: 100%;
 }
 
-/* line 496, ../sass/screen.scss */
+/* line 498, ../sass/screen.scss */
 .new-image-only .image-slide {
   position: absolute;
   top: 0;
@@ -496,20 +498,20 @@ main {
   height: 100%;
 }
 
-/* line 504, ../sass/screen.scss */
+/* line 506, ../sass/screen.scss */
 .new-video, body .new-image-only {
   position: relative;
   z-index: 1;
   opacity: 1;
 }
 
-/* line 510, ../sass/screen.scss */
+/* line 512, ../sass/screen.scss */
 .new-image, body .new-video-hide {
   position: absolute;
   opacity: 0;
 }
 
-/* line 515, ../sass/screen.scss */
+/* line 517, ../sass/screen.scss */
 .video-carousel, .image-carousel {
   width: 100%;
   height: 100%;
@@ -517,24 +519,24 @@ main {
 }
 
 /* transition so that animation is smooth */
-/* line 522, ../sass/screen.scss */
+/* line 524, ../sass/screen.scss */
 .new-video, .new-image {
   transition: all 2s;
 }
 
-/* line 526, ../sass/screen.scss */
+/* line 528, ../sass/screen.scss */
 .new-image-only {
   padding-bottom: 50%;
   height: 0;
 }
 
-/* line 531, ../sass/screen.scss */
+/* line 533, ../sass/screen.scss */
 .container {
   display: flex;
   flex-direction: column;
 }
 
-/* line 536, ../sass/screen.scss */
+/* line 538, ../sass/screen.scss */
 .container video, .carousel-image {
   position: absolute;
   top: 0;
@@ -543,24 +545,24 @@ main {
   height: 100%;
 }
 
-/* line 544, ../sass/screen.scss */
+/* line 546, ../sass/screen.scss */
 .carousel-image {
   transform: scale(1.75);
   padding: 0 !important;
 }
 
-/* line 549, ../sass/screen.scss */
+/* line 551, ../sass/screen.scss */
 .image-carousel .container {
   height: 100%;
   width: 100%;
 }
 
-/* line 554, ../sass/screen.scss */
+/* line 556, ../sass/screen.scss */
 .image-container {
   overflow: hidden;
 }
 
-/* line 558, ../sass/screen.scss */
+/* line 560, ../sass/screen.scss */
 .video-react,
 .image-container {
   padding-top: 0 !important;
@@ -571,12 +573,12 @@ main {
 }
 
 /* react styling override */
-/* line 567, ../sass/screen.scss */
+/* line 569, ../sass/screen.scss */
 .video-react-big-play-button, .video-react-control-bar {
   display: none;
 }
 
-/* line 571, ../sass/screen.scss */
+/* line 573, ../sass/screen.scss */
 pre {
   position: fixed;
   top: 0;
@@ -585,23 +587,23 @@ pre {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 579, ../sass/screen.scss */
+/* line 581, ../sass/screen.scss */
 button {
   background: transparent;
 }
 
-/* line 583, ../sass/screen.scss */
+/* line 585, ../sass/screen.scss */
 button:focus {
   outline: none;
   /* override for browser style */
 }
 
-/* line 587, ../sass/screen.scss */
+/* line 589, ../sass/screen.scss */
 .slide-list-nav-container {
   padding: 40px 60px;
 }
 
-/* line 591, ../sass/screen.scss */
+/* line 593, ../sass/screen.scss */
 .slide-list-nav {
   display: flex;
   justify-content: space-evenly;
@@ -623,17 +625,17 @@ button:focus {
           background: linear-gradient(to left, #F8F8F8, transparent 90%);
       }*/
 }
-/* line 600, ../sass/screen.scss */
+/* line 602, ../sass/screen.scss */
 .slide-list-nav::-webkit-scrollbar {
   display: none;
 }
 
-/* line 613, ../sass/screen.scss */
+/* line 615, ../sass/screen.scss */
 .slide-list-nav-wrapper {
   width: 100%;
 }
 
-/* line 617, ../sass/screen.scss */
+/* line 619, ../sass/screen.scss */
 .slide-list-nav-item {
   display: inline-flex;
   align-items: center;
@@ -648,13 +650,18 @@ button:focus {
   flex-direction: row;
   height: 60px;
   pointer-events: all;
-  border: 1px solid #000;
+  border: 1px solid #D0D2D3;
   border-radius: 3px;
   margin: 0 5px;
-  padding: 0 25px 0 10px;
+  padding: 0 25px 0 30px;
 }
 
-/* line 628, ../sass/screen.scss */
+/* line 631, ../sass/screen.scss */
+.slide-list-nav-item.mobile-selected {
+  border: 1px solid #222228;
+}
+
+/* line 635, ../sass/screen.scss */
 .slide-list-nav-item::before {
   content: '';
   display: inline-block;
@@ -662,67 +669,68 @@ button:focus {
   width: 8px;
   height: 8px;
   position: relative;
-  top: -5px;
+  top: 0;
+  left: -5px;
   background: #D0D2D3;
 }
 
-/* line 639, ../sass/screen.scss */
+/* line 647, ../sass/screen.scss */
 .slide-list-nav-item.selected {
   color: #222228;
 }
 
-/* line 643, ../sass/screen.scss */
+/* line 651, ../sass/screen.scss */
 .slide-list-nav-item.completed {
   color: #000;
 }
 
-/* line 647, ../sass/screen.scss */
+/* line 655, ../sass/screen.scss */
 .slide-list-nav-item.selected::before {
   background: #222228;
 }
 
-/* line 651, ../sass/screen.scss */
+/* line 659, ../sass/screen.scss */
 .slide-list-nav-item.completed::before {
   background: #000;
 }
 
-/* line 655, ../sass/screen.scss */
+/* line 663, ../sass/screen.scss */
 .slide-list-nav-item.completed.use-case::before {
   background: #40BEEA;
 }
 
-/* line 659, ../sass/screen.scss */
+/* line 667, ../sass/screen.scss */
 .slide-list-nav-item.completed.technologies::before {
   background: #00B08C;
 }
 
-/* line 663, ../sass/screen.scss */
+/* line 671, ../sass/screen.scss */
 .slide-list-nav-item.completed.deployment::before {
   background: #E9CF51;
 }
 
-/* line 667, ../sass/screen.scss */
+/* line 675, ../sass/screen.scss */
 .slide-list-nav-item.completed.customization::before {
   background: #FB9D5E;
 }
 
-/* line 671, ../sass/screen.scss */
+/* line 679, ../sass/screen.scss */
 .slide-list-nav-item.completed.result::before {
   background: #EA5323;
 }
 
-/* line 677, ../sass/screen.scss */
+/* line 685, ../sass/screen.scss */
 .slide video {
   height: auto;
   width: 100%;
 }
 
-/* line 682, ../sass/screen.scss */
+/* line 690, ../sass/screen.scss */
 .hidden {
   display: none;
 }
 
-/* line 686, ../sass/screen.scss */
+/* line 694, ../sass/screen.scss */
 .customers {
   display: flex;
   flex-direction: column;
@@ -733,7 +741,7 @@ button:focus {
   padding: 50px 50px 25px 50px;
 }
 
-/* line 693, ../sass/screen.scss */
+/* line 701, ../sass/screen.scss */
 .cloud-container {
   padding: 25px 0 0 0;
   display: flex;
@@ -745,14 +753,14 @@ button:focus {
   width: 100%;
 }
 
-/* line 698, ../sass/screen.scss */
+/* line 706, ../sass/screen.scss */
 .cloud-image {
   height: auto;
   width: 25%;
   padding: 0 12.5%;
 }
 
-/* line 704, ../sass/screen.scss */
+/* line 712, ../sass/screen.scss */
 .stats {
   width: 100%;
   display: flex;
@@ -761,14 +769,14 @@ button:focus {
   flex-direction: column;
 }
 
-/* line 709, ../sass/screen.scss */
+/* line 717, ../sass/screen.scss */
 .stats-column {
   box-sizing: border-box;
   width: auto;
   padding: 0 10px;
 }
 
-/* line 715, ../sass/screen.scss */
+/* line 723, ../sass/screen.scss */
 .availability {
   background-size: contain;
   background-repeat: no-repeat;
@@ -776,7 +784,7 @@ button:focus {
   background-image: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
 }
 
-/* line 721, ../sass/screen.scss */
+/* line 729, ../sass/screen.scss */
 .risk-based {
   background-size: contain;
   background-repeat: no-repeat;
@@ -784,7 +792,7 @@ button:focus {
   background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), url(https://meinsta.github.io/auth0-hpg/Hero/BG_touch.svg);
 }
 
-/* line 727, ../sass/screen.scss */
+/* line 735, ../sass/screen.scss */
 .stats-column-icon {
   display: inline-flex;
   align-items: center;
@@ -793,7 +801,7 @@ button:focus {
   height: 50px;
 }
 
-/* line 735, ../sass/screen.scss */
+/* line 743, ../sass/screen.scss */
 .stats-table {
   display: flex;
   flex-direction: row;
@@ -803,7 +811,7 @@ button:focus {
   text-align: center;
 }
 
-/* line 742, ../sass/screen.scss */
+/* line 750, ../sass/screen.scss */
 .stats-table-column {
   display: flex;
   flex-direction: column;
@@ -813,12 +821,12 @@ button:focus {
   padding: 0 10px 25px;
 }
 
-/* line 749, ../sass/screen.scss */
+/* line 757, ../sass/screen.scss */
 .stats-table-column:first-of-type {
   border-right: 1px solid #E2E2E2;
 }
 
-/* line 753, ../sass/screen.scss */
+/* line 761, ../sass/screen.scss */
 .stats-list {
   font-family: 'FaktProUI-Medium';
   line-height: 28px;
@@ -826,12 +834,12 @@ button:focus {
   color: rgba(51, 51, 51, 0.86);
 }
 
-/* line 760, ../sass/screen.scss */
+/* line 768, ../sass/screen.scss */
 .stats-list.small {
   line-height: 25px;
 }
 
-/* line 764, ../sass/screen.scss */
+/* line 772, ../sass/screen.scss */
 .stats-list-detail {
   font-family: 'FaktProUI-Medium';
   line-height: 25px;
@@ -841,14 +849,14 @@ button:focus {
   opacity: 0.5;
 }
 
-/* line 773, ../sass/screen.scss */
+/* line 781, ../sass/screen.scss */
 .stats-list-cluster {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-/* line 779, ../sass/screen.scss */
+/* line 787, ../sass/screen.scss */
 .stats-list-cluster-icon-container {
   display: flex;
   flex-direction: row;
@@ -859,7 +867,7 @@ button:focus {
   margin: 0 0 0 5px;
 }
 
-/* line 786, ../sass/screen.scss */
+/* line 794, ../sass/screen.scss */
 .stats-list-cluster-icon {
   height: 12px;
   width: 12px;
