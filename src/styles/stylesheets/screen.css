@@ -88,79 +88,79 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* Sass Mixins */
 /* Large Screens - Larger Desktop */
 @media screen and (min-width: 2001px) {
-  /* line 171, ../sass/screen.scss */
+  /* line 174, ../sass/screen.scss */
   body .cloud-container {
     width: 50%;
   }
 }
 /* Medium Screens - Regular Desktop */
 @media screen and (min-width: 1601px) and (max-width: 2000px) {
-  /* line 180, ../sass/screen.scss */
+  /* line 183, ../sass/screen.scss */
   body .cloud-container {
     width: 60%;
   }
 }
 /* Small Screens - Small Desktop, Landscape Large Tablets */
 @media screen and (min-width: 1200px) and (max-width: 1600px) {
-  /* line 189, ../sass/screen.scss */
+  /* line 192, ../sass/screen.scss */
   body .customers {
     top: -125px !important;
   }
-  /* line 192, ../sass/screen.scss */
+  /* line 195, ../sass/screen.scss */
   body .cloud-container {
     width: 75%;
   }
 }
 /* Large Devices (tablet and smartphone), Desktop */
 @media screen and (min-width: 900px) {
-  /* line 201, ../sass/screen.scss */
+  /* line 204, ../sass/screen.scss */
   body .h3-stats {
     padding: 0;
   }
-  /* line 204, ../sass/screen.scss */
+  /* line 207, ../sass/screen.scss */
   body h4 span {
     display: block;
   }
-  /* line 207, ../sass/screen.scss */
+  /* line 210, ../sass/screen.scss */
   body .stats {
     flex-direction: row;
     border-top: 1px solid #E2E2E2;
   }
-  /* line 211, ../sass/screen.scss */
+  /* line 214, ../sass/screen.scss */
   body .stats-column {
     width: 50%;
     padding: 50px;
   }
-  /* line 215, ../sass/screen.scss */
+  /* line 218, ../sass/screen.scss */
   body .stats-column:first-of-type {
     /* risk-based */
     border-right: 1px solid #E2E2E2;
   }
-  /* line 218, ../sass/screen.scss */
+  /* line 221, ../sass/screen.scss */
   body .stats-column-icon {
     display: none;
   }
-  /* line 221, ../sass/screen.scss */
+  /* line 224, ../sass/screen.scss */
   body .stats-table {
     border: none;
   }
-  /* line 224, ../sass/screen.scss */
+  /* line 227, ../sass/screen.scss */
   body .stats-table-column:first-of-type {
     border-right: none;
   }
-  /* line 227, ../sass/screen.scss */
+  /* line 230, ../sass/screen.scss */
   body .stats-table-column {
     align-items: flex-start;
     text-align: left;
     padding: 0;
   }
-  /* line 232, ../sass/screen.scss */
+  /* line 235, ../sass/screen.scss */
   body .stats-list-cluster-icon-container {
     width: 75px;
     height: 50px;
     margin: 0;
   }
-  /* line 237, ../sass/screen.scss */
+  /* line 240, ../sass/screen.scss */
   body .stats-list-cluster-icon {
     height: 17px;
     width: 17px;
@@ -169,84 +169,84 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* Small Devices (tablet and smartphone) */
 @media screen and (min-width: 600px) {
-  /* line 247, ../sass/screen.scss */
+  /* line 250, ../sass/screen.scss */
   body {
     /* need to verify below */
     /* end of made up values */
   }
-  /* line 248, ../sass/screen.scss */
+  /* line 251, ../sass/screen.scss */
   body h1 {
     font-size: 72px;
     line-height: 80px;
   }
-  /* line 252, ../sass/screen.scss */
+  /* line 255, ../sass/screen.scss */
   body h2 {
     font-size: 36px;
     line-height: 60px;
   }
-  /* line 256, ../sass/screen.scss */
+  /* line 259, ../sass/screen.scss */
   body h3 {
     font-size: 20px;
     line-height: 32px;
   }
-  /* line 260, ../sass/screen.scss */
+  /* line 263, ../sass/screen.scss */
   body h4 {
     font-size: 24px;
     line-height: 40px;
   }
-  /* line 265, ../sass/screen.scss */
+  /* line 268, ../sass/screen.scss */
   body h5 {
     line-height: 72px;
     font-size: 72px;
   }
-  /* line 269, ../sass/screen.scss */
+  /* line 272, ../sass/screen.scss */
   body p {
     font-size: 16px;
     line-height: 28px;
   }
-  /* line 273, ../sass/screen.scss */
+  /* line 276, ../sass/screen.scss */
   body header {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: absolute;
   }
-  /* line 279, ../sass/screen.scss */
+  /* line 282, ../sass/screen.scss */
   body aside {
     top: 0;
     height: 75%;
     width: 100%;
   }
-  /* line 284, ../sass/screen.scss */
+  /* line 287, ../sass/screen.scss */
   body .h2-customers {
     line-height: 54px;
   }
-  /* line 288, ../sass/screen.scss */
+  /* line 291, ../sass/screen.scss */
   body .h2-stats {
     line-height: 24px;
     text-align: left;
   }
-  /* line 293, ../sass/screen.scss */
+  /* line 296, ../sass/screen.scss */
   body .h3-link {
     justify-content: flex-start;
   }
-  /* line 296, ../sass/screen.scss */
+  /* line 299, ../sass/screen.scss */
   body .h3-stats {
     text-align: left;
   }
-  /* line 299, ../sass/screen.scss */
+  /* line 302, ../sass/screen.scss */
   body main {
     position: absolute;
     top: 75%;
     width: 100%;
   }
-  /* line 304, ../sass/screen.scss */
+  /* line 307, ../sass/screen.scss */
   body .carousel {
     width: 75%;
     box-shadow: 0px 20px 70px rgba(0, 0, 0, 0.2);
     border-radius: 3px;
   }
-  /* line 309, ../sass/screen.scss */
+  /* line 312, ../sass/screen.scss */
   body .slide-list-nav {
     overflow: visible;
     white-space: normal;
@@ -256,7 +256,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
                     background: none;
                 }*/
   }
-  /* line 318, ../sass/screen.scss */
+  /* line 321, ../sass/screen.scss */
   body .slide-list-nav-wrapper {
     display: flex;
     flex-direction: row;
@@ -266,18 +266,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     width: auto;
     margin: 0 auto;
   }
-  /* line 327, ../sass/screen.scss */
+  /* line 330, ../sass/screen.scss */
   body .slide-list-nav-item {
     flex-direction: column;
     border: none;
     border-radius: 0;
     margin: 0;
   }
-  /* line 333, ../sass/screen.scss */
+  /* line 336, ../sass/screen.scss */
   body .dot {
     margin: 5px 10px;
   }
-  /* line 336, ../sass/screen.scss */
+  /* line 339, ../sass/screen.scss */
   body .customers {
     display: flex;
     flex-direction: column;
@@ -294,18 +294,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     z-index: -1;
     /* end styles for nuanced map bg overlap */
   }
-  /* line 348, ../sass/screen.scss */
+  /* line 351, ../sass/screen.scss */
   body .cloud-image {
     width: 15%;
     padding: 0 2.5%;
   }
-  /* line 352, ../sass/screen.scss */
+  /* line 355, ../sass/screen.scss */
   body .availability, body .risk-based {
     background-image: none;
   }
 }
 /* Mobile-First (smartphone, small tablet) Styles */
-/* line 359, ../sass/screen.scss */
+/* line 362, ../sass/screen.scss */
 body {
   margin: 0;
   padding: 0;
@@ -314,7 +314,7 @@ body {
   font-family: 'FaktProUI-Blond';
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 370, ../sass/screen.scss */
 h1 {
   text-align: center;
   color: #fff;
@@ -322,7 +322,7 @@ h1 {
   line-height: 48px;
 }
 
-/* line 373, ../sass/screen.scss */
+/* line 376, ../sass/screen.scss */
 h2 {
   color: #000;
   text-align: center;
@@ -330,7 +330,7 @@ h2 {
   line-height: 40px;
 }
 
-/* line 379, ../sass/screen.scss */
+/* line 382, ../sass/screen.scss */
 h3 {
   font-family: 'FaktPro-Normal';
   color: #5C666F;
@@ -339,7 +339,7 @@ h3 {
   line-height: 32px;
 }
 
-/* line 385, ../sass/screen.scss */
+/* line 388, ../sass/screen.scss */
 h4 {
   font-family: 'FaktPro-Blond';
   text-align: center;
@@ -348,7 +348,7 @@ h4 {
   line-height: 32px;
 }
 
-/* line 391, ../sass/screen.scss */
+/* line 394, ../sass/screen.scss */
 h5 {
   font-family: 'FaktPro-Blond';
   color: #222228;
@@ -357,24 +357,24 @@ h5 {
   font-size: 36px;
 }
 
-/* line 398, ../sass/screen.scss */
+/* line 401, ../sass/screen.scss */
 p {
   font-size: 12px;
   line-height: 20px;
 }
 
-/* line 403, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 .h2-customers {
   line-height: 40px;
 }
 
-/* line 407, ../sass/screen.scss */
+/* line 410, ../sass/screen.scss */
 .h2-stats {
   line-height: 48px;
   padding: 25px 0;
 }
 
-/* line 412, ../sass/screen.scss */
+/* line 415, ../sass/screen.scss */
 .h3-link {
   line-height: 40px;
   color: #222228;
@@ -386,49 +386,24 @@ p {
   justify-content: center;
 }
 
-/* line 417, ../sass/screen.scss */
+/* line 420, ../sass/screen.scss */
 .h3-carousel {
   padding: 0 0 50px;
 }
 
-/* line 421, ../sass/screen.scss */
+/* line 424, ../sass/screen.scss */
 .h3-stats {
   line-height: 34px;
   text-align: center;
   padding: 0 0 50px;
 }
 
-/* line 427, ../sass/screen.scss */
+/* line 430, ../sass/screen.scss */
 .emphasis {
   color: #e9552f;
 }
 
-/* line 431, ../sass/screen.scss */
-.dot.use-case {
-  background: #40BEEA;
-}
-
-/* line 435, ../sass/screen.scss */
-.dot.technologies {
-  background: #00B08C;
-}
-
-/* line 439, ../sass/screen.scss */
-.dot.deployment {
-  background: #E9CF51;
-}
-
-/* line 443, ../sass/screen.scss */
-.dot.customization {
-  background: #FB9D5E;
-}
-
-/* line 447, ../sass/screen.scss */
-.dot.result {
-  background: #EA5323;
-}
-
-/* line 451, ../sass/screen.scss */
+/* line 434, ../sass/screen.scss */
 .triangle {
   width: 0;
   height: 0;
@@ -439,7 +414,7 @@ p {
   position: relative;
 }
 
-/* line 461, ../sass/screen.scss */
+/* line 444, ../sass/screen.scss */
 header {
   display: flex;
   flex-direction: column;
@@ -448,14 +423,14 @@ header {
   position: relative;
 }
 
-/* line 465, ../sass/screen.scss */
+/* line 448, ../sass/screen.scss */
 #hero {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-/* line 471, ../sass/screen.scss */
+/* line 454, ../sass/screen.scss */
 aside {
   position: absolute;
   display: flex;
@@ -468,7 +443,7 @@ aside {
   width: min-content;
 }
 
-/* line 478, ../sass/screen.scss */
+/* line 461, ../sass/screen.scss */
 main {
   height: 100%;
   z-index: 1;
@@ -476,7 +451,7 @@ main {
   position: relative;
 }
 
-/* line 484, ../sass/screen.scss */
+/* line 467, ../sass/screen.scss */
 .carousel {
   background: #F8F8F8;
   height: auto;
@@ -485,34 +460,34 @@ main {
   box-shadow: none;
 }
 
-/* line 490, ../sass/screen.scss */
+/* line 473, ../sass/screen.scss */
 .carousel-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 75px 0 75px;
+  padding: 75px 0 50px;
 }
 
-/* line 497, ../sass/screen.scss */
+/* line 480, ../sass/screen.scss */
 .text-wrapper {
   padding: 0 25px;
 }
 
-/* line 501, ../sass/screen.scss */
+/* line 484, ../sass/screen.scss */
 .content-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* line 507, ../sass/screen.scss */
+/* line 490, ../sass/screen.scss */
 #container, .new-carousel {
   height: 100%;
   margin: 0;
   width: 100%;
 }
 
-/* line 513, ../sass/screen.scss */
+/* line 496, ../sass/screen.scss */
 .new-image-only .image-slide {
   position: absolute;
   top: 0;
@@ -521,20 +496,20 @@ main {
   height: 100%;
 }
 
-/* line 521, ../sass/screen.scss */
+/* line 504, ../sass/screen.scss */
 .new-video, body .new-image-only {
   position: relative;
   z-index: 1;
   opacity: 1;
 }
 
-/* line 527, ../sass/screen.scss */
+/* line 510, ../sass/screen.scss */
 .new-image, body .new-video-hide {
   position: absolute;
   opacity: 0;
 }
 
-/* line 532, ../sass/screen.scss */
+/* line 515, ../sass/screen.scss */
 .video-carousel, .image-carousel {
   width: 100%;
   height: 100%;
@@ -542,24 +517,24 @@ main {
 }
 
 /* transition so that animation is smooth */
-/* line 539, ../sass/screen.scss */
+/* line 522, ../sass/screen.scss */
 .new-video, .new-image {
   transition: all 2s;
 }
 
-/* line 543, ../sass/screen.scss */
+/* line 526, ../sass/screen.scss */
 .new-image-only {
   padding-bottom: 50%;
   height: 0;
 }
 
-/* line 548, ../sass/screen.scss */
+/* line 531, ../sass/screen.scss */
 .container {
   display: flex;
   flex-direction: column;
 }
 
-/* line 553, ../sass/screen.scss */
+/* line 536, ../sass/screen.scss */
 .container video, .carousel-image {
   position: absolute;
   top: 0;
@@ -568,24 +543,24 @@ main {
   height: 100%;
 }
 
-/* line 561, ../sass/screen.scss */
+/* line 544, ../sass/screen.scss */
 .carousel-image {
   transform: scale(1.75);
   padding: 0 !important;
 }
 
-/* line 566, ../sass/screen.scss */
+/* line 549, ../sass/screen.scss */
 .image-carousel .container {
   height: 100%;
   width: 100%;
 }
 
-/* line 571, ../sass/screen.scss */
+/* line 554, ../sass/screen.scss */
 .image-container {
   overflow: hidden;
 }
 
-/* line 575, ../sass/screen.scss */
+/* line 558, ../sass/screen.scss */
 .video-react,
 .image-container {
   padding-top: 0 !important;
@@ -596,12 +571,12 @@ main {
 }
 
 /* react styling override */
-/* line 584, ../sass/screen.scss */
+/* line 567, ../sass/screen.scss */
 .video-react-big-play-button, .video-react-control-bar {
   display: none;
 }
 
-/* line 588, ../sass/screen.scss */
+/* line 571, ../sass/screen.scss */
 pre {
   position: fixed;
   top: 0;
@@ -610,23 +585,23 @@ pre {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 596, ../sass/screen.scss */
+/* line 579, ../sass/screen.scss */
 button {
   background: transparent;
 }
 
-/* line 600, ../sass/screen.scss */
+/* line 583, ../sass/screen.scss */
 button:focus {
   outline: none;
   /* override for browser style */
 }
 
-/* line 604, ../sass/screen.scss */
+/* line 587, ../sass/screen.scss */
 .slide-list-nav-container {
   padding: 40px 60px;
 }
 
-/* line 608, ../sass/screen.scss */
+/* line 591, ../sass/screen.scss */
 .slide-list-nav {
   display: flex;
   justify-content: space-evenly;
@@ -648,17 +623,17 @@ button:focus {
           background: linear-gradient(to left, #F8F8F8, transparent 90%);
       }*/
 }
-/* line 617, ../sass/screen.scss */
+/* line 600, ../sass/screen.scss */
 .slide-list-nav::-webkit-scrollbar {
   display: none;
 }
 
-/* line 630, ../sass/screen.scss */
+/* line 613, ../sass/screen.scss */
 .slide-list-nav-wrapper {
   width: 100%;
 }
 
-/* line 634, ../sass/screen.scss */
+/* line 617, ../sass/screen.scss */
 .slide-list-nav-item {
   display: inline-flex;
   align-items: center;
@@ -676,45 +651,78 @@ button:focus {
   border: 1px solid #000;
   border-radius: 3px;
   margin: 0 5px;
-  padding: 0 15px 0 10px;
+  padding: 0 25px 0 10px;
 }
 
-/* line 645, ../sass/screen.scss */
+/* line 628, ../sass/screen.scss */
+.slide-list-nav-item::before {
+  content: '';
+  display: inline-block;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  position: relative;
+  top: -5px;
+  background: #D0D2D3;
+}
+
+/* line 639, ../sass/screen.scss */
 .slide-list-nav-item.selected {
   color: #222228;
 }
 
-/* line 649, ../sass/screen.scss */
+/* line 643, ../sass/screen.scss */
 .slide-list-nav-item.completed {
   color: #000;
 }
 
-/* line 653, ../sass/screen.scss */
-.dot {
-  border-radius: 50%;
-  width: 8px;
-  height: 8px;
-  margin: 0 10px;
-  background: #D0D2D3;
-}
-
-/* line 661, ../sass/screen.scss */
-.slide-list-nav-item.selected .dot {
+/* line 647, ../sass/screen.scss */
+.slide-list-nav-item.selected::before {
   background: #222228;
 }
 
-/* line 665, ../sass/screen.scss */
+/* line 651, ../sass/screen.scss */
+.slide-list-nav-item.completed::before {
+  background: #000;
+}
+
+/* line 655, ../sass/screen.scss */
+.slide-list-nav-item.completed.use-case::before {
+  background: #40BEEA;
+}
+
+/* line 659, ../sass/screen.scss */
+.slide-list-nav-item.completed.technologies::before {
+  background: #00B08C;
+}
+
+/* line 663, ../sass/screen.scss */
+.slide-list-nav-item.completed.deployment::before {
+  background: #E9CF51;
+}
+
+/* line 667, ../sass/screen.scss */
+.slide-list-nav-item.completed.customization::before {
+  background: #FB9D5E;
+}
+
+/* line 671, ../sass/screen.scss */
+.slide-list-nav-item.completed.result::before {
+  background: #EA5323;
+}
+
+/* line 677, ../sass/screen.scss */
 .slide video {
   height: auto;
   width: 100%;
 }
 
-/* line 670, ../sass/screen.scss */
+/* line 682, ../sass/screen.scss */
 .hidden {
   display: none;
 }
 
-/* line 674, ../sass/screen.scss */
+/* line 686, ../sass/screen.scss */
 .customers {
   display: flex;
   flex-direction: column;
@@ -725,7 +733,7 @@ button:focus {
   padding: 50px 50px 25px 50px;
 }
 
-/* line 681, ../sass/screen.scss */
+/* line 693, ../sass/screen.scss */
 .cloud-container {
   padding: 25px 0 0 0;
   display: flex;
@@ -737,14 +745,14 @@ button:focus {
   width: 100%;
 }
 
-/* line 686, ../sass/screen.scss */
+/* line 698, ../sass/screen.scss */
 .cloud-image {
   height: auto;
   width: 25%;
   padding: 0 12.5%;
 }
 
-/* line 692, ../sass/screen.scss */
+/* line 704, ../sass/screen.scss */
 .stats {
   width: 100%;
   display: flex;
@@ -753,14 +761,14 @@ button:focus {
   flex-direction: column;
 }
 
-/* line 697, ../sass/screen.scss */
+/* line 709, ../sass/screen.scss */
 .stats-column {
   box-sizing: border-box;
   width: auto;
   padding: 0 10px;
 }
 
-/* line 703, ../sass/screen.scss */
+/* line 715, ../sass/screen.scss */
 .availability {
   background-size: contain;
   background-repeat: no-repeat;
@@ -768,7 +776,7 @@ button:focus {
   background-image: url(https://meinsta.github.io/auth0-hpg/Hero/BG_map.svg);
 }
 
-/* line 709, ../sass/screen.scss */
+/* line 721, ../sass/screen.scss */
 .risk-based {
   background-size: contain;
   background-repeat: no-repeat;
@@ -776,7 +784,7 @@ button:focus {
   background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), url(https://meinsta.github.io/auth0-hpg/Hero/BG_touch.svg);
 }
 
-/* line 715, ../sass/screen.scss */
+/* line 727, ../sass/screen.scss */
 .stats-column-icon {
   display: inline-flex;
   align-items: center;
@@ -785,7 +793,7 @@ button:focus {
   height: 50px;
 }
 
-/* line 723, ../sass/screen.scss */
+/* line 735, ../sass/screen.scss */
 .stats-table {
   display: flex;
   flex-direction: row;
@@ -795,7 +803,7 @@ button:focus {
   text-align: center;
 }
 
-/* line 730, ../sass/screen.scss */
+/* line 742, ../sass/screen.scss */
 .stats-table-column {
   display: flex;
   flex-direction: column;
@@ -805,12 +813,12 @@ button:focus {
   padding: 0 10px 25px;
 }
 
-/* line 737, ../sass/screen.scss */
+/* line 749, ../sass/screen.scss */
 .stats-table-column:first-of-type {
   border-right: 1px solid #E2E2E2;
 }
 
-/* line 741, ../sass/screen.scss */
+/* line 753, ../sass/screen.scss */
 .stats-list {
   font-family: 'FaktProUI-Medium';
   line-height: 28px;
@@ -818,12 +826,12 @@ button:focus {
   color: rgba(51, 51, 51, 0.86);
 }
 
-/* line 748, ../sass/screen.scss */
+/* line 760, ../sass/screen.scss */
 .stats-list.small {
   line-height: 25px;
 }
 
-/* line 752, ../sass/screen.scss */
+/* line 764, ../sass/screen.scss */
 .stats-list-detail {
   font-family: 'FaktProUI-Medium';
   line-height: 25px;
@@ -833,14 +841,14 @@ button:focus {
   opacity: 0.5;
 }
 
-/* line 761, ../sass/screen.scss */
+/* line 773, ../sass/screen.scss */
 .stats-list-cluster {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-/* line 767, ../sass/screen.scss */
+/* line 779, ../sass/screen.scss */
 .stats-list-cluster-icon-container {
   display: flex;
   flex-direction: row;
@@ -851,7 +859,7 @@ button:focus {
   margin: 0 0 0 5px;
 }
 
-/* line 774, ../sass/screen.scss */
+/* line 786, ../sass/screen.scss */
 .stats-list-cluster-icon {
   height: 12px;
   width: 12px;

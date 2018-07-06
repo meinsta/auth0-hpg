@@ -44,7 +44,6 @@ export default class Carousel extends React.Component {
 			var that = this;
 			return new Promise(function (resolve) {
 			    document.querySelector('.new-carousel video').addEventListener('ended', function endedListener() {
-			        
 			    	document.querySelector('.new-carousel video').removeEventListener('ended', endedListener);
 	            	that.setState({
 						currentIndex: lastIndex,
@@ -61,6 +60,17 @@ export default class Carousel extends React.Component {
 	}
 
 	changeSource(event) {
+		var buttons = document.getElementsByTagName("Button");
+		for(var i = 0; i < buttons.length; i++)
+		{
+			if(buttons[i].classList.contains('selected') && event.target.id !== buttons[i].id)
+			{
+				buttons[i].classList.remove('selected');
+			}
+			else if(event.target.id === buttons[i].id) {
+				event.target.classList.add('selected');
+			}
+		}
 		this.setState({
 			currentIndex: event.target.id,
 			videoVisibility: false
@@ -69,6 +79,18 @@ export default class Carousel extends React.Component {
 	}
 
 	changeImage(event) {
+
+		var buttons = document.getElementsByTagName("Button");
+		for(var i = 0; i < buttons.length; i++)
+		{
+			if(buttons[i].classList.contains('selected') && event.target.id !== buttons[i].id)
+			{
+				buttons[i].classList.remove('selected');
+			}
+			else if(event.target.id === buttons[i].id) {
+				event.target.classList.add('selected');
+			}
+		}
 		this.setState({
 			currentIndex: event.target.id
 		});

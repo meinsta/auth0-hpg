@@ -29,6 +29,9 @@
 /* Sass Variables */
 $border: 1px solid #E2E2E2;
 $height: 60px;
+$inactive: #D0D2D3;
+$selected: #222228;
+$completed: #000;
 
 /* Sass Mixins */
 @mixin --h1 {
@@ -112,7 +115,7 @@ $height: 60px;
     font-family: 'FaktProUI-SemiBold';
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #D0D2D3;
+    color: $inactive;
     transition: all 0.25s;
     cursor: pointer;
 }
@@ -428,26 +431,6 @@ p {
 	color: rgb(233, 85, 47);
 }
 
-.dot.use-case {
-    background: #40BEEA;
-}
-
-.dot.technologies {
-    background: #00B08C;
-}
-
-.dot.deployment {
-    background: #E9CF51;
-}
-
-.dot.customization {
-    background: #FB9D5E;
-}
-
-.dot.result {
-    background: #EA5323;
-}
-
 .triangle {
 	width: 0;
     height: 0;
@@ -491,7 +474,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 75px 0 75px;
+    padding: 75px 0 50px;
 }
 
 .text-wrapper {
@@ -639,28 +622,57 @@ button:focus {
     border: 1px solid #000;
     border-radius: 3px;
     margin: 0 5px;
-    padding: 0 15px 0 10px;
+    padding: 0 25px 0 10px;
 }
 
-.slide-list-nav-item.selected {
-	color: #222228;
-}
-
-.slide-list-nav-item.completed {
-    color: #000;   
-}
-
-.dot {
+.slide-list-nav-item::before {
+    content: '';
+    display: inline-block;
     border-radius: 50%;
     width: 8px;
     height: 8px;
-    margin: 0 10px;
-    background: #D0D2D3;
+    position: relative;
+    top: -5px;
+    background: $inactive;
 }
 
-.slide-list-nav-item.selected .dot {
-	background: #222228;
+.slide-list-nav-item.selected {
+    color: $selected;
 }
+
+.slide-list-nav-item.completed {
+    color: $completed;   
+}
+
+.slide-list-nav-item.selected::before {
+    background: $selected;
+}
+
+.slide-list-nav-item.completed::before {
+    background: $completed;   
+}
+
+.slide-list-nav-item.completed.use-case::before {
+    background: #40BEEA;
+}
+
+.slide-list-nav-item.completed.technologies::before {
+    background: #00B08C;
+}
+
+.slide-list-nav-item.completed.deployment::before {
+    background: #E9CF51;
+}
+
+.slide-list-nav-item.completed.customization::before {
+    background: #FB9D5E;
+}
+
+.slide-list-nav-item.completed.result::before {
+    background: #EA5323;
+}
+
+
 
 .slide video {
 	height: auto;
