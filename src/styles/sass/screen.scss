@@ -624,7 +624,7 @@ button:focus {
     border: 1px solid $inactive;
     border-radius: 3px;
     margin: 0 5px;
-    padding: 0 25px 0 30px;
+    padding: 0 25px 0 40px;
 
 }
 
@@ -640,7 +640,7 @@ button:focus {
     height: 8px;
     position: relative;
     top: 0;
-    left: -5px;
+    left: -10px;
     background: $inactive;
 }
 
@@ -660,7 +660,7 @@ button:focus {
     background: $completed;   
 }
 
-.slide-list-nav-item.completed.use-case::before {
+.slide-list-nav-item.completed.use-cases::before {
     background: #40BEEA;
 }
 

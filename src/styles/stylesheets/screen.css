@@ -653,7 +653,7 @@ button:focus {
   border: 1px solid #D0D2D3;
   border-radius: 3px;
   margin: 0 5px;
-  padding: 0 25px 0 30px;
+  padding: 0 25px 0 40px;
 }
 
 /* line 631, ../sass/screen.scss */
@@ -670,7 +670,7 @@ button:focus {
   height: 8px;
   position: relative;
   top: 0;
-  left: -5px;
+  left: -10px;
   background: #D0D2D3;
 }
 
@@ -695,7 +695,7 @@ button:focus {
 }
 
 /* line 663, ../sass/screen.scss */
-.slide-list-nav-item.completed.use-case::before {
+.slide-list-nav-item.completed.use-cases::before {
   background: #40BEEA;
 }
 

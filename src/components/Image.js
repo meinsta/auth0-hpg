@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default class Image extends React.Component  {
 
   constructor(props, context) {
@@ -8,13 +7,15 @@ export default class Image extends React.Component  {
 
     this.state = {
       source: this.props.url,
+      alt: this.props.name
     };
   }
 
     componentWillReceiveProps(nextProps) {
     if(nextProps.url!==this.props.url){
       this.setState({
-        source: nextProps.url
+        source: nextProps.url,
+        alt: nextProps.name
       });
     }
   };
@@ -22,7 +23,7 @@ export default class Image extends React.Component  {
     render() {
     return (
 		<div className="new-image new-image-only container">
-			<img src={`${this.props.url}`} className="image-slide" />
+			<img alt={`${this.props.name}`} src={`${this.props.url}`} className="image-slide" />
 		</div>
     );
   }
