@@ -7,7 +7,7 @@ const sources = [
   { id: 0, name: 'Use Cases', class: 'use-cases', video: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/01_Use_Cases.mp4', image: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/svg/UseCases.svg', text: 'Choose your use case. Auth0’s Universal Identity Platform for web, mobile and IoT can handle any of them — B2C, B2B, B2E or a combination.'  },
   { id: 1, name: 'Technology', class: 'technologies', video: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/02_Technology_1.mp4', image: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/svg/Technology.svg', text: 'Your language. Your stack. Auth0 can connect to any application or API. Our 65+ SDKs and pre-configured Quickstarts offer rapid integration.' },
   { id: 2, name: 'Deployment', class: 'deployment',  video: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/03_Deployment.mp4', image: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/svg/Deployment.svg', text: 'Choose the deployment that suits your needs — your cloud, Auth0 Cloud, on-premise, or hybrid.' },
-  { id: 3, name: 'Customization', class: 'customization', video: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/04_Customization.mp4', image: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/svg/Customization.svg', text: 'Easily customize your app’s authentication process by writing code or picking one of our 100+ pre-built Auth0 Rules and Extensions.' },
+  { id: 3, name: 'Customization', class: 'customization', video: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/04_Customization.mp4', image: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/svg/Customization.svg', text: 'Easily customize your app’s authentication process by writing code or picking one of our 100+ pre-built Auth0 Rules and Extensions.', linkText: 'Auth0 Rules and Extensions', linkHref: 'https://auth0.com/docs/extensions/authorization-extension/v2' },
   { id: 4, name: 'Result', class: 'result', video: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/05_Result.mp4', image: 'https://meinsta.github.io/auth0-hpg/What_is_Auth0/svg/Result.svg', text: 'Your use case(s) + Your tech stack + Your deployment model + Your customization + Your changing needs = a seamless and secure Auth0 Identity solution that adapts to your future' }
 ];
 
@@ -22,7 +22,6 @@ function throttle(fn, wait) {
     }
   }
 };
-
 
 export default class Carousel extends React.Component {
 	constructor (props, context) {
@@ -86,7 +85,7 @@ export default class Carousel extends React.Component {
 		var buttons = document.querySelectorAll('.slide-list-nav-wrapper Button'),
 			videoElement = document.querySelector('.new-video');
 		if(!videoElement) { return; }
-		if(this.state.currentIndex === lastIndex && this.state.listeners == true) {
+		if(this.state.currentIndex === lastIndex && this.state.listeners === true) {
 			for(var i = 0; i < buttons.length; i++)
 			{
 				if(buttons[i].classList.contains('selected')) 
@@ -128,16 +127,25 @@ export default class Carousel extends React.Component {
 					buttons[i].classList.add('completed', sources[i].class);
 				}
 				buttons[i].classList.add('completed', sources[i].class);
+			}
+			else if(currentButtonIndex !== lastIndex) {
+				if(buttons[i].classList.contains('completed'))
+				{
+					buttons[i].classList.remove('completed', sources[i].class);
+				}
+				if(event.target.id === buttons[i].id) 
+				{
+					buttons[currentButtonIndex].classList.add('selected');
+					if(buttons[i].classList.contains('completed'))
+					{
+						buttons[i].classList.remove('completed', sources[i].class);
+					}
+				}
+				else if(buttons[i].classList.contains('selected') && event.target.id !== buttons[i].id)
+				{
+					buttons[i].classList.remove('selected');
+				}
 			}  
-			else if(buttons[i].classList.contains('selected') && event.target.id !== buttons[i].id)
-			{
-				buttons[i].classList.remove('selected');
-			}
-			else if(event.target.id === buttons[i].id) 
-			{
-				event.target.classList.add('selected');
-			}
-
 		} 
 		this.setState({
 			currentIndex: event.target.id,
@@ -160,25 +168,25 @@ export default class Carousel extends React.Component {
 							buttons[i].classList.remove('selected');
 							buttons[i].classList.add('completed', sources[i].class);
 						}
-						else if(buttons[i].classList.contains('mobile-selected')) 
-						{
-							buttons[i].classList.remove('mobile-selected');
-						}
 						buttons[i].classList.add('completed', sources[i].class);
 					}
-					if(currentButtonIndex !== lastIndex) {
-						if(buttons[i].classList.contains('completed')) 
+					else if(currentButtonIndex !== lastIndex) {
+						if(buttons[i].classList.contains('completed'))
 						{
 							buttons[i].classList.remove('completed', sources[i].class);
 						}
-						if(buttons[i].classList.contains('selected') && event.target.id !== buttons[i].id)
+						if(event.target.id === buttons[i].id) 
+						{
+							buttons[currentButtonIndex].classList.add('selected');
+							if(buttons[i].classList.contains('completed'))
+							{
+								buttons[i].classList.remove('completed', sources[i].class);
+							}
+						}
+						else if(buttons[i].classList.contains('selected') && event.target.id !== buttons[i].id)
 						{
 							buttons[i].classList.remove('selected');
 						}
-						if(event.target.id === buttons[i].id) 
-						{
-							event.target.classList.add('selected');
-						} 
 					}
 				} 				
 			}
@@ -189,11 +197,11 @@ export default class Carousel extends React.Component {
 					{
 						buttons[i].classList.remove('selected');
 					}
-					else if(buttons[i].classList.contains('mobile-selected') && event.target.id !== buttons[i].id)
+					if(buttons[i].classList.contains('mobile-selected') && event.target.id !== buttons[i].id)
 					{
 						buttons[i].classList.remove('mobile-selected');
 					}
-					else if(event.target.id === buttons[i].id) 
+					if(event.target.id === buttons[i].id) 
 					{
 						event.target.classList.add('mobile-selected');
 					}
@@ -210,7 +218,7 @@ export default class Carousel extends React.Component {
 			if(this.state.videoVisibility === true) {
 				return (
 				<div className="new-carousel">
-	              	<h3 className="h3-carousel">{ sources[this.state.currentIndex].text }</h3>
+	              	<h3 className="h3-carousel" dangerouslySetInnerHTML={{__html: sources[this.state.currentIndex].linkText ? (sources[this.state.currentIndex].text).replace(sources[this.state.currentIndex].linkText, sources[this.state.currentIndex].linkText.link(sources[this.state.currentIndex].linkHref)) : sources[this.state.currentIndex].text }} />
 					<Video url={ sources[this.state.currentIndex].video } />
 					<div className="slide-list-nav">
 			          <div className="slide-list-nav-wrapper">
@@ -227,7 +235,7 @@ export default class Carousel extends React.Component {
 			if(this.state.videoVisibility === false) {
 				return (
 				<div className="new-carousel">
-	              	<h3 className="h3-carousel">{ sources[this.state.currentIndex].text }</h3>
+	              	<h3 className="h3-carousel" dangerouslySetInnerHTML={{__html: sources[this.state.currentIndex].linkText ? (sources[this.state.currentIndex].text).replace(sources[this.state.currentIndex].linkText, sources[this.state.currentIndex].linkText.link(sources[this.state.currentIndex].linkHref)) : sources[this.state.currentIndex].text }} />
 					<Image alt={ sources[this.state.currentIndex].alt } url={ sources[this.state.currentIndex].image } />
 					<div className="slide-list-nav">
 			          <div className="slide-list-nav-wrapper">

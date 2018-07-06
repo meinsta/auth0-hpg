@@ -11,8 +11,11 @@ class App extends Component {
       <header>
         <video autoPlay playsInline muted loop id="hero"><source src="https://meinsta.github.io/auth0-hpg/Hero/atom.mp4" type="video/mp4" /></video>
         <aside>
-        <h1>Never compromise on <span className="emphasis">identity</span></h1>
-        <h4><span>We provide a universal authentication &amp; authorization platform for web, </span><span>mobile and legacy applications.</span></h4>        </aside>
+          <h1>Never compromise on <span className="emphasis">identity</span></h1>
+          <h4><span>We provide a universal authentication &amp; authorization platform for web, </span><span>mobile and legacy applications.</span></h4>
+          <a href="https://auth0.com/docs/getting-started" className="mobile-only orange button">Get started &rarr;</a>         
+          <a href="https://auth0.com/docs" className="mobile-only button">Read the Docs</a>
+        </aside>
       </header>
       <main>
         <section className="carousel">
